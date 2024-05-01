@@ -13,13 +13,13 @@ When('I enter password {kraken-string}', async function (password) {
 });
 
 When('I click sign in', async function() {
-    let element = await this.driver.$('#ember5');
+    let element = await this.driver.$('button[data-test-button="sign-in"]');
     await element.waitForDisplayed();
     return await element.click();
 });
 
 When('I click members', async function() {
-    let element = await this.driver.$('#ember30');
+    let element = await this.driver.$('a[data-test-nav="members"]');
     await element.waitForDisplayed();
     return await element.click();
 });

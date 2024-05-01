@@ -2,7 +2,7 @@ Feature: Members
 
 @user1 @web
 Scenario: Como usuario inicio sesion y creo de nuevo miembro de manera exitosa
-  Given I navigate to page "http://localhost:2369/ghost/#/signin"
+  Given I navigate to page "<URL>"
   And I enter email "<EMAIL>"
   And I enter password "<PASSWORD>"
   And I click sign in
@@ -21,7 +21,7 @@ Scenario: Como usuario inicio sesion y creo de nuevo miembro de manera exitosa
 
 @user2 @web
 Scenario: Como usuario inicio sesion y creo de nuevo miembro existente de manera fallida
-  Given I navigate to page "http://localhost:2369/ghost/#/signin"
+  Given I navigate to page "<URL>"
   And I enter email "<EMAIL>"
   And I enter password "<PASSWORD>"
   And I click sign in
