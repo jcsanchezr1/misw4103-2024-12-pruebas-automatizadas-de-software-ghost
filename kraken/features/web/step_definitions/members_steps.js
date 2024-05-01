@@ -1,23 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
-When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('#identification');
-    await element.waitForDisplayed();
-    return await element.setValue(email);
-});
-
-When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('#password');
-    await element.waitForDisplayed();
-    return await element.setValue(password);
-});
-
-When('I click sign in', async function() {
-    let element = await this.driver.$('button[data-test-button="sign-in"]');
-    await element.waitForDisplayed();
-    return await element.click();
-});
-
 When('I click members', async function() {
     let element = await this.driver.$('li.relative a[data-test-nav="members"]');
     await element.waitForDisplayed();
