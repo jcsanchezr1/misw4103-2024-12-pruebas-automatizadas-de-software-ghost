@@ -19,7 +19,7 @@ When('I click sign in', async function() {
 });
 
 When('I click members', async function() {
-    let element = await this.driver.$('a[data-test-nav="members"]');
+    let element = await this.driver.$('li.relative a[data-test-nav="members"]');
     await element.waitForDisplayed();
     return await element.click();
 });
@@ -48,12 +48,23 @@ When('I click save member', async function() {
     return await element.click();
 });
 
-Then('the button text should be {string}', async function (expectedText) {
+Then('I validate that the button text should be {string}', async function (expectedText) {
     let element = await this.driver.$('button[data-test-button="save"]');
     await element.waitForDisplayed();
     const actualText = await element.getText();
     if (actualText !== expectedText) {
         throw new Error(`Expected button text to be "${expectedText}" but found "${actualText}"`);
+    }
+});
+
+Then('I validate the label of the new member should be {string}', async function(title) {
+    let element = await this.driver.$('.gh-canvas-title[data-test-screen-title]');
+    await element.waitForDisplayed();
+    let text = await element.getText();
+    if (text.includes(title)) {
+        console.log('The screen title contains:', title);
+    } else {
+        throw new Error('The screen title does not contain:', title);
     }
 });
 
