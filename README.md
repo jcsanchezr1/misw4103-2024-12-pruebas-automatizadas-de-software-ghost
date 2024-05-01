@@ -1,2 +1,2 @@
-# misw4103-2024-12-pruebas-automatizadas-de-software-ghost-incidencias
-Repositorio utilizado para manejar la documentación e incidencias de la aplicación Ghost
+# misw4103-2024-12-pruebas-automatizadas-de-software-ghost
+Repositorio utilizado para automatización Ghost
