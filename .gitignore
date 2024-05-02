@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 kraken/reports
+.kraken/
 
 # Node
 kraken/node_modules

@@ -3,6 +3,7 @@ Feature: Members
 @user1 @web
 Scenario: Como usuario inicio sesion y creo de nuevo miembro de manera exitosa
   Given I navigate to page "<URL>"
+  And I wait for 10 seconds
   And I enter email "<EMAIL>"
   And I wait for 1 seconds
   And I enter password "<PASSWORD>"
@@ -28,9 +29,11 @@ Scenario: Como usuario inicio sesion y creo de nuevo miembro de manera exitosa
 @user2 @web
 Scenario: Como usuario inicio sesion y creo de nuevo miembro existente de manera fallida
   Given I navigate to page "<URL>"
+  And I wait for 10 seconds
   And I enter email "<EMAIL>"
   And I wait for 1 seconds
   And I enter password "<PASSWORD>"
+  And I wait for 1 seconds
   And I click sign in
   And I wait for 10 seconds
   When I click members
