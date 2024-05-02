@@ -2,11 +2,9 @@ const { When, Then } = require('@cucumber/cucumber');
 const { BeforeAll } = require('@cucumber/cucumber');
 const LoginPage = require('../model/loginPage');
 
-//const loginPage = new LoginPage(this.driver);
 let loginPage;
 
-BeforeAll(async function () {
-    console.log("beforeee all");
+BeforeAll(async function () {    
     loginPage = new LoginPage();   
 });
 

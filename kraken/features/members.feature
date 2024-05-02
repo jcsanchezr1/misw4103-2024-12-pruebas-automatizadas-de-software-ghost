@@ -3,7 +3,7 @@ Feature: Members
 @user1 @web
 Scenario: Como usuario inicio sesion y creo de nuevo miembro de manera exitosa
   Given I navigate to page "<URL>"
-  And I wait for 10 seconds
+  And I wait for 5 seconds
   And I enter email "<EMAIL>"
   And I wait for 1 seconds
   And I enter password "<PASSWORD>"
@@ -29,7 +29,7 @@ Scenario: Como usuario inicio sesion y creo de nuevo miembro de manera exitosa
 @user2 @web
 Scenario: Como usuario inicio sesion y creo de nuevo miembro existente de manera fallida
   Given I navigate to page "<URL>"
-  And I wait for 10 seconds
+  And I wait for 5 seconds
   And I enter email "<EMAIL>"
   And I wait for 1 seconds
   And I enter password "<PASSWORD>"
@@ -44,6 +44,7 @@ Scenario: Como usuario inicio sesion y creo de nuevo miembro existente de manera
   And I click save member
   And I wait for 5 seconds
   And I validate the label of the new member should be "name2"
+  And I wait for 2 seconds
   And I click members back
   And I fill the filter text field with "name2"
   And I wait for 5 seconds
