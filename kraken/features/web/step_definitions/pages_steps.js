@@ -29,12 +29,28 @@ When('I click publish page', async function() {
     pagePage.submitPublish();   
 });
 
+When('I click to update page', async function() {
+    pagePage.submitUpdatePage();   
+});
+
 When('I click continue final review page', async function() {
     pagePage.submitFinalReview();   
 });
 
+When('I click page settings', async function() {
+    pagePage.submitSettingsPage();   
+});
+
 When('I click publish final review page', async function() {
     pagePage.submitConfirmReview();   
+});
+
+When('I click delete page', async function() {
+    pagePage.submitDeletePage();   
+});
+
+When('I click delete confirmation page', async function() {
+    pagePage.buttonDeleteConfirmation();   
 });
 
 When('I click back to dashboard', async function() {
@@ -47,6 +63,10 @@ When('I click back to editor', async function() {
 
 When('I click back to pages', async function() {
     pagePage.submitBackPages();   
+});
+
+When('I select page to edit {string}', async function(namePage) {   
+    pagePage.clickToEditPage(namePage);    
 });
 
 Then('I validate the title of page {string}', async function(title) {   
@@ -67,6 +87,28 @@ Then('I validate the title of page {string}', async function(title) {
         throw new Error('The error message is not displayed: ' + title);
     }
 });
+
+Then('I validate the title of the page does not exist {string}', async function(title) {   
+    
+    let elements = await this.driver.$$('li a h3.gh-content-entry-title');    
+    let found = false;
+    for (let element of elements) {
+        let text = await element.getText();
+        console.log(text);
+        if (text.includes( )) {
+            console.log('The error message is displayed:', title);
+            throw new Error('The error message is not displayed: ' + title);
+        }
+    }
+     
+     if (!found) {
+        console.log('The page does not exist:', title);
+    }
+});
+
+ 
+
+
 
 
 
