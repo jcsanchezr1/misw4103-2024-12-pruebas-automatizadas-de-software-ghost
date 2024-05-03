@@ -5,11 +5,11 @@ Scenario: Creación exitosa de un page, visualización del page creado en la sec
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
-  And I wait for 15 seconds
+  And I wait for 20 seconds
   When I click pages
   And I wait for 5 seconds
   And I click new page
@@ -35,11 +35,11 @@ Scenario: Creación exitosa de un page, desde editor
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
-  And I wait for 15 seconds
+  And I wait for 20 seconds
   When I click pages
   And I wait for 3 seconds
   And I click new page
@@ -65,11 +65,11 @@ Scenario: Modificación exitosa de un page:
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
-  And I wait for 15 seconds
+  And I wait for 20 seconds
   When I click pages
   And I wait for 5 seconds
   And I click new page
@@ -103,13 +103,13 @@ Scenario: Modificación exitosa de un page:
 @user4 @web
 Scenario: Eliminar de manera exitosa una page
   Given I navigate to page "<URL>"
-  And I wait for 5 seconds
+  And I wait
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
-  And I wait for 15 seconds
+  And I wait for 20 seconds
   When I click pages
   And I wait for 5 seconds
   And I click new page
