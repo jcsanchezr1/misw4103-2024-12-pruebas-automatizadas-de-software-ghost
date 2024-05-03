@@ -1,37 +1,36 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const { BeforeAll } = require('@cucumber/cucumber');
+const MemberPage = require('../model/memberPage');
+
+let memberPage;
+
+BeforeAll(async function () {    
+    memberPage = new MemberPage();   
+})
 
 When('I click members', async function() {
-    let element = await this.driver.$('li.relative a[data-test-nav="members"]');
-    await element.waitForDisplayed();
-    return await element.click();
+    memberPage.setDriver(this.driver);    
+    memberPage.clickLinSideBarkMembers();
 });
 
 When('I click new member', async function() {
-    let element = await this.driver.$('.gh-btn.ember-view[data-test-new-member-button="true"]');
-    await element.waitForDisplayed();
-    return await element.click();
+    memberPage.clickNewMember();
 });
 
-When('I enter member name {string}', async function (email) {
-    let element = await this.driver.$('#member-name');
-    await element.waitForDisplayed();
-    return await element.setValue(email);
+When('I enter member name {string}', async function (name) {
+    memberPage.setMemberName(name);
 });
 
 When('I enter member email {string}', async function (email) {
-    let element = await this.driver.$('#member-email');
-    await element.waitForDisplayed();
-    return await element.setValue(email);
+    memberPage.setMemberEmail(email);
 });
 
 When('I click save member', async function() {
-    let element = await this.driver.$('button[data-test-button="save"]');
-    await element.waitForDisplayed();
-    return await element.click();
+    memberPage.clickSaveMember();
 });
 
 Then('I validate that the button text should be {string}', async function (expectedText) {
-    let element = await this.driver.$('button[data-test-button="save"]');
+    let element = await this.driver.$(memberPage.elements.buttonSaveMember);
     await element.waitForDisplayed();
     const actualText = await element.getText();
     if (actualText !== expectedText) {
@@ -40,7 +39,7 @@ Then('I validate that the button text should be {string}', async function (expec
 });
 
 Then('I validate the label of the new member should be {string}', async function(title) {
-    let element = await this.driver.$('.gh-canvas-title[data-test-screen-title]');
+    let element = await this.driver.$(memberPage.elements.labelNewMember);
     await element.waitForDisplayed();
     let text = await element.getText();
     if (text.includes(title)) {
@@ -51,19 +50,15 @@ Then('I validate the label of the new member should be {string}', async function
 });
 
 When('I click members back', async function() {
-    let element = await this.driver.$('a[data-test-link="members-back"]');
-    await element.waitForClickable();
-    return await element.click();
+    memberPage.clickBackMembers();
 });
 
 When('I fill the filter text field with {string}', async function(text) {
-    let element = await this.driver.$('input[data-test-input="members-search"]');
-    await element.waitForDisplayed();
-    await element.setValue(text);
+    memberPage.setFilterTextMembers(text);
 });
 
 Then('I validate that the table contains the name {string}', async function(name) {
-    let element = await this.driver.$('a[data-test-table-data="details"] .gh-members-list-name');
+    let element = await this.driver.$(memberPage.elements.tableMembers);
     await element.waitForDisplayed();
     let text = await element.getText();
     if (text.includes(name)) {
@@ -74,7 +69,7 @@ Then('I validate that the table contains the name {string}', async function(name
 });
 
 Then('I validate the error message {string}', async function(errorMessage) {
-    let element = await this.driver.$('.form-group.error .response');
+    let element = await this.driver.$(memberPage.elements.labelErrorMember);
     await element.waitForDisplayed();
     let text = await element.getText();
     if (text.includes(errorMessage)) {
@@ -85,7 +80,5 @@ Then('I validate the error message {string}', async function(errorMessage) {
 });
 
 When('I click leave button', async function() {
-    let element = await this.driver.$('button[data-test-leave-button]');
-    await element.waitForDisplayed();
-    return await element.click();
+    memberPage.clickModalButtonLeaveMember();
 });
