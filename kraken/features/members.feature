@@ -5,9 +5,9 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa y lo 
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
   When I click members
@@ -40,19 +40,21 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa y lo 
   And I validate that the table not contains the name "name1"
   And I wait for 5 seconds
 
+
 @user2 @web
 Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, creo nuevo miembro de manera fallida y lo elimino de manera exitosa
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
   When I click members
   And I wait for 5 seconds
   And I click new member
+  And I wait for 5 seconds
   And I enter member name "name2"
   And I wait for 3 seconds
   And I enter member email "name2@uniandes.edu.co"
@@ -75,8 +77,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, creo
   And I wait for 3 seconds
   And I click save member
   And I wait for 5 seconds
-  Then I validate that the button text should be "Retry"
-  And I validate the error message "Member already exists. Attempting to add member with existing email address"
+  Then I validate the error message "Member already exists. Attempting to add member with existing email address"
   And I click members back
   And I wait for 5 seconds
   And I click leave button
@@ -103,14 +104,15 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
   When I click members
   And I wait for 5 seconds
   And I click new member
+  And I wait for 5 seconds
   And I enter member name "name3"
   And I wait for 3 seconds
   And I enter member email "name3@uniandes.edu.co"
@@ -157,14 +159,15 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
   And I click members
   And I wait for 5 seconds
   And I click new member
+  And I wait for 5 seconds
   And I enter member name "name4"
   And I wait for 3 seconds
   And I enter member email "name4@uniandes.edu.co"

@@ -1,24 +1,24 @@
 const { When, Then } = require('@cucumber/cucumber');
-class PagePage {
+class MemberPage {
       
     constructor() {        
         this.elements = {
-            sideBarMembers: 'li.relative a[data-test-nav="members"]',
-            buttonNewMember: '.gh-btn.ember-view[data-test-new-member-button="true"]',
+            sideBarMembers: 'a[href="#/members/"]',
+            buttonNewMember: 'a[href="#/members/new/"]',
             memberNameText: '#member-name',
             memberEmailText: '#member-email',
-            buttonSaveMember: 'button[data-test-button="save"]',
-            labelNewMember: '.gh-canvas-title[data-test-screen-title]',
-            buttonBackMembers: 'a[data-test-link="members-back"]',
-            textFilterMembers: 'input[data-test-input="members-search"]',
-            tableMembers: 'a[data-test-table-data="details"] .gh-members-list-name',
+            buttonSaveMember: 'button=Save',
+            labelNewMember: '.gh-member-details-identity h3',
+            buttonBackMembers: '.gh-canvas-title a',
+            textFilterMembers: '.gh-members-header-search input[type="text"]',
+            tableMembers: '.gh-list',
             labelErrorMember: '.form-group.error .response',
-            modalButtonLeaveMember: 'button[data-test-leave-button]',
-            firstRowTableMembers: '.gh-members-list-row a[data-test-table-data="details"]',
-            buttonActionsMember: 'button[data-test-button="member-actions"]',
-            buttonDeleteMember: 'button[data-test-button="delete-member"]',
-            buttonConfirmDeleteMember: 'button[data-test-button="confirm"]',
-            buttonShowAllMembers: 'a[data-test-button="show-all-members"]'
+            modalButtonLeaveMember: 'button=Leave',
+            firstRowTableMembers: '.gh-list tbody tr:first-of-type a',
+            buttonActionsMember: 'section.view-actions button.gh-btn-action-icon',
+            buttonDeleteMember: 'button span.red',
+            buttonConfirmDeleteMember: '.modal-footer button.gh-btn-red',
+            buttonShowAllMembers: 'div.gh-members-empty a.ember-view.gh-btn span'
         };
     }
 
@@ -98,4 +98,4 @@ class PagePage {
     }
 }
 
-module.exports = PagePage;
+module.exports = MemberPage;
