@@ -188,7 +188,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I wait for 3 seconds
   And I click save member
   And I wait for 3 seconds
-  And I validate the error message "Invalid Email."
+  Then I validate the error message "Invalid Email."
   And I click members back
   And I wait for 5 seconds
   And I click leave button
