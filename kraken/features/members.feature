@@ -150,7 +150,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I wait for 5 seconds
   And I click on the show all members button
   And I wait for 5 seconds
-  Then I validate that the table not contains the name "name3Modified"
+  And I validate that the table not contains the name "name3Modified"
   And I wait for 5 seconds
 
 
