@@ -3,9 +3,9 @@ class LoginPage {
       
     constructor() {        
         this.elements = {
-            identification: '#identification',
-            password: '#password',
-            signInButton: 'button[data-test-button="sign-in"]'
+            identification: 'input[name="identification"]',
+            password: 'input[name="password"]',
+            signInButton: '.login'
         };
     }
 
