@@ -3,20 +3,20 @@ class PagePage {
       
     constructor() {        
         this.elements = {
-            sideBarlink: 'li a[data-test-nav="pages"]',
-            buttonNewMember: '.gh-btn[data-test-new-page-button=""]',
-            buttonPublishPage: 'button.gh-btn-editor[data-test-button="publish-flow"]',
+            sideBarlink: 'a[href="#/pages/"]',
+            buttonNewMember: '.view-actions a.gh-btn-primary',
+            buttonPublishPage: '.flex.items-center.pe-auto.h-100 button.gh-publish-trigger',
             buttonSettingsPage: 'button.settings-menu-toggle',
             buttonDeletePage: 'button[data-test-button="delete-post"]',
             buttonDeleteConfirmation: 'button[data-test-button="delete-post-confirm"]',
-            buttonContinueFinalReview: 'button[data-test-button="continue"]',
-            buttonBackDashBoard: 'a.gh-back-to-editor',
-            buttonBackEditor: 'button[data-test-button="close-publish-flow"]',
-            buttonConfirmPublish: 'button[data-test-button="confirm-publish"]',
+            buttonContinueFinalReview: '.gh-publish-cta button',
+            buttonBackDashBoard: '.gh-publish-confirmation button',
+            buttonBackEditor: '.gh-publish-header button',
+            buttonConfirmPublish: '.gh-publish-cta button:first-child',
             buttonBackPage: 'a.gh-btn-editor.gh-editor-back-button', 
             buttonUpdatePage: 'button[data-test-button="publish-save"]',           
             pageTitle: '.ember-text-area',
-            pageDescription: 'div.kg-prose[data-lexical-editor="true"]',
+            pageDescription: '[data-kg="editor"]:has(p)',
             titleList:'li a h3.gh-content-entry-title'            
         };
     }
