@@ -37,7 +37,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa y lo 
   And I wait for 5 seconds
   And I click on the show all members button
   And I wait for 5 seconds
-  And I validate that the table not contains the name "name1"
+  Then I validate that the table not contains the name "name1"
   And I wait for 5 seconds
 
 
@@ -96,7 +96,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, creo
   And I wait for 5 seconds
   And I click on the show all members button
   And I wait for 5 seconds
-  And I validate that the table not contains the name "name2"
+  Then I validate that the table not contains the name "name2"
   And I wait for 5 seconds
 
 @user3 @web
@@ -150,7 +150,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I wait for 5 seconds
   And I click on the show all members button
   And I wait for 5 seconds
-  And I validate that the table not contains the name "name3Modified"
+  Then I validate that the table not contains the name "name3Modified"
   And I wait for 5 seconds
 
 
@@ -207,5 +207,5 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I wait for 5 seconds
   And I click on the show all members button
   And I wait for 5 seconds
-  And I validate that the table not contains the name "name4"
+  Then I validate that the table not contains the name "name4"
   And I wait for 5 seconds
