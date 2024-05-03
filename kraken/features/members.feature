@@ -1,7 +1,7 @@
 Feature: Members
 
 @user1 @web
-Scenario: Como usuario inicio sesion y creo nuevo miembro de manera exitosa
+Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa y lo elimino de manera exitosa
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
@@ -27,9 +27,21 @@ Scenario: Como usuario inicio sesion y creo nuevo miembro de manera exitosa
   And I wait for 5 seconds
   And I validate that the table contains the name "name1"
   And I wait for 5 seconds
+  And I click first row on table members
+  And I wait for 5 seconds
+  And I click on the member actions button
+  And I wait for 5 seconds
+  And I click on the delete member button
+  And I wait for 5 seconds
+  And I click on the confirm delete member button
+  And I wait for 5 seconds
+  And I click on the show all members button
+  And I wait for 5 seconds
+  And I validate that the table not contains the name "name1"
+  And I wait for 5 seconds
 
 @user2 @web
-Scenario: Como usuario inicio sesion y creo nuevo miembro existente de manera fallida
+Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, creo nuevo miembro de manera fallida y lo elimino de manera exitosa
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
@@ -69,9 +81,25 @@ Scenario: Como usuario inicio sesion y creo nuevo miembro existente de manera fa
   And I wait for 5 seconds
   And I click leave button
   And I wait for 5 seconds
+  And I fill the filter text field with "name2"
+  And I wait for 5 seconds
+  And I validate that the table contains the name "name2"
+  And I wait for 5 seconds
+  And I click first row on table members
+  And I wait for 5 seconds
+  And I click on the member actions button
+  And I wait for 5 seconds
+  And I click on the delete member button
+  And I wait for 5 seconds
+  And I click on the confirm delete member button
+  And I wait for 5 seconds
+  And I click on the show all members button
+  And I wait for 5 seconds
+  And I validate that the table not contains the name "name2"
+  And I wait for 5 seconds
 
 @user3 @web
-Scenario: Como usuario inicio sesion y creo nuevo miembro y lo edito exitosamente
+Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo edito de manera exitosa y lo elimino de manera exitosa
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
@@ -110,10 +138,22 @@ Scenario: Como usuario inicio sesion y creo nuevo miembro y lo edito exitosament
   And I wait for 5 seconds
   And I validate that the table contains the name "name3Modified"
   And I wait for 5 seconds
+  And I click first row on table members
+  And I wait for 5 seconds
+  And I click on the member actions button
+  And I wait for 5 seconds
+  And I click on the delete member button
+  And I wait for 5 seconds
+  And I click on the confirm delete member button
+  And I wait for 5 seconds
+  And I click on the show all members button
+  And I wait for 5 seconds
+  Then I validate that the table not contains the name "name3Modified"
+  And I wait for 5 seconds
 
 
 @user4 @web
-Scenario: Como usuario inicio sesion y creo nuevo miembro y lo elimino exitosamente
+Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo edito de manera fallida y lo elimino de manera exitosa
   Given I navigate to page "<URL>"
   And I wait for 5 seconds
   And I enter email "<EMAIL>"
@@ -122,7 +162,7 @@ Scenario: Como usuario inicio sesion y creo nuevo miembro y lo elimino exitosame
   And I wait for 1 seconds
   And I click sign in
   And I wait for 10 seconds
-  When I click members
+  And I click members
   And I wait for 5 seconds
   And I click new member
   And I enter member name "name4"
@@ -141,6 +181,21 @@ Scenario: Como usuario inicio sesion y creo nuevo miembro y lo elimino exitosame
   And I wait for 5 seconds
   And I click first row on table members
   And I wait for 5 seconds
+  When I enter member email "correoNoValido"
+  And I wait for 3 seconds
+  And I click save member
+  And I wait for 3 seconds
+  And I validate the error message "Invalid Email."
+  And I click members back
+  And I wait for 5 seconds
+  And I click leave button
+  And I wait for 5 seconds
+  And I fill the filter text field with "name4"
+  And I wait for 5 seconds
+  And I validate that the table contains the name "name4"
+  And I wait for 5 seconds
+  And I click first row on table members
+  And I wait for 5 seconds
   And I click on the member actions button
   And I wait for 5 seconds
   And I click on the delete member button
@@ -149,5 +204,5 @@ Scenario: Como usuario inicio sesion y creo nuevo miembro y lo elimino exitosame
   And I wait for 5 seconds
   And I click on the show all members button
   And I wait for 5 seconds
-  Then I validate that the table not contains the name "name4"
+  And I validate that the table not contains the name "name4"
   And I wait for 5 seconds
