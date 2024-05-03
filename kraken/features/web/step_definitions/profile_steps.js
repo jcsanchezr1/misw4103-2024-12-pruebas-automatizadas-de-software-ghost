@@ -37,6 +37,10 @@ Then('I validate the error message password {string}', async function(errorMessa
     profilePage.validateErrorMessage(errorMessage);   
 });
 
+Then('I validate the error message old password alert {string}', async function(errorMessage) {
+    profilePage.validateErrorMessageAlert(errorMessage);   
+});
+
 Then('I click close and save', async function() {   
     profilePage.submitChangeButton("Save & close");
 });

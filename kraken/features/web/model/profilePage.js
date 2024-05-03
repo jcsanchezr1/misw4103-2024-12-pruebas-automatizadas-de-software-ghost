@@ -11,7 +11,8 @@ class ProfilePage {
             inputOldPassword: '#user-password-old',
             inputPassword: '#user-password-new',
             inputConfirmPassword: '#user-new-password-verification',
-            labeInputPassword: '.form-group.error p'            
+            labeInputPassword: '.form-group.error p',
+            alertInputPassword: '.gh-alerts article.gh-alert div.gh-alert-content'
         };
     }
 
@@ -61,6 +62,18 @@ class ProfilePage {
 
     async validateErrorMessage(errorMessage) {                
         let element = await this.driver.$(this.elements.labeInputPassword);
+        await element.waitForDisplayed();
+        let text = await element.getText();
+        console.log("text: "+text);
+        if (text.includes(errorMessage)) {
+            console.log('The error message is displayed:', errorMessage);
+        } else {
+            throw new Error('The error message is not displayed: ' + errorMessage);
+        }            
+    }
+
+    async validateErrorMessageAlert(errorMessage) {                
+        let element = await this.driver.$(this.elements.alertInputPassword);
         await element.waitForDisplayed();
         let text = await element.getText();
         console.log("text: "+text);
