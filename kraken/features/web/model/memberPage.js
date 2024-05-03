@@ -14,6 +14,11 @@ class PagePage {
             tableMembers: 'a[data-test-table-data="details"] .gh-members-list-name',
             labelErrorMember: '.form-group.error .response',
             modalButtonLeaveMember: 'button[data-test-leave-button]',
+            firstRowTableMembers: '.gh-members-list-row a[data-test-table-data="details"]',
+            buttonActionsMember: 'button[data-test-button="member-actions"]',
+            buttonDeleteMember: 'button[data-test-button="delete-member"]',
+            buttonConfirmDeleteMember: 'button[data-test-button="confirm"]',
+            buttonShowAllMembers: 'a[data-test-button="show-all-members"]'
         };
     }
 
@@ -60,6 +65,36 @@ class PagePage {
     async clickModalButtonLeaveMember() {        
         await this.driver.$(this.elements.modalButtonLeaveMember).waitForDisplayed();
         return await this.driver.$(this.elements.modalButtonLeaveMember).click();
+    }
+
+    async clickFirstRecordInTableMembers() {
+        await this.driver.$(this.elements.firstRowTableMembers).waitForDisplayed();
+        const firstRecord = await this.driver.$(this.elements.firstRowTableMembers);
+        await firstRecord.click();
+    }
+
+    async clickMemberActionsButton() {
+        await this.driver.$(this.elements.buttonActionsMember).waitForDisplayed();
+        const memberActionsButton = await this.driver.$(this.elements.buttonActionsMember);
+        await memberActionsButton.click();
+    }
+
+    async clickDeleteMemberButton() {
+        await this.driver.$(this.elements.buttonDeleteMember).waitForDisplayed();
+        const deleteMemberButton = await this.driver.$(this.elements.buttonDeleteMember);
+        await deleteMemberButton.click();
+    }
+
+    async clickConfirmDeleteMemberButton() {
+        await this.driver.$(this.elements.buttonConfirmDeleteMember).waitForDisplayed();
+        const confirmDeleteButton = await this.driver.$(this.elements.buttonConfirmDeleteMember);
+        await confirmDeleteButton.click();
+    }
+
+    async clickShowAllMembersButton() {
+        await this.driver.$(this.elements.buttonShowAllMembers).waitForDisplayed();
+        const showAllMembersButton = await this.driver.$(this.elements.buttonShowAllMembers);
+        await showAllMembersButton.click();
     }
 }
 

@@ -82,3 +82,34 @@ Then('I validate the error message {string}', async function(errorMessage) {
 When('I click leave button', async function() {
     memberPage.clickModalButtonLeaveMember();
 });
+
+When('I click first row on table members', async function() {
+    memberPage.clickFirstRecordInTableMembers();
+});
+
+When('I click on the member actions button', async function() {
+    await memberPage.clickMemberActionsButton();
+});
+
+When('I click on the delete member button', async function() {
+    await memberPage.clickDeleteMemberButton();
+});
+
+When('I click on the confirm delete member button', async function() {
+    await memberPage.clickConfirmDeleteMemberButton();
+});
+
+When('I click on the show all members button', async function() {
+    await memberPage.clickShowAllMembersButton();
+});
+
+Then('I validate that the table not contains the name {string}', async function(name) {
+    let element = await this.driver.$(memberPage.elements.tableMembers);
+    await element.waitForDisplayed();
+    let text = await element.getText();
+    if (!text.includes(name)) {
+        console.log('The table not contains the name', name);
+    } else {
+        throw new Error('The table does contain the name ' + name);
+    }
+});
