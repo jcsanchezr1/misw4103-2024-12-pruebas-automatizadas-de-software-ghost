@@ -53,3 +53,21 @@ Antes de instalar Kraken, se requiere tener estas herramientas instaladas previa
 **Nota:** Un posible error es que el comando appium no se reconozca a nivel del sistema operativo y, por ende, Kraken no lo pueda utilizar. Si esto le sucede, ejecute el siguiente comando para instalarlo:
 
 `npm install -g appium`
+
+### Detalles de la Instalación de Ghost
+
+La versión desplegada de Ghost es:
+
+- Ghost-CLI version: 1.23.0
+- Ghost version: 5.14.1
+
+### Máquinas de Prueba
+
+Los escenarios de prueba fueron probados en las siguientes máquinas
+
+| Tester          | Sistema Operativo |Procesadpr|Memoria RAM|Disco Duro|Resolución de Pantalla|
+| --------------- |-------------------|----------|-----------|----------|----------------------|
+| Ian Beltran     | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM |1TB |1920 x 1080 |
+| Esteban Rico    | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM | |1920 x 1080 |
+| Laura Santana   | Windows 11 Home|12th Gen Intel(R) Core(TM) i7-12700H   2.70 GHz| 16 GB Memoria RAM | |1920 x 1080 |
+| Julio Sanchez   | MacOS Sonoma Versión 14.4.1|rocesador Apple M2 Pro| 16 GB Memoria RAM | 1TB|3456 × 2234 |
