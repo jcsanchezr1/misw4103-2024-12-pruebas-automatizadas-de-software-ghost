@@ -21,6 +21,24 @@ git clone https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-
 
 3. El manejador de paquetes NPM actualizado según la versión de Node.js.
 
+### Detalles de la Instalación de Ghost
+
+La versión desplegada de Ghost es:
+
+- Ghost-CLI version: 1.23.0
+- Ghost version: 5.14.1
+
+### Máquinas de Prueba
+
+Los escenarios de prueba fueron probados en las siguientes máquinas
+
+| Tester          | Sistema Operativo |Procesadpr|Memoria RAM|Disco Duro|Resolución de Pantalla|
+| --------------- |-------------------|----------|-----------|----------|----------------------|
+| Ian Beltran     | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM |1TB |1920 x 1080 |
+| Esteban Rico    | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM | |1920 x 1080 |
+| Laura Santana   | Windows 11 Home|12th Gen Intel(R) Core(TM) i7-12700H   2.70 GHz| 16 GB Memoria RAM | DD 500 GB |1920 X 1080 |
+| Julio Sanchez   | MacOS Sonoma Versión 14.4.1|rocesador Apple M2 Pro| 16 GB Memoria RAM | 1TB|3456 × 2234 |
+
 ## 1. Instalación y ejecución de pruebas con Kraken
 
 ### Prerrequisitos Kraken
@@ -54,20 +72,4 @@ Antes de instalar Kraken, se requiere tener estas herramientas instaladas previa
 
 `npm install -g appium`
 
-### Detalles de la Instalación de Ghost
 
-La versión desplegada de Ghost es:
-
-- Ghost-CLI version: 1.23.0
-- Ghost version: 5.14.1
-
-### Máquinas de Prueba
-
-Los escenarios de prueba fueron probados en las siguientes máquinas
-
-| Tester          | Sistema Operativo |Procesadpr|Memoria RAM|Disco Duro|Resolución de Pantalla|
-| --------------- |-------------------|----------|-----------|----------|----------------------|
-| Ian Beltran     | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM |1TB |1920 x 1080 |
-| Esteban Rico    | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM | |1920 x 1080 |
-| Laura Santana   | Windows 11 Home|12th Gen Intel(R) Core(TM) i7-12700H   2.70 GHz| 16 GB Memoria RAM | DD 500 GB |1920 X 1080 |
-| Julio Sanchez   | MacOS Sonoma Versión 14.4.1|rocesador Apple M2 Pro| 16 GB Memoria RAM | 1TB|3456 × 2234 |
