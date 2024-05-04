@@ -19,6 +19,10 @@ typePassword(password) {
     cy.get(this.elements.password).type(password);
 }
 
+cleanPassword() {
+    cy.get(this.elements.password).clear();
+}
+
 clickSignInButton() {
     cy.get(this.elements.signInButton).click();
 }
