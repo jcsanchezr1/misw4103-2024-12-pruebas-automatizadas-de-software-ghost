@@ -5,7 +5,8 @@ class TagPage {
             newTag: 'body > div.gh-app > div > main > section > div > header > section > a',
             name: '#tag-name',
             save: 'body > div.gh-app > div > main > section > form > div.gh-canvas-header > header > section > button',
-            saved: 'span > svg'
+            saved: 'span > svg',
+            getNames: '.gh-tag-list-name'
         };  
 }
 
@@ -29,5 +30,21 @@ isSaved() {
     cy.get(this.elements.saved).should('be.visible');
 }
 
+getNames() {
+    let arr = [];
+    cy.get(".gh-tag-list-name").each((element) => {
+        const text = Cypress.$(element).text().trim();
+        arr.push(text);
+      });
+    return arr;
+}
+compareNames(arr,arr2){
+    console.log(arr);
+    let flag= false;
+    if(arr[arr.length-1]!=arr2[arr2.length-1] && arr2[arr2.length-1]==="Tag1"){
+        flag=true;
+    }
+    expect(flag).to.be.true;
+}
 }
 module.exports = TagPage;
