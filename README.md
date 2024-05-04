@@ -72,4 +72,13 @@ Antes de instalar Kraken, se requiere tener estas herramientas instaladas previa
 
 `npm install -g appium`
 
+## URL de Ghost y Credenciales de Inicio de Sesión
+La URL de la instancia de Ghost que utilizaremos para nuestras pruebas es: https://ghost-rrgn.onrender.com/ghost/#/signin.
+
+Para acceder a la plataforma, puedes utilizar las siguientes credenciales:
+
+- **Email address**: conan@gmail.com
+- **Password**: Automatizadas01*
+Asegúrate de utilizar estas credenciales al ejecutar tus pruebas automatizadas en la plataforma de Ghost.
+
 
