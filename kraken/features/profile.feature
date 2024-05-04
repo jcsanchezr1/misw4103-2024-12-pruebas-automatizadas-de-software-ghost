@@ -5,9 +5,9 @@ Scenario: Cambiar password de forma fallida por error insecure
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
   And I wait for 15 seconds
   When I click profile
@@ -46,9 +46,9 @@ Scenario: Cambiar password de forma fallida por error old password incorrecto
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I enter password "<PASSWORD>"
-  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I click sign in
   And I wait for 15 seconds
   When I click profile
