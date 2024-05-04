@@ -32,7 +32,7 @@ La versión desplegada de Ghost es:
 
 Los escenarios de prueba fueron probados en las siguientes máquinas
 
-| Tester          | Sistema Operativo |Procesadpr|Memoria RAM|Disco Duro|Resolución de Pantalla|
+| Tester          | Sistema Operativo |Procesador|Memoria RAM|Disco Duro|Resolución de Pantalla|
 | --------------- |-------------------|----------|-----------|----------|----------------------|
 | Ian Beltran     | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM |1TB |1920 x 1080 |
 | Esteban Rico    | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM | |1920 x 1080 |
