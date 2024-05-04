@@ -7,6 +7,7 @@
 /bazel-out
 kraken/reports
 .kraken/
+/cypress/cypress/screenshots
 
 # Node
 kraken/node_modules
