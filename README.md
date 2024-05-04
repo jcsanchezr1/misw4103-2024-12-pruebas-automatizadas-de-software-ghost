@@ -69,5 +69,5 @@ Los escenarios de prueba fueron probados en las siguientes máquinas
 | --------------- |-------------------|----------|-----------|----------|----------------------|
 | Ian Beltran     | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM |1TB |1920 x 1080 |
 | Esteban Rico    | Ubuntu 22.04.4 LTS|Procesador Intel® Core™ i7-4700HQ CPU @ 2.40GHz * 8| 16 GB Memoria RAM | |1920 x 1080 |
-| Laura Santana   | Windows 11 Home|12th Gen Intel(R) Core(TM) i7-12700H   2.70 GHz| 16 GB Memoria RAM | |1920 x 1080 |
+| Laura Santana   | Windows 11 Home|12th Gen Intel(R) Core(TM) i7-12700H   2.70 GHz| 16 GB Memoria RAM | DD 500 GB |1920 X 1080 |
 | Julio Sanchez   | MacOS Sonoma Versión 14.4.1|rocesador Apple M2 Pro| 16 GB Memoria RAM | 1TB|3456 × 2234 |
