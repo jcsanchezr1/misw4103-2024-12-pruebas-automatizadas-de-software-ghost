@@ -11,12 +11,21 @@ class ProfilePage {
             inputPassword: '#user-password-new',
             inputConfirmPassword: '#user-new-password-verification',
             labeInputPassword: '.form-group.error p',
-            alertInputPassword: '.gh-alerts article.gh-alert div.gh-alert-content'
+            alertInputPassword: '.gh-alerts article.gh-alert div.gh-alert-content',
+            fullName: '#user-name',
+            save:'body > div.gh-app > div > main > section > div > header > section > button',
+            saved: 'gh-btn gh-btn-primary gh-btn-icon gh-btn-green ember-view',
+            profileLabel:'.gh-user-name'
         };
     }
 
     submitProfileMenu() {
         cy.get(this.elements.profileMenu).click();
+    }
+
+    typeName(name) {
+        cy.get(this.elements.fullName).clear();
+        cy.get(this.elements.fullName).type(name, {force: true});
     }
 
     submitYourProfile() {
