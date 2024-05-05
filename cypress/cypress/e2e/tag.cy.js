@@ -1,7 +1,7 @@
 import properties from "./properties.json";
 import LoginPage from "./model/loginPage";
 import PagePage from "./model/pagePage";
-import TagPage from "./model/TagPage";
+import TagPage from "./model/tagPage";
 import PostPage from "./model/postPage";
 
 
