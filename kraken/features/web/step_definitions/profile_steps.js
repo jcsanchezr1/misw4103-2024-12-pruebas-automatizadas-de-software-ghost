@@ -48,3 +48,19 @@ Then('I click close and save', async function() {
 Then('I click sign out', async function() {   
     profilePage.submitSignOut();
 });
+
+When('I change FullName {string}', async function(title) {
+    profilePage.setFullName(title);
+});
+
+When('I click Save button', async function() {
+    profilePage.submitChangeButton();
+});
+
+When('I click back on profile', async function() {
+    profilePage.submitProfileMenu();
+});
+
+Then('I validate the name has been changed {string}', async function(name) {
+    profilePage.validateProfileName(name);
+});

@@ -12,7 +12,10 @@ class ProfilePage {
             inputPassword: '#user-password-new',
             inputConfirmPassword: '#user-new-password-verification',
             labeInputPassword: '.form-group.error p',
-            alertInputPassword: '.gh-alerts article.gh-alert div.gh-alert-content'
+            alertInputPassword: '.gh-alerts article.gh-alert div.gh-alert-content',
+            labelChangeName: '#user-name',
+            save:'body > div.gh-app > div > main > section > div > header > section > button',
+            profileName: '.gh-user-name',
         };
     }
 
@@ -82,8 +85,29 @@ class ProfilePage {
         } else {
             throw new Error('The error message is not displayed: ' + errorMessage);
         }            
-    } 
+    }
     
+    async setFullName(name) {                
+        await this.driver.$(this.elements.labelChangeName).waitForDisplayed();
+        await this.driver.$(this.elements.labelChangeName).setValue(name);            
+    }
+    
+    async submitChangeButton(button) {         
+        await this.driver.$(this.elements.save).waitForDisplayed();        
+        return await this.driver.$(this.elements.save).click();            
+    }
+
+    async validateProfileName(name) {                
+        let element = await this.driver.$(this.elements.profileName);
+        await element.waitForDisplayed();
+        let text = await element.getText();
+        console.log("text: "+text);
+        if (text.includes(name)) {
+            console.log('The profile name is displayed:', name);
+        } else {
+            throw new Error('The profile name is not displayed: ' + text);
+        }            
+    }
 }
 
 module.exports = ProfilePage;
