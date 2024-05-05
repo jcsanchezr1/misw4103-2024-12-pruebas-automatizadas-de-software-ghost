@@ -90,6 +90,7 @@ describe("Funcionalidad de Tag", (z ) => {
         let flag= pagePage.compareTags(arrTag, arr2);
         expect(flag).to.be.true;
     });
+    
   }); 
 //   it("1.3", () => {
 //     //When el usuario navega en la sección de tags
