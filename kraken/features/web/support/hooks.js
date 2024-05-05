@@ -9,7 +9,11 @@ Before(async function() {
 After(async function() {
   await this.deviceClient.stopKrakenForUserId(this.userId);
 });
+<<<<<<< Updated upstream
 
+=======
+const dns = require("dns");
+>>>>>>> Stashed changes
 
 BeforeAll(async function () {
   dns.setDefaultResultOrder("ipv4first");
