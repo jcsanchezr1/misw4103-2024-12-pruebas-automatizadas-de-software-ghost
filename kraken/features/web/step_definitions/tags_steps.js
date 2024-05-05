@@ -18,6 +18,7 @@ When('I click back to tags', async function() {
     tagPage.ClickTagPages();
 });
 
+
 When('I click new tag', async function() {
     tagPage.CreateNewTag();   
 });
@@ -72,6 +73,38 @@ Then('I validate the title of tag {string}', async function(title) {
     }
 });
 
-Then('I text for the tag {Tag1}', async function(slug) {
-    
+When('I click delete tag', async function () {
+    tagPage.submitDeletePage();
 });
+
+When('I select tag to edit {string}', async function (namePage) {
+    tagPage.clickToEditPage(namePage);
+});
+
+When('I click delete confirmation tag', async function () {
+    tagPage.buttonDeleteConfirmation();
+});
+
+Then('I validate the title of the tag does not exist {string}', async function (title) {
+
+    let elements = await this.driver.$$('.gh-tag-list-name');
+    let found = false;
+    for (let element of elements) {
+        let text = await element.getText();
+        console.log(text);
+        if (text.includes()) {
+            console.log('The error message is displayed:', title);
+            throw new Error('The error message is not displayed: ' + title);
+        }
+    }
+
+    if (!found) {
+        console.log('The page does not exist:', title);
+    }
+}); 
+
+
+When('I modify the name and slug of the tag to {string}', async function (title) {
+    tagPage.submitEditTag(title);
+});
+

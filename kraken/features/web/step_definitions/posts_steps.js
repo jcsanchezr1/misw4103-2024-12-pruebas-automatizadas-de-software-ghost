@@ -81,6 +81,10 @@ When('I confirm unpublish post', async function() {
     postsPage.unpublishPostConfirmation();
 });
 
+When('I enter tag {string} in the settings of post', async function (title) {
+    postsPage.setTag(title); 
+});
+
 Then('I check the post in the list {string}', async function(title) {
 
     let elements = await this.driver.$$(postsPage.elements.titlePostList);
@@ -120,4 +124,20 @@ Then('I check the post is not in the list {string}', async function(title) {
         throw new Error('The created post is displayed: ' + title);
     }
     console.assert(found,"The created post is displayed")
+});
+
+Then('I validate if the tag {string} is in the post creation', async function(title) {   
+    let elements = await this.driver.$$('.ember-power-select-option');    
+    let found = false;
+    for (let element of elements) {
+        let text = await element.getText();
+        console.log(text);
+        if (text.includes(title)) {
+            found = true;
+            break;
+        }
+    }
+     if (!found) {
+        throw new Error('The error message is not displayed: ' + title);
+    }
 });

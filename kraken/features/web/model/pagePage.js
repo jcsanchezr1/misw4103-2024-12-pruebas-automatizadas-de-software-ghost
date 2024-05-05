@@ -17,7 +17,8 @@ class PagePage {
             buttonUpdatePage: '.flex.items-center.pe-auto.h-100 button.gh-editor-save-trigger',           
             pageTitle: '.ember-text-area',
             pageDescription: '[data-kg="editor"]:has(p)',
-            titleList:'li a h3.gh-content-entry-title'            
+            titleList:'li a h3.gh-content-entry-title',
+            tagSelector: "#tag-input > ul > input",
         };
     }
 
@@ -86,6 +87,7 @@ class PagePage {
         return await this.driver.$(this.elements.buttonBackPage).click();
     }
 
+    
     async clickToEditPage(namePage) {   
         let elements = await this.driver.$$(this.elements.titleList);    
         let found = false;
@@ -103,6 +105,11 @@ class PagePage {
         if (!found) {
             throw new Error('The error message is not displayed: ' + title);
         }      
+    }
+
+    async setTag(tag) {
+        await this.driver.$(this.elements.tagSelector).waitForDisplayed();
+        await this.driver.$(this.elements.tagSelector).setValue(tag);
     }
 
     async setTitle(title) {        

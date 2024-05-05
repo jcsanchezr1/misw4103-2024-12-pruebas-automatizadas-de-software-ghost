@@ -21,7 +21,8 @@ class PostsPage {
             buttonDeletePostConfirmation: 'div.modal-footer > button.gh-btn.gh-btn-red.gh-btn-icon:nth-of-type(2)',
             buttonUnpublish: '.gh-unpublish-trigger',
             buttonUnpublishConfirmation: 'button.gh-unpublish-trigger',
-            statusCheck:'div.gh-editor-post-status'
+            statusCheck:'div.gh-editor-post-status',
+            tagSelector: "#tag-input > ul > input",
         };
     }
 
@@ -112,7 +113,15 @@ class PostsPage {
         await this.driver.$(this.elements.buttonUnpublishConfirmation).waitForDisplayed();
         return await this.driver.$(this.elements.buttonUnpublishConfirmation).click();
     }
+    async setTag(tag) {
+        await this.driver.$(this.elements.tagSelector).waitForDisplayed();
+        await this.driver.$(this.elements.tagSelector).setValue(tag);
+    }
 
+    async SubmitBackToPost() {
+        await this.driver.$(this.elements.sideBarPostlink).waitForDisplayed();
+        return await this.driver.$(this.elements.sideBarPostlink).click();
+    }
 }
 
 module.exports = PostsPage;

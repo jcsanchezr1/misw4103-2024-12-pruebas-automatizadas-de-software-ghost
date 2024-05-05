@@ -69,6 +69,10 @@ When('I select page to edit {string}', async function(namePage) {
     pagePage.clickToEditPage(namePage);    
 });
 
+When('I enter tag {string} in the settings of pages', async function (title) {
+    pagePage.setTag(title); 
+});
+
 Then('I validate the title of page {string}', async function(title) {   
     
     let elements = await this.driver.$$('li a h3.gh-content-entry-title');    
@@ -106,6 +110,21 @@ Then('I validate the title of the page does not exist {string}', async function(
     }
 });
 
+Then('I validate if the tag {string} is in the page creation', async function(title) {   
+    let elements = await this.driver.$$('.ember-power-select-option');    
+    let found = false;
+    for (let element of elements) {
+        let text = await element.getText();
+        console.log(text);
+        if (text.includes(title)) {
+            found = true;
+            break;
+        }
+    }
+     if (!found) {
+        throw new Error('The error message is not displayed: ' + title);
+    }
+});
  
 
 
