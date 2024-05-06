@@ -3,9 +3,11 @@ const { BeforeAll } = require('@cucumber/cucumber');
 const PostsPage = require('../model/postPage');
 
 let postsPage;
+let date;
 
 BeforeAll(async function () {
     postsPage = new PostsPage();
+    date = Date.now();
 })
 
 When('I click post', async function() {
@@ -18,7 +20,7 @@ When('I click new post', async function() {
 });
 
 When('I enter post title {string}', async function (title) {
-    postsPage.setPostTitle(title);
+    postsPage.setPostTitle(title + date);
 });
 
 When('I select the  post description', async function(){
@@ -26,7 +28,7 @@ When('I select the  post description', async function(){
 });
 
 When('I enter post description {string}', async function (title) {
-    postsPage.setPostDescription(title);
+    postsPage.setPostDescription(title + date);
 });
 
 When('I click publish post', async function() {
@@ -106,6 +108,7 @@ Then('I check the post in the list {string}', async function(title) {
     console.assert(found,"The created post is not displayed")
 });
 
+
 Then('I check the post is not in the list {string}', async function(title) {
 
     let elements = await this.driver.$$('li a h3.gh-content-entry-title');
@@ -113,15 +116,15 @@ Then('I check the post is not in the list {string}', async function(title) {
     for (let element of elements) {
         let text = await element.getText();
         console.log(text);
-        if (text.includes(title)) {
-            console.log('The created post is displayed:', title);
+        if (text.includes(title + date)) {
+            console.log('The created post is displayed:', title + date);
             found = false;
             break;
         }
     }
 
     if (!found) {
-        throw new Error('The created post is displayed: ' + title);
+        throw new Error('The created post is displayed: ' + title + date);
     }
     console.assert(found,"The created post is displayed")
 });

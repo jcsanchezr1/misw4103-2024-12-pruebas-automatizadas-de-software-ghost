@@ -76,7 +76,6 @@ Feature: Posts
     Then I check the post in the list "Post3"
 
   @user3 @web
-
   Scenario: Eliminaciòn exitosa de un post, visualización del post eliminado en post list:
     Given I navigate to page "<URL>"
     And I wait
@@ -90,11 +89,11 @@ Feature: Posts
     And I wait for 6 seconds
     And I click new post
     And I wait for 5 seconds
-    And I enter post title "Post4"
+    And I enter post title "Post"
     And I wait for 1 seconds
     And I select the  post description
     And I wait for 1 seconds
-    And I enter post description "Description Post 4"
+    And I enter post description "Description Post"
     And I wait for 3 seconds
     And I click publish post
     And I wait for 5 seconds
@@ -107,8 +106,8 @@ Feature: Posts
     And I click settings of post
     And I click delete post
     And I click delete post confirmation
-    And I wait for 3 seconds
-    Then I check the post is not in the list "Post4"
+    And I wait for 7 seconds
+    Then I check the post is not in the list "Post"
 
 
   @user4 @web
@@ -145,6 +144,4 @@ Feature: Posts
     And I confirm unpublish post
     And I wait for 5 seconds
     Then I click publish post
-
-
 
