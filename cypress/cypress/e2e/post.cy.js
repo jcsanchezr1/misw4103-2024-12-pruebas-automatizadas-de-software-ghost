@@ -116,6 +116,7 @@ describe('Funcionalidad de Post', () => {
             //When I click posts
             postPage.submitLinkPosts();
             cy.wait(1000);
+            let arr= postPage.validatePostName();
             //And I click new post
             postPage.submitNewPosts();
             cy.wait(1000)
@@ -150,9 +151,9 @@ describe('Funcionalidad de Post', () => {
             postPage.confirmDeletePost();
             cy.wait(1000);
             //Then I validate the title of the post does not exist "Post3"
-            let listPosts = postPage.validatePostName();
+            let arr2= postPage.validatePostName();
             cy.wait(3000).then(() => {
-                let found = postPage.validateExistPostTitle(listPosts, "Post3");
+                let found = postPage.verifyDeletedPost(arr, arr2);
                 expect(found).to.be.false;
             });
 

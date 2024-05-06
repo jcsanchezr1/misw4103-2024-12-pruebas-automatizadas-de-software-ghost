@@ -138,6 +138,30 @@ class PostPage {
     }
     return false;
   }
+  verifyDeletedPost(arr, arr2) {
+    let obj = {};
+    let flag = false;
+    if (arr.length > arr2.length) {
+      for (let el of arr) {
+        obj[el] = obj[el] ? obj[el] + 1 : 1;
+      }
+      let obj2 = {};
+      for (let el of arr2) {
+        obj2[el] = obj2[el] ? obj2[el] + 1 : 1;
+      }
+      for (let key in obj) {
+        if (obj2[key] == obj[key] - 1) {
+          flag = true;
+          break;
+        }
+        if (!obj2[key]) {
+          flag = true;
+          break;
+        }
+      }
+    }
+    return flag;
+  }
 }
 
 module.exports = PostPage;
