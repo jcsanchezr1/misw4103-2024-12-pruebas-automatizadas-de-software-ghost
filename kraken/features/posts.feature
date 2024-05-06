@@ -23,11 +23,11 @@ Feature: Posts
     And I enter post description "Description Post 1"
     And I wait for 3 seconds
     And I click publish post
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click final review post
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click publish post right now
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click back to editor post
     And I wait for 5 seconds
     And I click back to post
@@ -58,9 +58,9 @@ Feature: Posts
     And I click publish post
     And I wait for 5 seconds
     And I click final review post
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click publish post right now
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click back to editor post
     And I wait for 5 seconds
     And I enter post title "Post3"
@@ -99,9 +99,9 @@ Feature: Posts
     And I click publish post
     And I wait for 5 seconds
     And I click final review post
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click publish post right now
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click back to editor post
     And I wait for 5 seconds
     And I click settings of post
@@ -133,13 +133,13 @@ Feature: Posts
     And I enter post description "Description Post 5"
     And I wait for 3 seconds
     And I click publish post
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click final review post
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click publish post right now
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click back to editor post
-    And I wait for 5 seconds
+    And I wait for 7 seconds
     And I click unpublish post
     And I wait for 5 seconds
     And I confirm unpublish post
