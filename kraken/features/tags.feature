@@ -10,9 +10,9 @@ Scenario: Creación y visualización de un tag de manera exitosa, visualización
   And I enter password "<PASSWORD>"
   And I wait for 2 seconds
   And I click sign in
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   When I click tags
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   And I click new tag
   And I wait for 2 seconds
   And I enter tag title "Tag1"
@@ -43,9 +43,9 @@ Scenario: Creación y visualización de un tag de manera exitosa, visualización
   And I enter password "<PASSWORD>"
   And I wait for 2 seconds
   And I click sign in
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   When I click tags
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   And I click new tag
   And I wait for 2 seconds
   And I enter tag title "Tag1"
@@ -78,7 +78,7 @@ Scenario: Edición y visualización de un tag de manera exitosa, visualización 
   And I click sign in
   And I wait for 30 seconds
   When I click tags
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   And I select tag to edit "Tag1"   
   And I wait for 2 seconds
   And I wait for 3 seconds
@@ -112,7 +112,7 @@ Scenario: Eliminación y no visualización de un tag de manera exitosa:
   And I click sign in
   And I wait for 50 seconds
   When I click tags
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   And I select tag to edit "Tag2"   
   And I wait for 2 seconds
   And I click delete tag
