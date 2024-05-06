@@ -19,6 +19,26 @@ describe('Funcionalidad de Members', () => {
         cy.wait(3000);
     });
 
+    it('Cambiar nombre de manera éxitosa', () => {
+        // WHEN I click profile
+        profilePage.submitProfileMenu();
+        cy.wait(1000);
+        // AND I click on your profile
+        profilePage.submitYourProfile()
+        cy.wait(1000);
+        // AND I enter name "NombreNuevo"
+        profilePage.typeName('NombreNuevo');
+        cy.wait(1000);
+        // AND I click save
+        profilePage.submitSaveButton();
+        cy.wait(1000);
+        // AND I click profile
+        profilePage.submitProfileMenu();
+        cy.wait(1000);
+        // AND I validate the name "NombreNuevo"
+        cy.get(profilePage.elements.profileLabel).should('contain', 'NombreNuevo');
+    })
+
     it('Cambiar password de forma fallida por error insecure', () => {
         // WHEN I click profile
         profilePage.submitProfileMenu();
