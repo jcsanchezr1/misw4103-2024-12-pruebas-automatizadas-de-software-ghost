@@ -12,180 +12,183 @@ const  postPage = new PostPage();
 
 describe("Funcionalidad de Tag", (z ) => {
   beforeEach(() => {
-    //Given un usuario admin logueado en Ghost
+    // Given I navigate to page "<URL>"
     loginPage.VisitURL(properties.URL);
     cy.wait(1000);
+    // And I enter email "<EMAIL>"
     loginPage.typeEmail(properties.EMAIL);
+    // And I enter password "<PASSWORD>"
     loginPage.typePassword(properties.PASSWORD);
+    // And I click sign in
     loginPage.clickSignInButton();
     cy.wait(1000);
   });
 
   it("1.1 Creación y visualización de un tag de manera exitosa, visualización en un post creation:", () => {
-    //When el usuario navega en la sección de tags
+    //When i click tags
     tagPage.clickTagsPage();
     cy.wait(1000);
     let arr = [];
     arr = tagPage.getNames();
-    //AND el usuario da clic en el botón de nuevo tag
+    //AND i click new tag
     tagPage.clickNewTag();
     cy.wait(1000);
-    //AND inserta la información permitida - campo nombre con un nombre "Tag1"
+    //And I enter tag title "Tag1"
     tagPage.typeName("Tag1");
-    //AND da clic en el botón de guardar
+    //AND And I click Save
     tagPage.clickSave();
     cy.wait(1000);
-    //Then el botón new tag cambia a "saved"
     tagPage.isSaved();
     cy.wait(1000);
-    //AND se navega en la sección de tags
+    //AND I click back to tags
     tagPage.clickTagsPage();
     cy.wait(1000)
     let arr2 = tagPage.getNames();
     cy.wait(1000).then(() => {
-     //AND el tag se encuentra en la lista de tags creados - tag "Tag1" en la lista   
+     //Then I validate the title of tag "Tag1"
      let flag= tagPage.compareNames(arr,arr2);
       expect(flag).to.be.true;
     });
-    //AND Al ir al post creation, es posible agregar el tag a un nuevo post  - Agregar el "Tag1"
+    //When I click post
     cy.wait(1000);
     postPage.submitLinkPosts();
     cy.wait(1000);
+    //And I click new post
     postPage.submitNewPosts();
     cy.wait(1000);
+    //And I click settings of post
     postPage.selectPostSettings();
     cy.wait(1000);
+    //And I enter tag "Tag1" in the settings of post
     postPage.typeTag("Tag1");
     cy.wait(1000);
     let arrTag= postPage.getListOfTags();
     cy.wait(1000).then(() => {
-        //AND el tag "Tag1" se encuentra en la sección de Post settings - tags del post
+        //Then I validate if the tag "Tag1" is in the post creation
         let flag= postPage.compareTags(arrTag, arr2, "Tag1");
         expect(flag).to.be.true;
     });
 
   });
-  
+
   it("1.2 Creación y visualización de un tag de manera exitosa, visualización en un page creation:", () => {
-    //When el usuario navega en la sección de tags
+    //When I click tags
     tagPage.clickTagsPage();
     cy.wait(1000);
     let arr = [];
     arr = tagPage.getNames();
-    //AND el usuario da clic en el botón de nuevo tag
+    // And I click new tag
     tagPage.clickNewTag();
     cy.wait(1000);
-    //AND inserta la información permitida - campo nombre con un nombre "Tag1"
+    // And I enter tag title "Tag1"
     tagPage.typeName("Tag1");
-    //AND da clic en el botón de guardar
+    //And I click Save
     tagPage.clickSave();
     cy.wait(1000);
-    //Then el botón new tag cambia a "saved"
     tagPage.isSaved();
     cy.wait(1000);
-    //AND se navega en la sección de tags
+    //And I click back to tags
     tagPage.clickTagsPage();
     cy.wait(1000)
     let arr2 = tagPage.getNames();
     cy.wait(1000).then(() => {
-     //AND el tag se encuentra en la lista de tags creados - tag "Tag1" en la lista   
+     //Then I validate the title of tag "Tag1"
      let flag= tagPage.compareNames(arr,arr2);
       expect(flag).to.be.true;
     });
-    //AND Al ir al page creation, es posible agregar el tag a un nuevo post  - Agregar el "Tag1"
+    //AND I click pages
     cy.wait(1000);
     pagePage.submitLinkPages();
     cy.wait(1000);
+    //And I click new page
     pagePage.submitNewPage();
     cy.wait(1000);
+    //And I click page settings-
     pagePage.submitSettingsPage();
     cy.wait(1000);
+    // And I enter tag "Tag1" in the settings of pages
     pagePage.typeTag("Tag1");
     cy.wait(1000);
     let arrTag= pagePage.getListOfTags();
     cy.wait(1000).then(() => {
-        //AND el tag "Tag1" se encuentra en la sección de Post settings - tags del post
+        // Then I validate if the tag "Tag1" is in the page creation
         let flag= pagePage.compareTags(arrTag, arr2);
         expect(flag).to.be.true;
     });
-  }); 
+  });
+
   it("1.3 Edición y visualización de un tag de manera exitosa, visualización en un post creation:", () => {
-    //When el usuario navega en la sección de tags
+    //When I click tags
     tagPage.clickTagsPage();
     cy.wait(1000);
     let arr= tagPage.getNames();
 
-    //AND selecciona el tag "Tag1" en el listado de tags
+    //And I select tag to edit "Tag1"   
     tagPage.validateATagExists("Tag1").click();
     cy.wait(1000);
-
-    //AND La información precargada del tag se muestra
     tagPage.validateTagInfo("Tag1");
-    
-    //AND Modifica el nombre y el slug del "Tag1" por "Tag2" en los dos campos
+
+    // And I modify the name and slug of the tag to "Tag2"
     tagPage.ChangeTagNameAndSlug("Tag2", "Tag2");
 
-    //AND guarda la información del tag modificado con la opción guardar
+    //And I click Save
     tagPage.clickSave();
     cy.wait(1000);
-
-    //Then el botón new tag cambia a "saved"
     tagPage.isSaved();
     cy.wait(1000);
 
-    //AND se navega en la sección de tags 
+    //And I click back to tags
     tagPage.clickTagsPage();
     cy.wait(1000);
 
     let arr2 = tagPage.getNames();
     cy.wait(1000).then(() => {
-        //AND el tag se encuentra en la lista de tags creados - tag "Tag2" en la lista
+        //Then I validate the title of tag "Tag2"
         let flag= tagPage.verifyEditedTag(arr,arr2);
         expect(flag).to.be.true;
     });
 
-    //AND Al ir al post creation, es posible agregar el tag modificado a un nuevo post - Agregar el "Tag2"
+    //When I click post
     cy.wait(1000);
     postPage.submitLinkPosts();
     cy.wait(1000);
+    // And I click new post
     postPage.submitNewPosts();
     cy.wait(1000);
+    // And I click settings of post
     postPage.selectPostSettings();
     cy.wait(1000);
+    // And I enter tag "Tag2" in the settings of post
     postPage.typeTag("Tag2");
     cy.wait(1000);
     let arrTag= postPage.getListOfTags();
     cy.wait(1000).then(() => {
-        //AND el tag "Tag2" se encuentra en la sección de post settings - tags del post
+        //Then I validate if the tag "Tag2" is in the post creation
         let flag= postPage.compareTags(arrTag, arr2, "Tag2");
         expect(flag).to.be.true;
     });
    });
    it("1.4 Eliminación y no visualización de un tag de manera exitosa:", () => {
-    // WHEN navega en la sección de tags
+    // When I click tags
     tagPage.clickTagsPage();
     cy.wait(1000);
     let arr= tagPage.getNames();
-	// AND selecciona el tag "Tag2" en el listado de tags
+	//  And I select tag to edit "Tag2"   
     tagPage.validateATagExists("Tag2").click();
     cy.wait(1000);
-	// AND La información precargada del tag se muestra
     tagPage.validateTagInfo("Tag2");
     cy.wait(1000);
-    // AND Al final de la página se presenta la opción "Delete tag"
-	// AND Seleccionar la opción "Delete tag"
+	// And I click delete tag
     tagPage.clickDelete();
     cy.wait(1000);
-	// AND Un mensaje de confirmación se despliega con opciones "Cancel" y "Delete"
+    // And I click delete confirmation tag
+
     tagPage.verifyDeleteButton();
-	// AND Seleccionar la opción "Delete"
     tagPage.clickConfirmDelete();
     cy.wait(1000);
-	// THEN El sistema redirecciona al listado de tags
     tagPage.verifyTagName();
-
     let arr2 = tagPage.getNames();
-	// AND El "Tag2" no se encuentra en la lista de tags
+	//  Then I validate the title of the tag does not exist "Tag2"
     cy.wait(200).then(() => {
        let flag = tagPage.veriFyDeletedTag(arr,arr2);
         expect(flag).to.be.true;
