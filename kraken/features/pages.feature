@@ -1,7 +1,7 @@
 Feature: Pages
 
 @user1 @web
-Scenario: Creación exitosa de un page, visualización del page creado en la sección de Pages:
+Scenario: Creación exitosa de un page, visualización del page creado en la sección de Pages
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -61,7 +61,7 @@ Scenario: Creación exitosa de un page, desde editor
   And I validate the title of page "Page2"  
 
 @user3 @web
-Scenario: Modificación exitosa de un page:
+Scenario: Modificación exitosa de un page
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
