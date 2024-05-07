@@ -3,7 +3,7 @@ Feature: Posts
 
   @user1 @web
 
-  Scenario: Creación exitosa de un post, visualización del post creado en post list:
+  Scenario: Creación exitosa de un post, visualización del post creado en post list
     Given I navigate to page "<URL>"
     And I wait
     And I enter email "<EMAIL>"
@@ -36,7 +36,7 @@ Feature: Posts
 
   @user2 @web
 
-  Scenario: Modificación exitosa de un post, visualización del post modificado en post list:
+  Scenario: Modificación exitosa de un post, visualización del post modificado en post list
     Given I navigate to page "<URL>"
     And I wait
     And I enter email "<EMAIL>"
@@ -76,7 +76,7 @@ Feature: Posts
     Then I check the post in the list "Post3"
 
   @user3 @web
-  Scenario: Eliminaciòn exitosa de un post, visualización del post eliminado en post list:
+  Scenario: Eliminaciòn exitosa de un post, visualización del post eliminado en post list
     Given I navigate to page "<URL>"
     And I wait
     And I enter email "<EMAIL>"
@@ -112,7 +112,7 @@ Feature: Posts
 
   @user4 @web
 
-  Scenario: Despublicación exitosa de un post, visualización del post en post list:
+  Scenario: Despublicación exitosa de un post, visualización del post en post list
     Given I navigate to page "<URL>"
     And I wait
     And I enter email "<EMAIL>"
