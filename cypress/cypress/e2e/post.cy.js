@@ -47,8 +47,6 @@ describe('Funcionalidad de Post', () => {
         //And I click back to posts
         postPage.backToPost();
         cy.wait(1000);
-
-
         //And I look for the element in the list
         let listPosts = postPage.validatePostName();
         cy.wait(3000).then(() => {

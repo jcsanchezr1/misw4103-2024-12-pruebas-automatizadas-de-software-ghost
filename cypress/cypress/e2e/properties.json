@@ -1,5 +1,5 @@
 {
     "EMAIL": "conan@gmail.com",
     "PASSWORD": "Automatizadas01*",
-    "URL": "https://ghost-rrgn.onrender.com/ghost/#/signin"
+    "URL": "http://localhost:2368/ghost/"
   }
