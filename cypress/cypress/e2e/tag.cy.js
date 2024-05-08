@@ -20,6 +20,9 @@ function wait(waitTime, path='' ){
 
 describe("Funcionalidad de Tag", (z ) => {
   beforeEach(() => {
+    Cypress.Screenshot.defaults({
+      overwrite: true,
+    })
     // Given I navigate to page "<URL>"
     loginPage.VisitURL(properties.URL);
     wait(1000);
