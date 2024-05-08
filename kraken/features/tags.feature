@@ -80,8 +80,7 @@ Scenario: Edición y visualización de un tag de manera exitosa, visualización 
   When I click tags
   And I wait for 10 seconds
   And I select tag to edit "Tag1"   
-  And I wait for 2 seconds
-  And I wait for 3 seconds
+  And I wait for 5 seconds
   And I modify the name and slug of the tag to "Tag2"
   And I wait for 3 seconds
   And I click Save
@@ -120,5 +119,6 @@ Scenario: Eliminación y no visualización de un tag de manera exitosa
   And I click delete confirmation tag
   And I wait for 3 seconds
   Then I validate the title of the tag does not exist "Tag2"
+  And I wait for 3 seconds
 
   
