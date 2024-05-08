@@ -4,9 +4,7 @@ const dns = require('dns');
 const { promisify } = require('util');
 const fs = require('fs');
 const writeFile = promisify(fs.writeFile);
-const properties = require('../../../properties.json');
 
-const NEW_URL = 'https://ghost-rrgn.onrender.com/ghost/#/signin';
 const ROOT_PATH_IMAGES = './screenshots/';
 let count = 0;
 let nameImageCount = 0;
@@ -30,9 +28,8 @@ AfterStep(async function ({ pickle }) {
       const lastSlashIndex = pickle.uri.lastIndexOf('/');
       const dotIndex = pickle.uri.lastIndexOf('.');
       const featureName = pickle.uri.substring(lastSlashIndex + 1, dotIndex);
-      const version = NEW_URL === properties.URL ? 'new_version' : 'old_version';
-      createFolderIfNotExists(ROOT_PATH_IMAGES + version + '/' + featureName + '/' + scenarioName);
-      const outputPath = ROOT_PATH_IMAGES + version + '/' + featureName + '/' + scenarioName + '/' + nameImageCount + '.png';
+      createFolderIfNotExists(ROOT_PATH_IMAGES + '/' + featureName + '/' + scenarioName);
+      const outputPath = ROOT_PATH_IMAGES + '/' + featureName + '/' + scenarioName + '/' + nameImageCount + '.png';
       takeScreenshot(outputPath, this.driver);
       nameImageCount++;
   }
