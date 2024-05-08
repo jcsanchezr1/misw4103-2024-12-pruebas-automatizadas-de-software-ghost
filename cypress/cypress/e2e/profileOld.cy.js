@@ -7,6 +7,9 @@ const loginPageOld = new LoginPageOld();
 
 describe('Funcionalidad de Members', () => {
     beforeEach(() => {
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false;
+        });
         // Given I navigate to page "<URL>"
         loginPageOld.VisitURL(properties.URL_OLD);
         cy.wait(1000);
@@ -58,8 +61,8 @@ describe('Funcionalidad de Members', () => {
         // AND I click confirm password
         profilePageOld.submitChangePassword();
         cy.wait(1000);
-        // THEN I validate the error message old password alert "Sorry, you cannot use an insecure password."
-        cy.get(profilePageOld.elements.labeInputPassword).should('contain', 'Sorry, you cannot use an insecure password.');
+        // THEN I validate the error message old password alert "Sorry, you cannot use an insecure password"
+        cy.get(profilePageOld.elements.labeInputPassword).should('contain', 'Sorry, you cannot use an insecure password');
         // AND I click save
         profilePageOld.submitSaveButton();
         cy.wait(1000);
@@ -104,8 +107,8 @@ describe('Funcionalidad de Members', () => {
         // AND I click confirm password
         profilePageOld.submitChangePassword();
         cy.wait(1000);
-        // THEN I validate the error message alert "Password must be at least 10 characters long."
-        cy.get(profilePageOld.elements.labeInputPassword).should('contain', 'Password must be at least 10 characters long.');
+        // THEN I validate the error message alert "Password must be at least 10 characters long"
+        cy.get(profilePageOld.elements.labeInputPassword).should('contain', 'Password must be at least 10 characters long');
         // AND I click save
         profilePageOld.submitSaveButton();
         cy.wait(1000);

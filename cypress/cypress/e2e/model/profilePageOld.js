@@ -3,10 +3,10 @@ class ProfilePageOld {
     constructor() {
         this.elements = {
             profileMenu: '.gh-user-avatar',
-            buttonYourProfile: 'ul li a[href="#/settings/staff/conan/"]',
+            buttonYourProfile: 'a.dropdown-item[href="#/staff/conan/"]',
             buttonSignOut: 'a.user-menu-signout',
             buttonChangePassword: '.gh-btn.gh-btn-icon.button-change-password.gh-btn-red',
-            buttonSaveProfile: '.gh-btn.gh-btn-primary.gh-btn-icon',
+            buttonSaveProfile: 'button.gh-btn.gh-btn-blue.gh-btn-icon',
             inputOldPassword: '#user-password-old',
             inputPassword: '#user-password-new',
             inputConfirmPassword: '#user-new-password-verification',
