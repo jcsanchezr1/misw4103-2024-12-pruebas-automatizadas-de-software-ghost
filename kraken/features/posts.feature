@@ -2,7 +2,6 @@ Feature: Posts
 
 
   @user1 @web
-
   Scenario: Creación exitosa de un post, visualización del post creado en post list
     Given I navigate to page "<URL>"
     And I wait
@@ -33,9 +32,9 @@ Feature: Posts
     And I click back to post
     And I wait for 3 seconds
     Then I check the post in the list "Post1"
+    And I wait for 2 seconds
 
   @user2 @web
-
   Scenario: Modificación exitosa de un post, visualización del post modificado en post list
     Given I navigate to page "<URL>"
     And I wait
@@ -74,6 +73,7 @@ Feature: Posts
     And I click back to post
     And I wait for 3 seconds
     Then I check the post in the list "Post3"
+    And I wait for 2 seconds
 
   @user3 @web
   Scenario: Eliminaciòn exitosa de un post, visualización del post eliminado en post list
@@ -104,14 +104,16 @@ Feature: Posts
     And I click back to editor post
     And I wait for 5 seconds
     And I click settings of post
+    And I wait for 2 seconds
     And I click delete post
+    And I wait for 2 seconds
     And I click delete post confirmation
     And I wait for 7 seconds
     Then I check the post is not in the list "Post"
+    And I wait for 2 seconds
 
 
   @user4 @web
-
   Scenario: Despublicación exitosa de un post, visualización del post en post list
     Given I navigate to page "<URL>"
     And I wait
@@ -144,4 +146,4 @@ Feature: Posts
     And I confirm unpublish post
     And I wait for 5 seconds
     Then I click publish post
-
+    And I wait for 2 seconds
