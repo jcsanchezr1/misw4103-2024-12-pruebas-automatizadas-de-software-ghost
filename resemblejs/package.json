@@ -1,0 +1,15 @@
+{
+  "name": "resemblejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.44.0",
+    "resemblejs": "^5.0.0"
+  }
+}
