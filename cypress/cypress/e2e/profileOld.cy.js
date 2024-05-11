@@ -10,7 +10,7 @@ const commonFunction = new CommonFunction();
 
 let parentFolder = '';
 
-describe('Funcionalidad de Profile old', () => {
+describe('Funcionalidad de Profile Old', () => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false;
