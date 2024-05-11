@@ -1,0 +1,218 @@
+{
+  "id": "Funcionalidad_Page",
+  "viewports": [
+    {
+      "label": "default",
+      "width": 800,
+      "height": 600
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/8.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages_9",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Creacion_exitosa_de_un_page_visualizacion_del_page_creado_en_la_seccion_de_Pages/9.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/8.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_9",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/9.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_10",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/10.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_11",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/11.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_12",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/12.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_13",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/13.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_14",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/14.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Modificacion_exitosa_de_un_page_15",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Modificacion_exitosa_de_un_page/15.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/8.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_9",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/9.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_10",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/10.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_11",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/11.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_12",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/12.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_13",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/13.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminar_de_manera_exitosa_una_page_14",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_page_old/Eliminar_de_manera_exitosa_una_page/14.png",
+      "misMatchThreshold": 7
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/page_html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
