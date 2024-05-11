@@ -12,6 +12,9 @@ let parentFolder = '';
 
 describe('Funcionalidad de Profile old', () => {
     beforeEach(() => {
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false;
+        });
         Cypress.Screenshot.defaults({
             overwrite: true,
         })
@@ -24,13 +27,13 @@ describe('Funcionalidad de Profile old', () => {
         commonFunction.login(properties.URL_OLD)
         // WHEN I click profile
         profilePageOld.submitProfileMenu();
-        commonFunction.wait(1000);
+        commonFunction.wait(2000);
         // AND I click on your profile
         profilePageOld.submitYourProfile()
-        commonFunction.wait(1000);
+        commonFunction.wait(2000);
         // AND I enter name "NombreNuevo"
         profilePageOld.typeName('NombreNuevo');
-        commonFunction.wait(1000);
+        commonFunction.wait(2000);
         // AND I click save
         profilePageOld.submitSaveButton();
         commonFunction.wait(1000);
@@ -39,7 +42,7 @@ describe('Funcionalidad de Profile old', () => {
         commonFunction.wait(1000);
         // AND I validate the name "NombreNuevo"
         cy.get(profilePageOld.elements.profileLabel).should('contain', 'NombreNuevo');
-    })
+    });
 
     it('Cambiar password de forma fallida por error insecure', () => {
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';

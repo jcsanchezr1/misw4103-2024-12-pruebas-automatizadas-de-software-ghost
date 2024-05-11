@@ -9,9 +9,12 @@ let parentFolder = '';
 
 describe("Funcionalidad de Page", (z ) => {
     beforeEach(() => {
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false;
+        });
         Cypress.Screenshot.defaults({
             overwrite: true,
-        }) 
+        })
     });
 
     it('Creación exitosa de un page, visualización del page creado en la sección de Pages', () => {

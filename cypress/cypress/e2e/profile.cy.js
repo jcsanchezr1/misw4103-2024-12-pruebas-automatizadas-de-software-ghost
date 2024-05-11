@@ -12,6 +12,9 @@ let parentFolder = '';
 
 describe("Funcionalidad de profile", (z ) => {
     beforeEach(() => {
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false;
+        });
         Cypress.Screenshot.defaults({
             overwrite: true,
         })

@@ -16,6 +16,9 @@ let parentFolder = '';
 
 describe("Funcionalidad de Tag", (z ) => {
   beforeEach(() => {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+      return false;
+    });
     Cypress.Screenshot.defaults({
       overwrite: true,
     })

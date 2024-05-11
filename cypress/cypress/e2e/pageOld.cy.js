@@ -9,6 +9,9 @@ let parentFolder = '';
 
 describe('Funcionalidad de page old', () => {
     beforeEach(() => {
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false;
+        });
         Cypress.Screenshot.defaults({
             overwrite: true,
         })

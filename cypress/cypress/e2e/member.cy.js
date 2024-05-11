@@ -1,25 +1,22 @@
 import properties from './properties.json';
 import LoginPage from './model/loginPage';
 import MemberPage from './model/memberPage';
+import CommonFunction from "./model/commonFunction";
 
 const memberPage = new MemberPage();
 const loginPage = new LoginPage();
+const commonFunction = new CommonFunction();
+
+let parentFolder = '';
 
 describe('Funcionalidad de Members', () => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false;
         });
-        // Given I navigate to page "<URL>"
-        loginPage.VisitURL(properties.URL);
-        cy.wait(1000);
-        // AND I enter email "<EMAIL>"
-        loginPage.typeEmail(properties.EMAIL);
-        // AND I enter password "<PASSWORD>"
-        loginPage.typePassword(properties.PASSWORD);
-        // AND I click sign in
-        loginPage.clickSignInButton();
-        cy.wait(3000);
+        Cypress.Screenshot.defaults({
+            overwrite: true,
+        })
     });
 
     afterEach(() => {
