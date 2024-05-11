@@ -9,6 +9,9 @@ kraken/reports
 .kraken/
 cypress/cypress/screenshots
 kraken/screenshots
+backstopjs/backstop_data/bitmaps_test
+backstopjs/backstop_data/bitmaps_reference
+backstopjs/backstop_data/html_report
 
 # Node
 kraken/node_modules
