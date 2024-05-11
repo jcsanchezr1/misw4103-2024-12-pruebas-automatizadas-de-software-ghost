@@ -17,6 +17,16 @@ describe('Funcionalidad de Members', () => {
         Cypress.Screenshot.defaults({
             overwrite: true,
         })
+        // Given I navigate to page "<URL>"
+        loginPage.VisitURL(properties.URL);
+        cy.wait(1000);
+        // AND I enter email "<EMAIL>"
+        loginPage.typeEmail(properties.EMAIL);
+        // AND I enter password "<PASSWORD>"
+        loginPage.typePassword(properties.PASSWORD);
+        // AND I click sign in
+        loginPage.clickSignInButton();
+        cy.wait(3000);
     });
 
     afterEach(() => {
