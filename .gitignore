@@ -12,9 +12,10 @@ kraken/screenshots
 backstopjs/backstop_data/bitmaps_test
 backstopjs/backstop_data/bitmaps_reference
 backstopjs/backstop_data/html_report
-
+resemblejs/results
 # Node
 kraken/node_modules
+resemblejs/node_modules
 npm-debug.log
 yarn-error.log
 
