@@ -10,17 +10,33 @@ Integrantes:
 | Julio Sanchez   | jc.sanchezr1@uniandes.edu.co |
 
 ## Prerrequisitos Generales
-1. Haber clonado el reposito previamente:
-
-Ejemplo HTTPS
+Tener el proyecto en su maquina. este paso lo puede hacer de dos formas, cloando el proyecto o instalando el release
+1. Obtención del proyecto:
+   - Opción 1: Clonación del repositorio:
+     - Comando:   
 ```
 git clone https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost.git
 ```
 **Nota:** Para ejecutar este comando debe tener `git` instalado y configurado.
+   - Opción 2: Descarga del release
+     1. Descargar el archivo  `Entrega 6 Grupo 2 - Pruebas E2E` desde el release correspondiente.
+     2. Descomprimir el archivo descargado.   
 
-2. Node.js actualizado en una versión estable (se recomienda usar v21.7.1), y se recomienda usar [nvm](https://github.com/nvm-sh/nvm) para la instalación y manejo de versiones de Node.js.
+2. Veerificación:
+  - Si clonaste el repositorio:
+    - Dirígete al directorio clonado.
+    - Asegúrate de tener los archivos y carpetas del proyecto.
 
-3. El manejador de paquetes NPM actualizado según la versión de Node.js.
+  - Si descargaste el release:
+    - Abre la carpeta descomprimida.
+    - Asegúrate de tener los archivos y carpetas del proyecto.
+**Nota:** Asi es la estructura del proyecto;
+![Captura desde 2024-05-11 11-09-55](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/264b8355-2381-4475-90de-b332de0b878d)
+
+    
+3.  Node.js actualizado en una versión estable (se recomienda usar v21.7.1), y se recomienda usar [nvm](https://github.com/nvm-sh/nvm) para la instalación y manejo de versiones de Node.js.
+
+4. El manejador de paquetes NPM actualizado según la versión de Node.js.
 
 **Nota:** Estos prerrequisitos generales aplican para las dos herramientas (Kraken, Cypress)
 
@@ -108,12 +124,16 @@ Antes de instalar Kraken, se requiere tener estas herramientas instaladas previa
 <img width="1728" alt="Captura de pantalla 2024-05-04 a la(s) 14 44 36" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/9bdbd30d-790d-4f3d-b4d4-347802d4185b">
 
 ## URL de Ghost y Credenciales de Inicio de Sesión
-La URL de la instancia de Ghost que utilizaremos para nuestras pruebas es: https://ghost-rrgn.onrender.com/ghost/#/signin
+- La versión de Ghost (Ghost 5.14.1) fue la que se utilizo para para pruebas automatización E2E
+- La versión de Ghost (Ghost 3.4.2) fue la que versión que se uso para las pruebas VRT.
 
-Para acceder a la plataforma, puedes utilizar las siguientes credenciales:
+Para acceder a las plataformas, puedes utilizar las siguientes credenciales:
 
-- **Email address**: conan@gmail.com
-- **Password**: Automatizadas01*
-Asegúrate de utilizar estas credenciales al ejecutar tus pruebas automatizadas en la plataforma de Ghost.
+| Versión de Ghost| Email address     |Password  |    URL    |
+| --------------- |-------------------|----------|-----------|
+| Ghost 5.14.1    | conan@gmail.com   |Automatizadas01*| [Ghost 5.14.1](https://ghost-rrgn.onrender.com/ghost/#/signin) |
+| Ghost 3.4.2    | conan@gmail.com   |Automatizadas01*| [Ghost 3.4.2 ](https://ghostv3-efi9.onrender.com/ghost/#/signin) |
+
+Asegúrate de utilizar estas credenciales al ejecutar tus pruebas automatizadas ETE y VRTpara probar las plataformas de Ghost.
 
 
