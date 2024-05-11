@@ -1,0 +1,24 @@
+{
+    "url": "https://ghost-rrgn.onrender.com/ghost/#/signin",
+    "url_old": "https://ghostv3-efi9.onrender.com/ghost/#/signin",
+    "browsers": [
+        "chromium"
+    ],
+    "options": {
+        "output": {
+            "errorColor": {
+                "red": 255,
+                "green": 0,
+                "blue": 255
+            },
+            "errorType": "movement",
+            "largeImageThreshold": 1200,
+            "useCrossOrigin": false,
+            "outputDiff": true
+        },
+        "scaleToSameSize": true,
+        "ignore": "antialiasing"
+    },
+    "viewportHeight": 600,
+    "viewportWidth": 800
+}
