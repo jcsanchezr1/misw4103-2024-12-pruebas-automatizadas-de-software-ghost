@@ -199,7 +199,8 @@ Se debe ejecutar las pruebas E2E con Cypress antes de proceder con la instalaci�
    - Una vez que el script tenga permisos de ejecución, simplemente ejecutarlo con el comando `./execute_test_backstopjs.sh`
    - Este script tiene los pasos para ejecutar las pruebas con `backstopjs` y generar los reportes de cada una de las funcionalidades (`page`, `post`, `profile`, `tag`), y por cada funncionalidad se genera un reporte.
 
-*Nota:* Dejamos los links para instalar Bash en windows [Instalar bash en windows](https://hackernoon.com/es/como-instalar-bash-en-windows-10-lqb73yj3)
+**Nota:** Dejamos los links para instalar Bash en windows [Instalar bash en windows](https://hackernoon.com/es/como-instalar-bash-en-windows-10-lqb73yj3)
+**Recomendación:** Cuando se está ejecutando el bash `execute_test_backstopjs.sh`, es normal que se abran pestañas en el navegador con los reportes que se están ejecuntado y se vean errores dado que no existen referencias en el momento. Le recomendamos que siga con el paso 4 y omita los reportes que se abren en el navegador.
 
 4. Una vez ejecutado el script, validar los reportes de cada funcionalidad (`page`, `post`, `profile`, `tag`) en `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/backstopjs/backstop_data`, por ejemplo dejamos una imagen del reporte genenrado de `page`:
 
