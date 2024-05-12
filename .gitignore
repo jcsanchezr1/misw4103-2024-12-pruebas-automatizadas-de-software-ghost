@@ -14,6 +14,7 @@ backstopjs/backstop_data/bitmaps_reference
 backstopjs/backstop_data/page_html_report
 backstopjs/backstop_data/post_html_report
 backstopjs/backstop_data/profile_html_report
+backstopjs/backstop_data/tag_html_report
 resemblejs/results
 
 # Node
