@@ -4,6 +4,7 @@ const config = require("./config.json");
 const fs = require('fs');
 const path = require('path');
 
+
 const { viewportHeight, viewportWidth, browsers, options } = config;
 
 const resultInfo = {}
@@ -65,8 +66,10 @@ async function generateREport(filePath) {
     console.log("****Begin generateREport***");
 
     console.log("filePath: " + filePath);
+    const separadorDirectorios = path.sep;
+    const splitPath = filePath.split(separadorDirectorios);
+    console.log('El separador de directorios en este sistema operativo es:', separadorDirectorios);
 
-    const splitPath = filePath.split("/");
     // Obtener el último valor
     const screenshotName = splitPath.pop();
     // Obtener el penúltimo valor
@@ -74,7 +77,7 @@ async function generateREport(filePath) {
     const feature = splitPath.pop();
 
     // Unir las partes restantes para obtener el resto de la cadena
-    const firstPath = splitPath.join("/");
+    const firstPath = splitPath.join(separadorDirectorios);
 
     console.log("screenshotName:", screenshotName);
     console.log("escenario:", escenario);
@@ -82,8 +85,8 @@ async function generateREport(filePath) {
     console.log("firstPath:", firstPath)
 
 
-    const oldImagePath = `${firstPath}/${feature}_Old/${escenario}/${screenshotName}`;
-    const imagePath = `${firstPath}/${feature}/${escenario}/${screenshotName}`;
+    const oldImagePath = `${firstPath}${separadorDirectorios}${feature}_Old${separadorDirectorios}${escenario}${separadorDirectorios}${screenshotName}`;
+    const imagePath = `${firstPath}${separadorDirectorios}${feature}${separadorDirectorios}${escenario}${separadorDirectorios}${screenshotName}`;
 
     if (fs.existsSync(oldImagePath) && fs.existsSync(imagePath)) {
         const data = await compareImages(
@@ -104,14 +107,14 @@ async function generateREport(filePath) {
             misMatchPercentage: data.misMatchPercentage,
             diffBounds: data.diffBounds,
             analysisTime: data.analysisTime,
-            beforeImage: `../${oldImagePath}`,
-            afterImage: `../${imagePath}`,
-            compareImage: `${feature}/${escenario}/compare-${screenshotName}`,
+            beforeImage: `..${separadorDirectorios}${oldImagePath}`,
+            afterImage: `..${separadorDirectorios}${imagePath}`,
+            compareImage: `${feature}/${escenario}${separadorDirectorios}compare-${screenshotName}`,
             scenario: originalScenarioName,
             feature: feature.replaceAll('_', ' ')
         });
 
-        let createPath = `./results/${feature}/${escenario}`;
+        let createPath = `.${separadorDirectorios}results${separadorDirectorios}${feature}${separadorDirectorios}${escenario}`;
         try {
             if (!fs.existsSync(createPath)) {
                 fs.mkdirSync(createPath, { recursive: true });
