@@ -150,11 +150,6 @@
     },
     {
       "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_1",
-      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag_Old/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/14.png",
-      "misMatchThreshold": 7
-    },
-    {
-      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_1",
       "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag_Old/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/1.png",
       "misMatchThreshold": 7
     },

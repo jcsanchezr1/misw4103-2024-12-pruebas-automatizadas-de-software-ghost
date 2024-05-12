@@ -35,11 +35,11 @@ backstop test --config=backstop_profile_new_version
 
 ######################################### tag
 
-# Ejecutar prueba con la configuración de los escenarios profile de Ghost 3.4.2
+# Ejecutar prueba con la configuración de los escenarios tag de Ghost 3.4.2
 backstop test --config=backstop_tag_old_version
 
-# Aprobar los resultados de la prueba con la configuración de los escenarios profile de Ghost 3.4.2
+# Aprobar los resultados de la prueba con la configuración de los escenarios tag de Ghost 3.4.2
 backstop approve --config=backstop_tag_old_version
 
-# Ejecutar prueba con la configuración de los escenarios profile de Ghost 5.14.1
+# Ejecutar prueba con la configuración de los escenarios tag de Ghost 5.14.1
 backstop test --config=backstop_tag_new_version
