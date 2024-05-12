@@ -9,6 +9,7 @@ class PostPageOld {
       buttonContinueFinalReviewPost: "button.gh-publishmenu-button",
       buttonBackEditorPost: ".gh-publish-confirmation button",
       buttonBackPost: "a.blue.link.fw4.flex.items-center.ember-view",
+      buttonSettingsPost: ".post-settings",
       titlePostList: "li a h3.gh-content-entry-title",
       buttonUpdatePost: ".gh-editor-save-trigger",
       buttonUnpublish: ".gh-unpublish-trigger",
@@ -29,6 +30,10 @@ class PostPageOld {
 
   setPostTitle(title) {
     cy.get(this.elements.postTitle).type(title);
+  }
+
+  typeTag(tag) {
+    cy.get(this.elements.tagSelector).type(tag);
   }
 
   clearPostTitle(title) {
