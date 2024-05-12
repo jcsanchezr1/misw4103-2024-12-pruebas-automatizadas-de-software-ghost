@@ -21,6 +21,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa y lo 
   And I click save member
   And I wait for 5 seconds
   Then I validate the label of the new member should be "name1"
+  And I wait for 2 seconds
   And I click members back
   And I wait for 5 seconds
   And I fill the filter text field with "name1"
@@ -78,6 +79,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, creo
   And I click save member
   And I wait for 5 seconds
   Then I validate the error message "Member already exists. Attempting to add member with existing email address"
+  And I wait for 2 seconds
   And I click members back
   And I wait for 5 seconds
   And I click leave button
@@ -134,6 +136,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I click save member
   And I wait for 5 seconds
   Then I validate the label of the new member should be "name3Modified"
+  And I wait for 2 seconds
   And I click members back
   And I wait for 5 seconds
   And I fill the filter text field with "name3Modified"
@@ -189,6 +192,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I click save member
   And I wait for 3 seconds
   Then I validate the error message "Invalid Email."
+  And I wait for 2 seconds
   And I click members back
   And I wait for 5 seconds
   And I click leave button

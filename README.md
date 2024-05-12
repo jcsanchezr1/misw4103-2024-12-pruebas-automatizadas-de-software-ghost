@@ -10,17 +10,34 @@ Integrantes:
 | Julio Sanchez   | jc.sanchezr1@uniandes.edu.co |
 
 ## Prerrequisitos Generales
-1. Haber clonado el reposito previamente:
-
-Ejemplo HTTPS
+Tener el proyecto en su maquina. este paso lo puede hacer de dos formas, cloando el proyecto o instalando el release
+1. Obtención del proyecto:
+   - Opción 1: Clonación del repositorio:
+     - Comando:   
 ```
 git clone https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost.git
 ```
 **Nota:** Para ejecutar este comando debe tener `git` instalado y configurado.
+   - Opción 2: Descarga del release
+     1. Descargar el archivo  `Entrega 6 Grupo 2 - Pruebas E2E` desde el release correspondiente.
+     2. Descomprimir el archivo descargado.   
 
-2. Node.js actualizado en una versión estable (se recomienda usar v21.7.1), y se recomienda usar [nvm](https://github.com/nvm-sh/nvm) para la instalación y manejo de versiones de Node.js.
+2. Veerificación:
+  - Si clonaste el repositorio:
+    - Dirígete al directorio clonado.
+    - Asegúrate de tener los archivos y carpetas del proyecto.
 
-3. El manejador de paquetes NPM actualizado según la versión de Node.js.
+  - Si descargaste el release:
+    - Abre la carpeta descomprimida.
+    - Asegúrate de tener los archivos y carpetas del proyecto.
+   
+**Nota:** Asi es la estructura del proyecto;
+![Captura desde 2024-05-11 11-09-55](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/264b8355-2381-4475-90de-b332de0b878d)
+
+    
+3.  Node.js actualizado en una versión estable (se recomienda usar v21.7.1), y se recomienda usar [nvm](https://github.com/nvm-sh/nvm) para la instalación y manejo de versiones de Node.js.
+
+4. El manejador de paquetes NPM actualizado según la versión de Node.js.
 
 **Nota:** Estos prerrequisitos generales aplican para las dos herramientas (Kraken, Cypress)
 
@@ -107,13 +124,108 @@ Antes de instalar Kraken, se requiere tener estas herramientas instaladas previa
 
 <img width="1728" alt="Captura de pantalla 2024-05-04 a la(s) 14 44 36" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/9bdbd30d-790d-4f3d-b4d4-347802d4185b">
 
+## Nota importante antes de ejecutar Resemble.js y Backstop.js
+
+Antes de iniciar la instalación y ejecución del reporte de Resemble.js y Backstop.js, es fundamental haber completado los pasos previos de:
+
+    Prerrequisitos Generales: Asegurar que se tenga el proyecto listo para trabajar con las pruebas E2E.
+    Instalación y ejecución de pruebas con Cypress: Ejecutar las pruebas E2E con Cypress para generar las imágenes base que se utilizarán en los reportes de Resemble.js y Backstop.js.
+
+- Las imágenes base se encuentran en la siguiente ruta:
+
+`./cypress/cypress/screenshots/`
+
+- Organización de las imágenes:
+![Captura desde 2024-05-11 11-38-10](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/a518cb70-774d-48a5-b977-2b8f7dc314b3)
+
+Las imágenes se encuentran organizadas por feature y escenario, permitiendo una fácil comparación y análisis de las diferencias visuales.
+
+**Recomendación:**
+
+Se debe ejecutar las pruebas E2E con Cypress antes de proceder con la instalación y ejecución de Resemble.js y Backstop.js para garantizar la disponibilidad de las imágenes base necesarias para la generación de los reportes.
+
+
+## 3. Instalación y ejecución del reporte Resemble.js
+
+1. Desde la raíz del repositorio clonado `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost` movernos a la carpeta `resemblejs`
+   - `cd resemblejs/`
+     
+     ![Captura desde 2024-05-11 11-54-34](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/0c6487bd-21d7-4541-87b3-1d5aa40335e5)
+
+2. Instalación de dependencias:
+   - Playwright:
+     - Comando: `npm install playwright`
+     
+![Captura desde 2024-05-11 12-05-55](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/75845c85-33b9-4841-9704-60a45c1f05b8)
+
+*Nota:* La instalación de Playwright puede demorar un poco debido a la descarga e instalación de instancias de tres navegadores diferentes (Chromium, Firefox y WebKit).
+   - Resemble.js:
+     Comando: `npm install resemblejs`
+![Captura desde 2024-05-11 12-04-41](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/6ad1b082-cd47-42cd-a770-6e24304b5744)
+
+
+3. Para la ejecución del reporte en `Resemble.js`, ejecute el comando:
+
+    Comando: `node index.js`
+   
+   ![Captura desde 2024-05-11 12-08-02](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/29e5ce42-7162-49d8-a0d5-a654fab952f7)
+
+5. Para visualización del reporte, movernos a la carpeta `results`
+     - `cd results/`
+
+![Captura desde 2024-05-11 12-08-38](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/c07113bb-c344-41c0-bfc9-5b12b9fb6317)
+     - Estructura del reporte 
+![Captura desde 2024-05-11 12-09-53](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/1898fb6f-a768-4c4b-ab32-2d280bea6403)
+
+6. Para visualizar el reporte, hacer clic en el archivo `report.html`, este le abrira el repote en su navegador por defecto, y se vera el reporte de la siguiente manera:   
+   
+     ![Captura desde 2024-05-11 12-12-27](https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158121561/c41e6c1d-2f1a-47f4-af1c-b0de2a23d20d)
+
+   **Nota**: Para visualizar el resto del reporte, incluyendo los demás pasos, escenarios y features, puedes desplazarte hacia abajo (scroll down)
+
+## 4. Instalación y ejecución del reporte Backstop.js
+
+1. Para hacer uso de las herramientas de Backstop, debe descargar la CLI. Abra una terminal y ejecute el siguiente comando:
+
+`npm install -g backstopjs`
+
+2. Desde la raíz del repositorio clonado `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost` movernos a la carpeta `backstopjs`
+
+`cd backstopjs/`
+
+3. Para la ejecución de los test en `backstopjs` necesitamos ejecutar el `execute_test_backstopjs.sh` para ello ejecute el siguiente comando:
+
+   - Asegúrese de que el script tenga permisos de ejecución. Puedes hacerlo con el comando `chmod +x execute_test_backstopjs.sh`
+   - Una vez que el script tenga permisos de ejecución, simplemente ejecutarlo con el comando `./execute_test_backstopjs.sh`
+   - Este script tiene los pasos para ejecutar las pruebas con `backstopjs` y generar los reportes de cada una de las funcionalidades (`page`, `post`, `profile`, `tag`), y por cada funncionalidad se genera un reporte.
+
+**Nota:** Dejamos los links para instalar Bash en windows [Instalar bash en windows](https://hackernoon.com/es/como-instalar-bash-en-windows-10-lqb73yj3)
+
+**Recomendación:** Cuando se está ejecutando el bash `execute_test_backstopjs.sh`, es normal que se abran pestañas en el navegador con los reportes que se están ejecuntado y se vean errores dado que no existen referencias en el momento. Le recomendamos que espere a que termine de ejecutarse el bash siga con el paso 4 y omita los reportes que se abren en el navegador.
+
+4. Una vez ejecutado el script, validar los reportes de cada funcionalidad (`page`, `post`, `profile`, `tag`) en `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/backstopjs/backstop_data`, por ejemplo dejamos una imagen del reporte genenrado de `page`:
+
+   - Nos movemos a la carpeta del reporte de `page` en `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/backstopjs/backstop_data/page_html_report` y deberiamos ver los archivos del reporte generado:
+
+<img width="1540" alt="Captura de pantalla 2024-05-11 a la(s) 19 56 32" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/4fe9d5a6-a37c-4e4b-b298-fbdb0adf4d56">
+
+   - Abrimos el index.html para ver el reporte de esta funcionalidad y validar los resultados:
+
+<img width="1728" alt="Captura de pantalla 2024-05-11 a la(s) 19 57 34" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/636e9838-4ba2-4ed7-902a-195957711c7e">
+
+**recordar que por cada funcionalidad generamos un reporte con esta herramienta (page, post, profile, tag)**
+
 ## URL de Ghost y Credenciales de Inicio de Sesión
-La URL de la instancia de Ghost que utilizaremos para nuestras pruebas es: https://ghost-rrgn.onrender.com/ghost/#/signin
+- La versión de Ghost (Ghost 5.14.1) fue la que se utilizo para para pruebas automatización E2E
+- La versión de Ghost (Ghost 3.4.2) fue la que versión que se uso para las pruebas VRT.
 
-Para acceder a la plataforma, puedes utilizar las siguientes credenciales:
+Para acceder a las plataformas, puedes utilizar las siguientes credenciales:
 
-- **Email address**: conan@gmail.com
-- **Password**: Automatizadas01*
-Asegúrate de utilizar estas credenciales al ejecutar tus pruebas automatizadas en la plataforma de Ghost.
+| Versión de Ghost| Email address     |Password  |    URL    |
+| --------------- |-------------------|----------|-----------|
+| Ghost 5.14.1    | conan@gmail.com   |Automatizadas01*| [Ghost 5.14.1](https://ghost-rrgn.onrender.com/ghost/#/signin) |
+| Ghost 3.4.2    | conan@gmail.com   |Automatizadas01*| [Ghost 3.4.2 ](https://ghostv3-efi9.onrender.com/ghost/#/signin) |
+
+Asegúrate de utilizar estas credenciales al ejecutar tus pruebas automatizadas ETE y VRTpara probar las plataformas de Ghost.
 
 

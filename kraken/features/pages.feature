@@ -1,7 +1,7 @@
 Feature: Pages
 
 @user1 @web
-Scenario: Creación exitosa de un page, visualización del page creado en la sección de Pages:
+Scenario: Creación exitosa de un page, visualización del page creado en la sección de Pages
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -29,6 +29,7 @@ Scenario: Creación exitosa de un page, visualización del page creado en la sec
   And I click pages
   And I wait for 5 seconds
   And I validate the title of page "Page1"
+  And I wait for 2 seconds
 
 @user2 @web
 Scenario: Creación exitosa de un page, desde editor
@@ -58,10 +59,11 @@ Scenario: Creación exitosa de un page, desde editor
   And I wait for 2 seconds 
   And I click back to pages  
   And I wait for 5 seconds
-  And I validate the title of page "Page2"  
+  And I validate the title of page "Page2"
+  And I wait for 2 seconds  
 
 @user3 @web
-Scenario: Modificación exitosa de un page:
+Scenario: Modificación exitosa de un page
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -99,6 +101,7 @@ Scenario: Modificación exitosa de un page:
   Then I click back to pages  
   And I wait for 5 seconds
   And I validate the title of page "Page4"
+  And I wait for 2 seconds
 
 @user4 @web
 Scenario: Eliminar de manera exitosa una page
@@ -137,4 +140,5 @@ Scenario: Eliminar de manera exitosa una page
   And I click delete confirmation page
   And I wait for 3 seconds  
   Then I validate the title of the page does not exist "Page5"  
+  And I wait for 2 seconds
 

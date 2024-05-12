@@ -2,7 +2,7 @@ Feature: Tags
 
 
 @user1 @web
-Scenario: Creación y visualización de un tag de manera exitosa, visualización en un post creation:
+Scenario: Creación y visualización de un tag de manera exitosa, visualización en un post creation
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -35,7 +35,7 @@ Scenario: Creación y visualización de un tag de manera exitosa, visualización
   And I wait for 3 seconds
 
 @user2 @web
-Scenario: Creación y visualización de un tag de manera exitosa, visualización en un pages creation:
+Scenario: Creación y visualización de un tag de manera exitosa, visualización en un pages creation
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -68,7 +68,7 @@ Scenario: Creación y visualización de un tag de manera exitosa, visualización
   And I wait for 3 seconds
 
 @user3 @web
-Scenario: Edición y visualización de un tag de manera exitosa, visualización en un post creation:
+Scenario: Edición y visualización de un tag de manera exitosa, visualización en un post creation
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -80,8 +80,7 @@ Scenario: Edición y visualización de un tag de manera exitosa, visualización 
   When I click tags
   And I wait for 10 seconds
   And I select tag to edit "Tag1"   
-  And I wait for 2 seconds
-  And I wait for 3 seconds
+  And I wait for 5 seconds
   And I modify the name and slug of the tag to "Tag2"
   And I wait for 3 seconds
   And I click Save
@@ -102,7 +101,7 @@ Scenario: Edición y visualización de un tag de manera exitosa, visualización 
   And I wait for 2 seconds
 
 @user4 @web
-Scenario: Eliminación y no visualización de un tag de manera exitosa:
+Scenario: Eliminación y no visualización de un tag de manera exitosa
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -120,5 +119,6 @@ Scenario: Eliminación y no visualización de un tag de manera exitosa:
   And I click delete confirmation tag
   And I wait for 3 seconds
   Then I validate the title of the tag does not exist "Tag2"
+  And I wait for 3 seconds
 
   

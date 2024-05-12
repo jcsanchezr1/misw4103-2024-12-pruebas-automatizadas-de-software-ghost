@@ -107,10 +107,12 @@ class PagePage {
   }
 
   setTitle(title) {
+    cy.get(this.elements.pageTitle).clear();
     cy.get(this.elements.pageTitle).type(title);
   }
 
   setDescription(description) {
+    cy.get(this.elements.pageDescription).clear();
     cy.get(this.elements.pageDescription).type(description);
   }
 
@@ -140,10 +142,10 @@ class PagePage {
 
   getListOfTags() {
     let arr = [];
-        cy.get(this.elements.listTags).each((element) => {
-          const text = Cypress.$(element).text().trim();
-          arr.push(text);
-        });
+    cy.get(this.elements.listTags).each((element) => {
+      const text = Cypress.$(element).text().trim();
+      arr.push(text);
+    });
     return arr;
   }
 
@@ -166,5 +168,7 @@ class PagePage {
     return false;
   }
 }
+
+
 
 module.exports = PagePage;

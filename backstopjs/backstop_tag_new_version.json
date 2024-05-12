@@ -1,0 +1,218 @@
+{
+  "id": "Funcionalidad_Tag",
+  "viewports": [
+    {
+      "label": "default",
+      "width": 800,
+      "height": 600
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/8.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_9",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/9.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_10",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/10.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_11",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/11.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_12",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/12.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_13",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/13.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_14",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Creacion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/14.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/8.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_9",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/9.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_10",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/10.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_11",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/11.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_12",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/12.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_13",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/13.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation_14",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Edicion_y_visualizacion_de_un_tag_de_manera_exitosa_visualizacion_en_un_post_creation/14.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/14.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Tag/Eliminacion_y_no_visualizacion_de_un_tag_de_manera_exitosa/8.png",
+      "misMatchThreshold": 7
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/tag_html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": [
+    "browser"
+  ],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": [
+      "--no-sandbox"
+    ]
+  },
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 10,
+  "debug": false,
+  "debugWindow": false
+}
+  

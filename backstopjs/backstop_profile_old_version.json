@@ -1,0 +1,197 @@
+{
+  "id": "Funcionalidad_Profile",
+  "viewports": [
+    {
+      "label": "default",
+      "width": 800,
+      "height": 600
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Cambiar_nombre_de_manera_exitosa_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_nombre_de_manera_exitosa/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_nombre_de_manera_exitosa_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_nombre_de_manera_exitosa/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_nombre_de_manera_exitosa_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_nombre_de_manera_exitosa/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_nombre_de_manera_exitosa_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_nombre_de_manera_exitosa/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_nombre_de_manera_exitosa_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_nombre_de_manera_exitosa/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_nombre_de_manera_exitosa_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_nombre_de_manera_exitosa/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_nombre_de_manera_exitosa_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_nombre_de_manera_exitosa/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/8.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_9",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/9.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_10",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/10.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_11",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/11.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_12",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/12.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_insecure_13",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_insecure/13.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_1",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/1.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_2",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/2.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_3",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/3.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_4",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/4.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_5",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/5.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_6",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/6.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_7",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/7.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_8",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/8.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_9",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/9.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_10",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/10.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_11",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/11.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_12",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/12.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena_13",
+      "url": "../cypress/cypress/screenshots/Funcionalidad_de_Profile_old/Cambiar_password_de_forma_fallida_por_error_de_longitud_de_la_contrasena/13.png",
+      "misMatchThreshold": 7
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/profile_html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": [
+    "browser"
+  ],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": [
+      "--no-sandbox"
+    ]
+  },
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 10,
+  "debug": false,
+  "debugWindow": false
+}

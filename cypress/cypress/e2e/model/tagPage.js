@@ -141,7 +141,7 @@ class TagPage {
     }
 
     let flag = false;
-    for (let key in obj) {
+    for (let key in obj2) {
       if (obj[key] == obj2[key] - 1) {
         flag = true;
         break;
