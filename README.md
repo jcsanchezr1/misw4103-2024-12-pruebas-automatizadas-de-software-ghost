@@ -197,11 +197,11 @@ Se debe ejecutar las pruebas E2E con Cypress antes de proceder con la instalaci�
 
    - Asegúrese de que el script tenga permisos de ejecución. Puedes hacerlo con el comando `chmod +x execute_test_backstopjs.sh`
    - Una vez que el script tenga permisos de ejecución, simplemente ejecutarlo con el comando `./execute_test_backstopjs.sh`
-   - Este script tiene los pasos para ejecutar las pruebas con `backstopjs` y generar los reportes de cada una de las funcionalidades (`page`, `post`, `profile`, `tag`), y por cada funncionalidad se genera un reporte.
+   - Este script tiene los pasos para ejecutar las pruebas con `backstopjs` y generar los reportes de cada una de las funcionalidades (`page`, `post`, `profile`, `tag`), y por cada funcionalidad se genera un reporte.
 
 **Nota:** Dejamos los links para instalar Bash en windows [Instalar bash en windows](https://hackernoon.com/es/como-instalar-bash-en-windows-10-lqb73yj3)
 
-**Recomendación:** Cuando se está ejecutando el bash `execute_test_backstopjs.sh`, es normal que se abran pestañas en el navegador con los reportes que se están ejecuntado y se vean errores dado que no existen referencias en el momento. Le recomendamos que espere a que termine de ejecutarse el bash siga con el paso 4 y omita los reportes que se abren en el navegador.
+**Recomendación:** Cuando se está ejecutando el bash `execute_test_backstopjs.sh`, es normal que se abran pestañas en el navegador con los reportes que se están ejecutando y se vean errores dado que no existen referencias en el momento. Le recomendamos que espere a que termine de ejecutarse el bash (puede tardarse unos minutos), siga con el paso 4 y omita los reportes que se abren en el navegador.
 
 4. Una vez ejecutado el script, validar los reportes de cada funcionalidad (`page`, `post`, `profile`, `tag`) en `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/backstopjs/backstop_data`, por ejemplo dejamos una imagen del reporte genenrado de `page`:
 
@@ -227,5 +227,3 @@ Para acceder a las plataformas, puedes utilizar las siguientes credenciales:
 | Ghost 3.4.2    | conan@gmail.com   |Automatizadas01*| [Ghost 3.4.2 ](https://ghostv3-efi9.onrender.com/ghost/#/signin) |
 
 Asegúrate de utilizar estas credenciales al ejecutar tus pruebas automatizadas ETE y VRTpara probar las plataformas de Ghost.
-
-
