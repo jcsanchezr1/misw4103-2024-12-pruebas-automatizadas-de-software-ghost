@@ -10,18 +10,21 @@ const resultInfo = {}
 
 async function executeTest() {
 
-    let basePath = "./results";
+    //let basePath = "./results";
+    let basePath = "../cypress/cypress/screenshots"
+
     let datetime = new Date().toISOString().replace(/:/g, ".");
 
     //New imnplementation
     await exploreDirectory(basePath);
 
-    console.log("resultInfo ", resultInfo)
+    //console.log("resultInfo ", resultInfo)
     fs.writeFileSync(`./results/report.html`, createReport(datetime, resultInfo));
     fs.copyFileSync('./index.css', `./results/index.css`);
 
     console.log('------------------------------------------------------------------------------------')
     console.log("Execution finished. Check the report under the results folder")
+    //console.log('resultInfo: ' + resultInfo)
 
     return resultInfo;
 }
@@ -30,13 +33,20 @@ async function exploreDirectory(basePath) {
     console.log("basePath: ", basePath);
     const files = fs.readdirSync(basePath);
 
+    // Ordenar los nombres de archivo alfanuméricamente
+    files.sort((a, b) => {
+        const numA = parseInt((a.match(/\d+/) || [])[0]) || 0; // Verificación de coincidencia y valor predeterminado
+        const numB = parseInt((b.match(/\d+/) || [])[0]) || 0; // Verificación de coincidencia y valor predeterminado
+        return numA - numB;
+    });
+
     for (const file of files) {
         const filePath = path.join(basePath, file);
         const stats = fs.statSync(filePath);
 
         if (stats.isDirectory()) {
             console.log('Directorio:', filePath);
-            if (!filePath.includes('before')) {
+            if (!filePath.includes('_Old')) {
                 await exploreDirectory(filePath); // Espera a que exploreDirectory(filePath) termine
             }
         } else {
@@ -53,35 +63,67 @@ async function exploreDirectory(basePath) {
 
 async function generateREport(filePath) {
     console.log("****Begin generateREport***");
-    const splitPath = filePath.split('/');
 
-    let pathEscenarion = splitPath[1];
-    let escreenshotName = splitPath[2].replace('after-', '');
+    console.log("filePath: " + filePath);
 
-    console.log('pathEscenarion:', pathEscenarion);
-    console.log('escreenshotName:', escreenshotName);
+    const splitPath = filePath.split("/");
+    // Obtener el último valor
+    const screenshotName = splitPath.pop();
+    // Obtener el penúltimo valor
+    const escenario = splitPath.pop();
+    const feature = splitPath.pop();
 
-    const data = await compareImages(
-        fs.readFileSync(`./results/before_${pathEscenarion}/before-${escreenshotName}`),
-        fs.readFileSync(`./results/${pathEscenarion}/after-${escreenshotName}`),
-        options
-    );
-    if (!resultInfo[pathEscenarion]) {
-        resultInfo[pathEscenarion] = [];
+    // Unir las partes restantes para obtener el resto de la cadena
+    const firstPath = splitPath.join("/");
+
+    console.log("screenshotName:", screenshotName);
+    console.log("escenario:", escenario);
+    console.log("feature:", feature)
+    console.log("firstPath:", firstPath)
+
+
+    const oldImagePath = `${firstPath}/${feature}_Old/${escenario}/${screenshotName}`;
+    const imagePath = `${firstPath}/${feature}/${escenario}/${screenshotName}`;
+
+    if (fs.existsSync(oldImagePath) && fs.existsSync(imagePath)) {
+        const data = await compareImages(
+            fs.readFileSync(oldImagePath),
+            fs.readFileSync(imagePath),
+            options
+        );
+
+        if (!resultInfo[escenario]) {
+            resultInfo[escenario] = [];
+        }
+        let originalScenarioName = escenario.replaceAll('_', ' ')
+        console.log("originalScenarioName: ", originalScenarioName);
+        resultInfo[escenario].push({
+            isSameDimensions: data.isSameDimensions,
+            dimensionDifference: data.dimensionDifference,
+            rawMisMatchPercentage: data.rawMisMatchPercentage,
+            misMatchPercentage: data.misMatchPercentage,
+            diffBounds: data.diffBounds,
+            analysisTime: data.analysisTime,
+            beforeImage: `../${oldImagePath}`,
+            afterImage: `../${imagePath}`,
+            compareImage: `${feature}/${escenario}/compare-${screenshotName}`,
+            scenario: originalScenarioName,
+            feature: feature.replaceAll('_', ' ')
+        });
+
+        let createPath = `./results/${feature}/${escenario}`;
+        try {
+            if (!fs.existsSync(createPath)) {
+                fs.mkdirSync(createPath, { recursive: true });
+            }
+        } catch (err) {
+            console.error("Error al crear directorios:", err);
+        }
+
+        fs.writeFileSync(`./results/${feature}/${escenario}/compare-${screenshotName}`, data.getBuffer());
+    } else {
+        console.log("Al menos uno de los archivos no existe. Saltando lógica.");
     }
-
-    resultInfo[pathEscenarion].push({
-        isSameDimensions: data.isSameDimensions,
-        dimensionDifference: data.dimensionDifference,
-        rawMisMatchPercentage: data.rawMisMatchPercentage,
-        misMatchPercentage: data.misMatchPercentage,
-        diffBounds: data.diffBounds,
-        analysisTime: data.analysisTime,
-        beforeImage: `before_${pathEscenarion}/before-${escreenshotName}`,
-        afterImage: `${pathEscenarion}/after-${escreenshotName}`,
-        compareImage: `${pathEscenarion}/compare-${escreenshotName}`
-    });
-    fs.writeFileSync(`./results/${pathEscenarion}/compare-${escreenshotName}`, data.getBuffer());
 
     return resultInfo;
 }
@@ -95,7 +137,7 @@ function browser(b, infoList) {
         let titleSection = '';
         titleSection = `
             <div class="btitle">
-            <h2>Escenario: ${b}</h2>
+            <h2>Feature: ${info.scenario} -  Escenario: ${info.scenario} - Paso ${index + 1}  </h2>
             <table>
                 <tr>
                     <th>Propiedad</th>
@@ -122,8 +164,7 @@ function browser(b, infoList) {
                     <td>${info.analysisTime} ms</td>
                 </tr>               
             </table>
-        </div>
-        
+        </div>        
             `;
 
         return `

@@ -7,7 +7,7 @@ const commonFunction = new CommonFunction();
 
 let parentFolder = '';
 
-describe("Funcionalidad de Post old", (z ) => {
+describe("Funcionalidad de Post Old", (z ) => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false;
