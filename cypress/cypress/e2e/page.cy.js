@@ -7,7 +7,7 @@ const commonFunction = new CommonFunction();
 
 let parentFolder = '';
 
-describe("Funcionalidad de Page", (z ) => {
+describe("Funcionalidad de Page", (z) => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false;
@@ -108,7 +108,7 @@ describe("Funcionalidad de Page", (z ) => {
         //And I click new page
         pagePage.submitNewPage();
         commonFunction.wait(1000);
-        //And I enter page title "Page1"
+        //And I enter page title "Page3"
         pagePage.setTitle("Page3");
         commonFunction.wait(1000);
         //And I enter description page "description Page 1"
@@ -135,7 +135,7 @@ describe("Funcionalidad de Page", (z ) => {
         //I enter page title "Page4"
         pagePage.setTitle("Page4");
         commonFunction.wait(4000);
-        //And I enter description page "description Page 1"
+        //And I enter description page "description Page 4"
         pagePage.setDescription("description Page 4");
         commonFunction.wait(2000);
         //And I click to update page
@@ -184,7 +184,7 @@ describe("Funcionalidad de Page", (z ) => {
         //And I click pages
         pagePage.submitLinkPages();
         commonFunction.wait(3000);
-        //And I select page to edit "Page3"  
+        //And I select page to edit "Page5"  
         pagePage.clickToEditPage("Page5");
         commonFunction.wait(3000);
         //And I click page settings

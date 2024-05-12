@@ -140,7 +140,7 @@ Antes de iniciar la instalación y ejecución del reporte de Resemble.js y Backs
 
 Las imágenes se encuentran organizadas por feature y escenario, permitiendo una fácil comparación y análisis de las diferencias visuales.
 
-Recomendación:
+**Recomendación:**
 
 Se debe ejecutar las pruebas E2E con Cypress antes de proceder con la instalación y ejecución de Resemble.js y Backstop.js para garantizar la disponibilidad de las imágenes base necesarias para la generación de los reportes.
 
@@ -184,6 +184,35 @@ Se debe ejecutar las pruebas E2E con Cypress antes de proceder con la instalaci�
    **Nota**: Para visualizar el resto del reporte, incluyendo los demás pasos, escenarios y features, puedes desplazarte hacia abajo (scroll down)
 
 ## 4. Instalación y ejecución del reporte Backstop.js
+
+1. Para hacer uso de las herramientas de Backstop, debe descargar la CLI. Abra una terminal y ejecute el siguiente comando:
+
+`npm install -g backstopjs`
+
+2. Desde la raíz del repositorio clonado `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost` movernos a la carpeta `backstopjs`
+
+`cd backstopjs/`
+
+3. Para la ejecución de los test en `backstopjs` necesitamos ejecutar el `execute_test_backstopjs.sh` para ello ejecute el siguiente comando:
+
+   - Asegúrese de que el script tenga permisos de ejecución. Puedes hacerlo con el comando `chmod +x execute_test_backstopjs.sh`
+   - Una vez que el script tenga permisos de ejecución, simplemente ejecutarlo con el comando `./execute_test_backstopjs.sh`
+   - Este script tiene los pasos para ejecutar las pruebas con `backstopjs` y generar los reportes de cada una de las funcionalidades (`page`, `post`, `profile`, `tag`), y por cada funncionalidad se genera un reporte.
+
+**Nota:** Dejamos los links para instalar Bash en windows [Instalar bash en windows](https://hackernoon.com/es/como-instalar-bash-en-windows-10-lqb73yj3)
+**Recomendación:** Cuando se está ejecutando el bash `execute_test_backstopjs.sh`, es normal que se abran pestañas en el navegador con los reportes que se están ejecuntado y se vean errores dado que no existen referencias en el momento. Le recomendamos que siga con el paso 4 y omita los reportes que se abren en el navegador.
+
+4. Una vez ejecutado el script, validar los reportes de cada funcionalidad (`page`, `post`, `profile`, `tag`) en `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/backstopjs/backstop_data`, por ejemplo dejamos una imagen del reporte genenrado de `page`:
+
+   - Nos movemos a la carpeta del reporte de `page` en `/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/backstopjs/backstop_data/page_html_report` y deberiamos ver los archivos del reporte generado:
+
+<img width="1540" alt="Captura de pantalla 2024-05-11 a la(s) 19 56 32" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/4fe9d5a6-a37c-4e4b-b298-fbdb0adf4d56">
+
+   - Abrimos el index.html para ver el reporte de esta funcionalidad y validar los resultados:
+
+<img width="1728" alt="Captura de pantalla 2024-05-11 a la(s) 19 57 34" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/636e9838-4ba2-4ed7-902a-195957711c7e">
+
+**recordar que por cada funcionalidad generamos un reporte con esta herramienta (page, post, profile, tag)**
 
 ## URL de Ghost y Credenciales de Inicio de Sesión
 - La versión de Ghost (Ghost 5.14.1) fue la que se utilizo para para pruebas automatización E2E
