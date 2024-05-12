@@ -89,11 +89,11 @@ Feature: Posts
     And I wait for 6 seconds
     And I click new post
     And I wait for 5 seconds
-    And I enter post title "Post"
+    And I enter post title "Post4"
     And I wait for 1 seconds
     And I select the  post description
     And I wait for 1 seconds
-    And I enter post description "Description Post"
+    And I enter post description "Description Post 4"
     And I wait for 3 seconds
     And I click publish post
     And I wait for 5 seconds
