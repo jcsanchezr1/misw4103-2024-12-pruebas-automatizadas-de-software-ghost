@@ -40,10 +40,10 @@ describe('Funcionalidad de Members', () => {
         // AND I click on the show all members button
         memberPage.clickShowAllMembersButton();
         commonFunction.wait(1000);
-        // THEN I validate that the table not contains the name "pseudoMember.member"
+        // THEN I validate that the table not contains the name "pseudoMember.member_name"
         cy.get(memberPage.elements.tableMembers).should(($table) => {
             const text = $table.text();
-            expect(text).to.not.contain(pseudoMember.member);
+            expect(text).to.not.contain(pseudoMember.member_name);
         });
         commonFunction.wait(1000);
     });
@@ -59,8 +59,8 @@ describe('Funcionalidad de Members', () => {
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "pseudoMember.member"
-        memberPage.setMemberName(pseudoMember.member);
+        // AND I enter member name "pseudoMember.member_name"
+        memberPage.setMemberName(pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I enter member email "pseudoMember.member_email"
         memberPage.setMemberEmail(pseudoMember.member_email);
@@ -68,16 +68,16 @@ describe('Funcionalidad de Members', () => {
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "pseudoMember.member"
-        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member);
+        // Then I validate the label of the new member should be "pseudoMember.member_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "pseudoMember.member"
-        memberPage.setFilterTextMembers(pseudoMember.member);
+        // AND I fill the filter text field with "pseudoMember.member_name"
+        memberPage.setFilterTextMembers(pseudoMember.member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "pseudoMember.member"
-        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member);
+        // AND I validate that the table contains the name "pseudoMember.member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member_name);
         commonFunction.wait(1000);
     });
 
@@ -92,8 +92,8 @@ describe('Funcionalidad de Members', () => {
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "pseudoMember.member"
-        memberPage.setMemberName(pseudoMember.member);
+        // AND I enter member name "pseudoMember.member_name"
+        memberPage.setMemberName(pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I enter member email "pseudoMember.member_email"
         memberPage.setMemberEmail(pseudoMember.member_email);
@@ -101,22 +101,22 @@ describe('Funcionalidad de Members', () => {
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "pseudoMember.member"
-        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member);
+        // Then I validate the label of the new member should be "pseudoMember.member_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "pseudoMember.member"
-        memberPage.setFilterTextMembers(pseudoMember.member);
+        // AND I fill the filter text field with "pseudoMember.member_name"
+        memberPage.setFilterTextMembers(pseudoMember.member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "pseudoMember.member"
-        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member);
+        // AND I validate that the table contains the name "pseudoMember.member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "pseudoMember.member"
-        memberPage.setMemberName(pseudoMember.member);
+        // AND I enter member name "pseudoMember.member_name"
+        memberPage.setMemberName(pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I enter member email "pseudoMember.member_email"
         memberPage.setMemberEmail(pseudoMember.member_email);
@@ -132,11 +132,11 @@ describe('Funcionalidad de Members', () => {
         // AND I click leave button
         memberPage.clickModalButtonLeaveMember();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "pseudoMember.member"
-        memberPage.setFilterTextMembers(pseudoMember.member);
+        // AND I fill the filter text field with "pseudoMember.member_name"
+        memberPage.setFilterTextMembers(pseudoMember.member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "pseudoMember.member"
-        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member);
+        // AND I validate that the table contains the name "pseudoMember.member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member_name);
         commonFunction.wait(1000);
     });
 
@@ -151,8 +151,8 @@ describe('Funcionalidad de Members', () => {
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "pseudoMember.member"
-        memberPage.setMemberName(pseudoMember.member);
+        // AND I enter member name "pseudoMember.member_name"
+        memberPage.setMemberName(pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I enter member email "pseudoMember.member_email"
         memberPage.setMemberEmail(pseudoMember.member_email);
@@ -160,36 +160,36 @@ describe('Funcionalidad de Members', () => {
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "pseudoMember.member"
-        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member);
+        // Then I validate the label of the new member should be "pseudoMember.member_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "pseudoMember.member"
-        memberPage.setFilterTextMembers(pseudoMember.member);
+        // AND I fill the filter text field with "pseudoMember.member_name"
+        memberPage.setFilterTextMembers(pseudoMember.member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "pseudoMember.member"
-        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member);
+        // AND I validate that the table contains the name "pseudoMember.member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I click first row on table members
         memberPage.clickFirstRecordInTableMembers();
         commonFunction.wait(1000);
-        // AND I enter member name "Modified"
-        memberPage.setMemberName('Modified');
+        // AND I enter member name "pseudoMember.member_last_name"
+        memberPage.setMemberName(' ' + pseudoMember.member_last_name);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "pseudoMember.member" + "Modified"
-        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member + 'Modified');
+        // Then I validate the label of the new member should be "pseudoMember.member_name" + "pseudoMember.member_last_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member_name + ' ' + pseudoMember.member_last_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "pseudoMember.member" + "Modified"
-        memberPage.setFilterTextMembers(pseudoMember.member + 'Modified');
+        // AND I fill the filter text field with "pseudoMember.member_name" + "pseudoMember.member_last_name"
+        memberPage.setFilterTextMembers(pseudoMember.member_name + ' ' + pseudoMember.member_last_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "pseudoMember.member" + "Modified"
-        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member + 'Modified');
+        // AND I validate that the table contains the name "pseudoMember.member_name" + "Modified"
+        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member_name + ' ' + pseudoMember.member_last_name);
         commonFunction.wait(1000);
     });
 
@@ -204,8 +204,8 @@ describe('Funcionalidad de Members', () => {
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "pseudoMember.member"
-        memberPage.setMemberName(pseudoMember.member);
+        // AND I enter member name "pseudoMember.member_name"
+        memberPage.setMemberName(pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I enter member email "pseudoMember.member_email"
         memberPage.setMemberEmail(pseudoMember.member_email);
@@ -213,16 +213,16 @@ describe('Funcionalidad de Members', () => {
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "pseudoMember.member"
-        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member);
+        // Then I validate the label of the new member should be "pseudoMember.member_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', pseudoMember.member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "pseudoMember.member"
-        memberPage.setFilterTextMembers(pseudoMember.member);
+        // AND I fill the filter text field with "pseudoMember.member_name"
+        memberPage.setFilterTextMembers(pseudoMember.member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "pseudoMember.member"
-        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member);
+        // AND I validate that the table contains the name "pseudoMember.member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member_name);
         commonFunction.wait(1000);
         // AND I click first row on table members
         memberPage.clickFirstRecordInTableMembers();
@@ -241,11 +241,11 @@ describe('Funcionalidad de Members', () => {
         // AND I click leave button
         memberPage.clickModalButtonLeaveMember();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "pseudoMember.member"
-        memberPage.setFilterTextMembers(pseudoMember.member);
+        // AND I fill the filter text field with "pseudoMember.member_name"
+        memberPage.setFilterTextMembers(pseudoMember.member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "pseudoMember.member"
-        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member);
+        // AND I validate that the table contains the name "pseudoMember.member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', pseudoMember.member_name);
         commonFunction.wait(1000);
     });
 });
