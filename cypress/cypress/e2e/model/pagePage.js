@@ -149,16 +149,16 @@ class PagePage {
     return arr;
   }
 
-  compareTags(arr, arr2) {
+  compareTags(arr, arr2,nameTag) {
     let newArr = [];
     let secondArr = [];
     for (let el of arr) {
-      if (el === "Tag1") {
+      if (el === nameTag) {
         newArr.push(el);
       }
     }
     for (let el of arr2) {
-      if (el === "Tag1") {
+      if (el === nameTag) {
         secondArr.push(el);
       }
     }
