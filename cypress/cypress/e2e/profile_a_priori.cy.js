@@ -2,6 +2,7 @@ import properties from './properties.json';
 import LoginPage from './model/loginPage';
 import ProfilePage from './model/profilePage';
 import CommonFunction from "./model/commonFunction";
+import membersApriori from "./prioriFiles/profiles";
 
 const profilePage = new ProfilePage();
 const loginPage = new LoginPage();
@@ -9,8 +10,7 @@ const commonFunction = new CommonFunction();
 
 let parentFolder = '';
 
-
-describe("Funcionalidad de Profile", (z ) => {
+describe("Funcionalidad de Profile A priori", (z) => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false;
@@ -31,8 +31,8 @@ describe("Funcionalidad de Profile", (z ) => {
         // AND I click on your profile
         profilePage.submitYourProfile()
         commonFunction.wait(1000);
-        // AND I enter name "NombreNuevo"
-        profilePage.typeName('NombreNuevo');
+        // AND I enter name "profile_full_name"
+        profilePage.typeName(membersApriori[0].profile_full_name);
         commonFunction.wait(1000);
         // AND I click save
         profilePage.submitSaveButton();
@@ -40,8 +40,8 @@ describe("Funcionalidad de Profile", (z ) => {
         // AND I click profile
         profilePage.submitProfileMenu();
         commonFunction.wait(1000);
-        // AND I validate the name "NombreNuevo"
-        cy.get(profilePage.elements.profileLabel).should('contain', 'NombreNuevo');
+        // AND I validate the name "profile_full_name"
+        cy.get(profilePage.elements.profileLabel).should('contain', membersApriori[0].profile_full_name);
     })
 
     it('Cambiar password de forma fallida por error insecure', () => {
@@ -58,11 +58,11 @@ describe("Funcionalidad de Profile", (z ) => {
         // AND I enter password "<PASSWORD>"
         profilePage.typeOldPassword(properties.PASSWORD);
         commonFunction.wait(1000);
-        // AND I enter the new password "password1234"
-        profilePage.typePassword('password1234');
+        // AND I enter the new password "profile_new_password"
+        profilePage.typePassword(membersApriori[1].profile_new_password);
         commonFunction.wait(1000);
-        // AND I both enter and confirm the new password "password1234"
-        profilePage.typeConfirmPassword("password1234");
+        // AND I both enter and confirm the new password "profile_verify_password"
+        profilePage.typeConfirmPassword(membersApriori[1].profile_verify_password);
         commonFunction.wait(1000);
         // AND I click confirm password
         profilePage.submitChangePassword();
@@ -80,8 +80,8 @@ describe("Funcionalidad de Profile", (z ) => {
         commonFunction.wait(1000);
         // AND I enter email "<EMAIL>"
         loginPage.typeEmail(properties.EMAIL);
-        // AND I enter password "password1234"
-        loginPage.typePassword('password1234');
+        // AND I enter password "profile_new_password"
+        loginPage.typePassword(membersApriori[1].profile_new_password);
         // AND I click sign in
         loginPage.clickSignInButton();
         commonFunction.wait(3000);
@@ -108,11 +108,11 @@ describe("Funcionalidad de Profile", (z ) => {
         // AND I enter password "<PASSWORD>"
         profilePage.typeOldPassword(properties.PASSWORD);
         commonFunction.wait(1000);
-        // AND I enter the new password "123456789"
-        profilePage.typePassword('123456789');
+        // AND I enter the new password "profile_new_password"
+        profilePage.typePassword(membersApriori[2].profile_new_password);
         commonFunction.wait(1000);
-        // AND I both enter and confirm the new password "123456789"
-        profilePage.typeConfirmPassword("123456789");
+        // AND I both enter and confirm the new password "profile_verify_password"
+        profilePage.typeConfirmPassword(membersApriori[2].profile_verify_password);
         commonFunction.wait(1000);
         // AND I click confirm password
         profilePage.submitChangePassword();
@@ -131,7 +131,7 @@ describe("Funcionalidad de Profile", (z ) => {
         // AND I enter email "<EMAIL>"
         loginPage.typeEmail(properties.EMAIL);
         // AND I enter password "123456789"
-        loginPage.typePassword('123456789');
+        loginPage.typePassword(membersApriori[2].profile_new_password);
         // AND I click sign in
         loginPage.clickSignInButton();
         commonFunction.wait(3000);
@@ -155,14 +155,14 @@ describe("Funcionalidad de Profile", (z ) => {
         // AND I click on your profile
         profilePage.submitYourProfile()
         commonFunction.wait(1000);
-        // AND I enter old password "OldPswInvalido"
-        profilePage.typeOldPassword('OldPswInvalido');
+        // AND I enter old password "profile_old_password"
+        profilePage.typeOldPassword(membersApriori[3].profile_old_password);
         commonFunction.wait(1000);
-        // AND I enter the new password "EstoEsUnPswValido!"
-        profilePage.typePassword('EstoEsUnPswValido!');
+        // AND I enter the new password "profile_new_password"
+        profilePage.typePassword(membersApriori[3].profile_new_password);
         commonFunction.wait(1000);
-        // AND I both enter and confirm the new password "EstoEsUnPswValido!"
-        profilePage.typeConfirmPassword("EstoEsUnPswValido!");
+        // AND I both enter and confirm the new password "profile_verify_password"
+        profilePage.typeConfirmPassword(membersApriori[3].profile_verify_password);
         commonFunction.wait(1000);
         // AND I click confirm password
         profilePage.submitChangePassword();
@@ -180,8 +180,8 @@ describe("Funcionalidad de Profile", (z ) => {
         commonFunction.wait(1000);
         // AND I enter email "<EMAIL>"
         loginPage.typeEmail(properties.EMAIL);
-        // AND I enter password "EstoEsUnPswValido!"
-        loginPage.typePassword('EstoEsUnPswValido!');
+        // AND I enter password "profile_old_password"
+        loginPage.typePassword(membersApriori[3].profile_old_password);
         // AND I click sign in
         loginPage.clickSignInButton();
         commonFunction.wait(3000);
