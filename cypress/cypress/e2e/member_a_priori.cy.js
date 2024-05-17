@@ -1,11 +1,13 @@
 import properties from './properties.json';
 import MemberPage from './model/memberPage';
 import CommonFunction from "./model/commonFunction";
+import membersApriori from "./prioriFiles/members";
 
 const memberPage = new MemberPage();
 const commonFunction = new CommonFunction();
 
 let parentFolder = '';
+let member_name;
 
 describe('Funcionalidad de Members A priori', () => {
     beforeEach(() => {
@@ -14,7 +16,7 @@ describe('Funcionalidad de Members A priori', () => {
         });
         Cypress.Screenshot.defaults({
             overwrite: true,
-        })
+        });
     });
 
     afterEach(() => {
@@ -36,12 +38,13 @@ describe('Funcionalidad de Members A priori', () => {
         // THEN I validate that the table not contains the name "name"
         cy.get(memberPage.elements.tableMembers).should(($table) => {
             const text = $table.text();
-            expect(text).to.not.contain('name');
+            expect(text).to.not.contain(member_name);
         });
         commonFunction.wait(1000);
     });
 
     it('Como usuario inicio sesion, creo nuevo miembro de manera exitosa y lo elimino de manera exitosa', () => {
+        member_name = membersApriori[0].member_name;
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
@@ -52,29 +55,30 @@ describe('Funcionalidad de Members A priori', () => {
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "name1"
-        memberPage.setMemberName('name1');
+        // AND I enter member name "member_name"
+        memberPage.setMemberName(membersApriori[0].member_name);
         commonFunction.wait(1000);
-        // AND I enter member email "name1@uniandes.edu.co"
-        memberPage.setMemberEmail('name1@uniandes.edu.co');
+        // AND I enter member email "member_email"
+        memberPage.setMemberEmail(membersApriori[0].member_email);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "name1"
-        cy.get(memberPage.elements.labelNewMember).should('contain', 'name1');
+        // Then I validate the label of the new member should be "member_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', membersApriori[0].member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "name1"
-        memberPage.setFilterTextMembers('name1');
+        // AND I fill the filter text field with "member_name"
+        memberPage.setFilterTextMembers(membersApriori[0].member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "name1"
-        cy.get(memberPage.elements.tableMembers).should('contain', 'name1');
+        // AND I validate that the table contains the name "member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', membersApriori[0].member_name);
         commonFunction.wait(1000);
     });
 
     it('Como usuario inicio sesion, creo nuevo miembro de manera exitosa, creo nuevo miembro de manera fallida y lo elimino de manera exitosa', () => {
+        member_name = membersApriori[1].member_name;
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
@@ -85,34 +89,34 @@ describe('Funcionalidad de Members A priori', () => {
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "name2"
-        memberPage.setMemberName('name2');
+        // AND I enter member name "member_name"
+        memberPage.setMemberName(membersApriori[1].member_name);
         commonFunction.wait(1000);
-        // AND I enter member email "name2@uniandes.edu.co"
-        memberPage.setMemberEmail('name2@uniandes.edu.co');
+        // AND I enter member email "membersApriori[1].member_email"
+        memberPage.setMemberEmail(membersApriori[1].member_email);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "name2"
-        cy.get(memberPage.elements.labelNewMember).should('contain', 'name2');
+        // Then I validate the label of the new member should be "member_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', membersApriori[1].member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "name2"
-        memberPage.setFilterTextMembers('name2');
+        // AND I fill the filter text field with "member_name"
+        memberPage.setFilterTextMembers(membersApriori[1].member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "name2"
-        cy.get(memberPage.elements.tableMembers).should('contain', 'name2');
+        // AND I validate that the table contains the name "member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', membersApriori[1].member_name);
         commonFunction.wait(1000);
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "name2"
-        memberPage.setMemberName('name2');
+        // AND I enter member name "member_name"
+        memberPage.setMemberName(membersApriori[1].member_name);
         commonFunction.wait(1000);
-        // AND I enter member email "name2@uniandes.edu.co"
-        memberPage.setMemberEmail('name2@uniandes.edu.co');
+        // AND I enter member email "membersApriori[1].member_email"
+        memberPage.setMemberEmail(membersApriori[1].member_email);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
@@ -125,15 +129,16 @@ describe('Funcionalidad de Members A priori', () => {
         // AND I click leave button
         memberPage.clickModalButtonLeaveMember();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "name2"
-        memberPage.setFilterTextMembers('name2');
+        // AND I fill the filter text field with "member_name"
+        memberPage.setFilterTextMembers(membersApriori[1].member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "name2"
-        cy.get(memberPage.elements.tableMembers).should('contain', 'name2');
+        // AND I validate that the table contains the name "member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', membersApriori[1].member_name);
         commonFunction.wait(1000);
     });
 
     it('Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo edito de manera exitosa y lo elimino de manera exitosa', () => {
+        member_name = membersApriori[2].member_name;
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
@@ -144,49 +149,50 @@ describe('Funcionalidad de Members A priori', () => {
         // AND I click new member
         memberPage.clickNewMember();
         commonFunction.wait(1000);
-        // AND I enter member name "name3"
-        memberPage.setMemberName('name3');
+        // AND I enter member name "member_name"
+        memberPage.setMemberName(membersApriori[2].member_name);
         commonFunction.wait(1000);
-        // AND I enter member email "name3@uniandes.edu.co"
-        memberPage.setMemberEmail('name3@uniandes.edu.co');
+        // AND I enter member email "member_email"
+        memberPage.setMemberEmail(membersApriori[2].member_email);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "name3"
-        cy.get(memberPage.elements.labelNewMember).should('contain', 'name3');
+        // Then I validate the label of the new member should be "member_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', membersApriori[2].member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "name3"
-        memberPage.setFilterTextMembers('name3');
+        // AND I fill the filter text field with "member_name"
+        memberPage.setFilterTextMembers(membersApriori[2].member_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "name3"
-        cy.get(memberPage.elements.tableMembers).should('contain', 'name3');
+        // AND I validate that the table contains the name "member_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', membersApriori[2].member_name);
         commonFunction.wait(1000);
         // AND I click first row on table members
         memberPage.clickFirstRecordInTableMembers();
         commonFunction.wait(1000);
         // AND I enter member name "Modified"
-        memberPage.setMemberName('Modified');
+        memberPage.setMemberName(' ' + membersApriori[2].member_last_name);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
-        // Then I validate the label of the new member should be "name3Modified"
-        cy.get(memberPage.elements.labelNewMember).should('contain', 'name3Modified');
+        // Then I validate the label of the new member should be "member_name + ' ' + member_last_name"
+        cy.get(memberPage.elements.labelNewMember).should('contain', membersApriori[2].member_name + ' ' + membersApriori[2].member_last_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
-        // AND I fill the filter text field with "name3Modified"
-        memberPage.setFilterTextMembers('name3Modified');
+        // AND I fill the filter text field with "member_name + ' ' + member_last_name"
+        memberPage.setFilterTextMembers(membersApriori[2].member_name + ' ' + membersApriori[2].member_last_name);
         commonFunction.wait(1000);
-        // AND I validate that the table contains the name "name3Modified"
-        cy.get(memberPage.elements.tableMembers).should('contain', 'name3Modified');
+        // AND I validate that the table contains the name "member_name + ' ' + member_last_name"
+        cy.get(memberPage.elements.tableMembers).should('contain', membersApriori[2].member_name + ' ' + membersApriori[2].member_last_name);
         commonFunction.wait(1000);
     });
 
     it('Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo edito de manera fallida y lo elimino de manera exitosa', () => {
+        member_name = membersApriori[3].member_name;
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
@@ -198,30 +204,30 @@ describe('Funcionalidad de Members A priori', () => {
         memberPage.clickNewMember();
         commonFunction.wait(1000);
         // AND I enter member name "name4"
-        memberPage.setMemberName('name4');
+        memberPage.setMemberName(membersApriori[3].member_name);
         commonFunction.wait(1000);
         // AND I enter member email "name4@uniandes.edu.co"
-        memberPage.setMemberEmail('name4@uniandes.edu.co');
+        memberPage.setMemberEmail(membersApriori[3].member_email);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
         commonFunction.wait(1000);
         // Then I validate the label of the new member should be "name4"
-        cy.get(memberPage.elements.labelNewMember).should('contain', 'name4');
+        cy.get(memberPage.elements.labelNewMember).should('contain', membersApriori[3].member_name);
         // AND I click members back
         memberPage.clickBackMembers();
         commonFunction.wait(1000);
         // AND I fill the filter text field with "name4"
-        memberPage.setFilterTextMembers('name4');
+        memberPage.setFilterTextMembers(membersApriori[3].member_name);
         commonFunction.wait(1000);
         // AND I validate that the table contains the name "name4"
-        cy.get(memberPage.elements.tableMembers).should('contain', 'name4');
+        cy.get(memberPage.elements.tableMembers).should('contain', membersApriori[3].member_name);
         commonFunction.wait(1000);
         // AND I click first row on table members
         memberPage.clickFirstRecordInTableMembers();
         commonFunction.wait(1000);
         // AND I enter member email ".*-+"
-        memberPage.setMemberEmail('.*-+');
+        memberPage.setMemberEmail(membersApriori[3].member_invalid_email);
         commonFunction.wait(1000);
         // AND I click save member
         memberPage.clickSaveMember();
@@ -235,10 +241,10 @@ describe('Funcionalidad de Members A priori', () => {
         memberPage.clickModalButtonLeaveMember();
         commonFunction.wait(1000);
         // AND I fill the filter text field with "name4"
-        memberPage.setFilterTextMembers('name4');
+        memberPage.setFilterTextMembers(membersApriori[3].member_name);
         commonFunction.wait(1000);
         // AND I validate that the table contains the name "name4"
-        cy.get(memberPage.elements.tableMembers).should('contain', 'name4');
+        cy.get(memberPage.elements.tableMembers).should('contain', membersApriori[3].member_name);
         commonFunction.wait(1000);
     });
 });
