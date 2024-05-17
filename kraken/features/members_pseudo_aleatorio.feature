@@ -133,7 +133,7 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I wait for 5 seconds
   And Pseudo: I enter member name edited
   And I wait for 3 seconds
-  And Pseudo: I click save member edited
+  And Pseudo: I click save member
   And I wait for 5 seconds
   Then Pseudo: I validate the label of the new member should be edited
   And I wait for 2 seconds

@@ -1,13 +1,13 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const { BeforeAll, Before } = require('@cucumber/cucumber');
+const {When, Then} = require('@cucumber/cucumber');
+const {BeforeAll, Before} = require('@cucumber/cucumber');
 const axios = require('axios');
 const MemberPage = require('../model/memberPage');
 
 let memberPage;
 let pseudoMember;
 
-BeforeAll(async function () {    
-    memberPage = new MemberPage();   
+BeforeAll(async function () {
+    memberPage = new MemberPage();
 })
 
 Before(async function () {
@@ -19,12 +19,12 @@ Before(async function () {
     }
 })
 
-When('Pseudo: I click members', async function() {
-    memberPage.setDriver(this.driver);    
+When('Pseudo: I click members', async function () {
+    memberPage.setDriver(this.driver);
     memberPage.clickLinSideBarkMembers();
 });
 
-When('Pseudo: I click new member', async function() {
+When('Pseudo: I click new member', async function () {
     memberPage.clickNewMember();
 });
 
@@ -37,22 +37,18 @@ When('Pseudo: I enter member email', async function () {
 });
 
 When('Pseudo: I enter member name edited', async function () {
-    memberPage.setMemberName(' ' + pseudoMember.member_last_name);
-});
-
-When('Pseudo: I enter member email edited', async function () {
-    memberPage.setMemberEmail(' ' + pseudoMember.member_last_name);
+    memberPage.setMemberName(pseudoMember.member_name + ' ' + pseudoMember.member_last_name);
 });
 
 When('Pseudo: I enter member invalid email', async function () {
-    memberPage.setMemberEmail(' ' + member_invalid_email);
+    memberPage.setMemberEmail(pseudoMember.member_invalid_email);
 });
 
-When('Pseudo: I click save member', async function() {
+When('Pseudo: I click save member', async function () {
     memberPage.clickSaveMember();
 });
 
-Then('Pseudo: I validate the label of the new member should be', async function() {
+Then('Pseudo: I validate the label of the new member should be', async function () {
     let element = await this.driver.$(memberPage.elements.labelNewMember);
     await element.waitForDisplayed();
     let text = await element.getText();
@@ -63,7 +59,7 @@ Then('Pseudo: I validate the label of the new member should be', async function(
     }
 });
 
-Then('Pseudo: I validate the label of the new member should be edited', async function() {
+Then('Pseudo: I validate the label of the new member should be edited', async function () {
     let element = await this.driver.$(memberPage.elements.labelNewMember);
     await element.waitForDisplayed();
     let text = await element.getText();
@@ -74,19 +70,19 @@ Then('Pseudo: I validate the label of the new member should be edited', async fu
     }
 });
 
-When('Pseudo: I click members back', async function() {
+When('Pseudo: I click members back', async function () {
     memberPage.clickBackMembers();
 });
 
-When('Pseudo: I fill the filter text field with', async function() {
+When('Pseudo: I fill the filter text field with', async function () {
     memberPage.setFilterTextMembers(pseudoMember.member_name);
 });
 
-When('Pseudo: I fill the filter text field with edited', async function() {
+When('Pseudo: I fill the filter text field with edited', async function () {
     memberPage.setFilterTextMembers(pseudoMember.member_name + ' ' + pseudoMember.member_last_name);
 });
 
-Then('Pseudo: I validate that the table contains the name', async function() {
+Then('Pseudo: I validate that the table contains the name', async function () {
     let element = await this.driver.$(memberPage.elements.tableMembers);
     await element.waitForDisplayed();
     let text = await element.getText();
@@ -97,7 +93,7 @@ Then('Pseudo: I validate that the table contains the name', async function() {
     }
 });
 
-Then('Pseudo: I validate that the table contains the name edited', async function() {
+Then('Pseudo: I validate that the table contains the name edited', async function () {
     let element = await this.driver.$(memberPage.elements.tableMembers);
     await element.waitForDisplayed();
     let text = await element.getText();
@@ -108,7 +104,7 @@ Then('Pseudo: I validate that the table contains the name edited', async functio
     }
 });
 
-Then('Pseudo: I validate the error message {string}', async function(errorMessage) {
+Then('Pseudo: I validate the error message {string}', async function (errorMessage) {
     let element = await this.driver.$(memberPage.elements.labelErrorMember);
     await element.waitForDisplayed();
     let text = await element.getText();
@@ -119,31 +115,31 @@ Then('Pseudo: I validate the error message {string}', async function(errorMessag
     }
 });
 
-When('Pseudo: I click leave button', async function() {
+When('Pseudo: I click leave button', async function () {
     memberPage.clickModalButtonLeaveMember();
 });
 
-When('Pseudo: I click first row on table members', async function() {
+When('Pseudo: I click first row on table members', async function () {
     memberPage.clickFirstRecordInTableMembers();
 });
 
-When('Pseudo: I click on the member actions button', async function() {
+When('Pseudo: I click on the member actions button', async function () {
     await memberPage.clickMemberActionsButton();
 });
 
-When('Pseudo: I click on the delete member button', async function() {
+When('Pseudo: I click on the delete member button', async function () {
     await memberPage.clickDeleteMemberButton();
 });
 
-When('Pseudo: I click on the confirm delete member button', async function() {
+When('Pseudo: I click on the confirm delete member button', async function () {
     await memberPage.clickConfirmDeleteMemberButton();
 });
 
-When('Pseudo: I click on the show all members button', async function() {
+When('Pseudo: I click on the show all members button', async function () {
     await memberPage.clickShowAllMembersButton();
 });
 
-Then('Pseudo: I validate that the table not contains the name', async function() {
+Then('Pseudo: I validate that the table not contains the name', async function () {
     let element = await this.driver.$(memberPage.elements.tableMembers);
     await element.waitForDisplayed();
     let text = await element.getText();
@@ -154,7 +150,7 @@ Then('Pseudo: I validate that the table not contains the name', async function()
     }
 });
 
-Then('Pseudo: I validate that the table not contains the name edited', async function() {
+Then('Pseudo: I validate that the table not contains the name edited', async function () {
     let element = await this.driver.$(memberPage.elements.tableMembers);
     await element.waitForDisplayed();
     let text = await element.getText();
