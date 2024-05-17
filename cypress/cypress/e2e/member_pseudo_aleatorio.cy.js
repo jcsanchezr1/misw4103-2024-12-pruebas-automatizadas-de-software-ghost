@@ -1,15 +1,13 @@
 import properties from './properties.json';
-import LoginPage from './model/loginPage';
 import MemberPage from './model/memberPage';
 import CommonFunction from "./model/commonFunction";
 
 const memberPage = new MemberPage();
-const loginPage = new LoginPage();
 const commonFunction = new CommonFunction();
 
 let parentFolder = '';
 
-describe('Funcionalidad de Members', () => {
+describe('Funcionalidad de Members Pseudo Aleatorio', () => {
     let pseudoMember;
 
     beforeEach(() => {
