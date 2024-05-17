@@ -10,35 +10,35 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa y lo 
   And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
-  When I click members
+  When Aleatorio: I click members
   And I wait for 5 seconds
-  And I click new member
+  And Aleatorio: I click new member
   And I wait for 5 seconds
-  And I enter member name "name1"
+  And Aleatorio: I enter member name
   And I wait for 3 seconds
-  And I enter member email "name1@uniandes.edu.co"
+  And Aleatorio: I enter member email
   And I wait for 3 seconds
-  And I click save member
+  And Aleatorio: I click save member
   And I wait for 5 seconds
-  Then I validate the label of the new member should be "name1"
+  Then Aleatorio: I validate the label of the new member should be
   And I wait for 2 seconds
-  And I click members back
+  And Aleatorio: I click members back
   And I wait for 5 seconds
-  And I fill the filter text field with "name1"
+  And Aleatorio: I fill the filter text field with
   And I wait for 5 seconds
-  And I validate that the table contains the name "name1"
+  And Aleatorio: I validate that the table contains the name
   And I wait for 5 seconds
-  And I click first row on table members
+  And Aleatorio: I click first row on table members
   And I wait for 5 seconds
-  And I click on the member actions button
+  And Aleatorio: I click on the member actions button
   And I wait for 5 seconds
-  And I click on the delete member button
+  And Aleatorio: I click on the delete member button
   And I wait for 5 seconds
-  And I click on the confirm delete member button
+  And Aleatorio: I click on the confirm delete member button
   And I wait for 5 seconds
-  And I click on the show all members button
+  And Aleatorio: I click on the show all members button
   And I wait for 5 seconds
-  Then I validate that the table not contains the name "name1"
+  Then Aleatorio: I validate that the table not contains the name
   And I wait for 5 seconds
 
 
@@ -52,53 +52,53 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, creo
   And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
-  When I click members
+  When Aleatorio: I click members
   And I wait for 5 seconds
-  And I click new member
+  And Aleatorio: I click new member
   And I wait for 5 seconds
-  And I enter member name "name2"
+  And Aleatorio: I enter member name
   And I wait for 3 seconds
-  And I enter member email "name2@uniandes.edu.co"
+  And Aleatorio: I enter member email
   And I wait for 3 seconds
-  And I click save member
+  And Aleatorio: I click save member
   And I wait for 5 seconds
-  And I validate the label of the new member should be "name2"
+  And Aleatorio: I validate the label of the new member should be
   And I wait for 2 seconds
-  And I click members back
+  And Aleatorio: I click members back
   And I wait for 5 seconds
-  And I fill the filter text field with "name2"
+  And Aleatorio: I fill the filter text field with
   And I wait for 5 seconds
-  And I validate that the table contains the name "name2"
+  And Aleatorio: I validate that the table contains the name
   And I wait for 5 seconds
-  And I click new member
+  And Aleatorio: I click new member
   And I wait for 5 seconds
-  And I enter member name "name2"
+  And Aleatorio: I enter member name
   And I wait for 3 seconds
-  And I enter member email "name2@uniandes.edu.co"
+  And Aleatorio: I enter member email
   And I wait for 3 seconds
-  And I click save member
+  And Aleatorio: I click save member
   And I wait for 5 seconds
-  Then I validate the error message "Member already exists. Attempting to add member with existing email address"
+  Then Aleatorio: I validate the error message "Member already exists. Attempting to add member with existing email address"
   And I wait for 2 seconds
-  And I click members back
+  And Aleatorio: I click members back
   And I wait for 5 seconds
-  And I click leave button
+  And Aleatorio: I click leave button
   And I wait for 5 seconds
-  And I fill the filter text field with "name2"
+  And Aleatorio: I fill the filter text field with
   And I wait for 5 seconds
-  And I validate that the table contains the name "name2"
+  And Aleatorio: I validate that the table contains the name
   And I wait for 5 seconds
-  And I click first row on table members
+  And Aleatorio: I click first row on table members
   And I wait for 5 seconds
-  And I click on the member actions button
+  And Aleatorio: I click on the member actions button
   And I wait for 5 seconds
-  And I click on the delete member button
+  And Aleatorio: I click on the delete member button
   And I wait for 5 seconds
-  And I click on the confirm delete member button
+  And Aleatorio: I click on the confirm delete member button
   And I wait for 5 seconds
-  And I click on the show all members button
+  And Aleatorio: I click on the show all members button
   And I wait for 5 seconds
-  Then I validate that the table not contains the name "name2"
+  Then Aleatorio: I validate that the table not contains the name
   And I wait for 5 seconds
 
 @user3 @web
@@ -111,49 +111,49 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
-  When I click members
+  When Aleatorio: I click members
   And I wait for 5 seconds
-  And I click new member
+  And Aleatorio: I click new member
   And I wait for 5 seconds
-  And I enter member name "name3"
+  And Aleatorio: I enter member name
   And I wait for 3 seconds
-  And I enter member email "name3@uniandes.edu.co"
+  And Aleatorio: I enter member email
   And I wait for 3 seconds
-  And I click save member
+  And Aleatorio: I click save member
   And I wait for 5 seconds
-  And I validate the label of the new member should be "name3"
+  And Aleatorio: I validate the label of the new member should be
   And I wait for 2 seconds
-  And I click members back
+  And Aleatorio: I click members back
   And I wait for 5 seconds
-  And I fill the filter text field with "name3"
+  And Aleatorio: I fill the filter text field with
   And I wait for 5 seconds
-  And I validate that the table contains the name "name3"
+  And Aleatorio: I validate that the table contains the name
   And I wait for 5 seconds
-  And I click first row on table members
+  And Aleatorio: I click first row on table members
   And I wait for 5 seconds
-  And I enter member name "name3Modified"
+  And Aleatorio: I enter member name edited
   And I wait for 3 seconds
-  And I click save member
+  And Aleatorio: I click save member
   And I wait for 5 seconds
-  Then I validate the label of the new member should be "name3Modified"
+  Then Aleatorio: I validate the label of the new member should be edited
   And I wait for 2 seconds
-  And I click members back
+  And Aleatorio: I click members back
   And I wait for 5 seconds
-  And I fill the filter text field with "name3Modified"
+  And Aleatorio: I fill the filter text field with edited
   And I wait for 5 seconds
-  And I validate that the table contains the name "name3Modified"
+  And Aleatorio: I validate that the table contains the name edited
   And I wait for 5 seconds
-  And I click first row on table members
+  And Aleatorio: I click first row on table members
   And I wait for 5 seconds
-  And I click on the member actions button
+  And Aleatorio: I click on the member actions button
   And I wait for 5 seconds
-  And I click on the delete member button
+  And Aleatorio: I click on the delete member button
   And I wait for 5 seconds
-  And I click on the confirm delete member button
+  And Aleatorio: I click on the confirm delete member button
   And I wait for 5 seconds
-  And I click on the show all members button
+  And Aleatorio: I click on the show all members button
   And I wait for 5 seconds
-  Then I validate that the table not contains the name "name3Modified"
+  Then Aleatorio: I validate that the table not contains the name edited
   And I wait for 5 seconds
 
 
@@ -167,49 +167,49 @@ Scenario: Como usuario inicio sesion, creo nuevo miembro de manera exitosa, lo e
   And I wait for 2 seconds
   And I click sign in
   And I wait for 10 seconds
-  And I click members
+  And Aleatorio: I click members
   And I wait for 5 seconds
-  And I click new member
+  And Aleatorio: I click new member
   And I wait for 5 seconds
-  And I enter member name "name4"
+  And Aleatorio: I enter member name
   And I wait for 3 seconds
-  And I enter member email "name4@uniandes.edu.co"
+  And Aleatorio: I enter member email
   And I wait for 3 seconds
-  And I click save member
+  And Aleatorio: I click save member
   And I wait for 5 seconds
-  And I validate the label of the new member should be "name4"
+  And Aleatorio: I validate the label of the new member should be
   And I wait for 2 seconds
-  And I click members back
+  And Aleatorio: I click members back
   And I wait for 5 seconds
-  And I fill the filter text field with "name4"
+  And Aleatorio: I fill the filter text field with
   And I wait for 5 seconds
-  And I validate that the table contains the name "name4"
+  And Aleatorio: I validate that the table contains the name
   And I wait for 5 seconds
-  And I click first row on table members
+  And Aleatorio: I click first row on table members
   And I wait for 5 seconds
-  When I enter member email "correoNoValido"
+  When Aleatorio: I enter member invalid email
   And I wait for 3 seconds
-  And I click save member
+  And Aleatorio: I click save member
   And I wait for 3 seconds
-  Then I validate the error message "Invalid Email."
+  Then Aleatorio: I validate the error message "Invalid Email."
   And I wait for 2 seconds
-  And I click members back
+  And Aleatorio: I click members back
   And I wait for 5 seconds
-  And I click leave button
+  And Aleatorio: I click leave button
   And I wait for 5 seconds
-  And I fill the filter text field with "name4"
+  And Aleatorio: I fill the filter text field with
   And I wait for 5 seconds
-  And I validate that the table contains the name "name4"
+  And Aleatorio: I validate that the table contains the name
   And I wait for 5 seconds
-  And I click first row on table members
+  And Aleatorio: I click first row on table members
   And I wait for 5 seconds
-  And I click on the member actions button
+  And Aleatorio: I click on the member actions button
   And I wait for 5 seconds
-  And I click on the delete member button
+  And Aleatorio: I click on the delete member button
   And I wait for 5 seconds
-  And I click on the confirm delete member button
+  And Aleatorio: I click on the confirm delete member button
   And I wait for 5 seconds
-  And I click on the show all members button
+  And Aleatorio: I click on the show all members button
   And I wait for 5 seconds
-  Then I validate that the table not contains the name "name4"
+  Then Aleatorio: I validate that the table not contains the name
   And I wait for 5 seconds

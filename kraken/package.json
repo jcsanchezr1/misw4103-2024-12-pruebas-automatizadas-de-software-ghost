@@ -2,6 +2,7 @@
   "dependencies": {
     "axios": "^1.6.8",
     "cucumber": "^6.0.7",
+    "faker": "^6.6.6",
     "kraken-node": "^1.0.24"
   }
 }
