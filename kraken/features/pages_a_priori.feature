@@ -1,7 +1,7 @@
 Feature: Pages
 
 @user1 @web
-Scenario: Creación exitosa de un page, visualización del page creado en la sección de Pages
+Scenario Outline: Creación exitosa de un page y visualización del page creado en la sección de Pages
   Given I navigate to page "<URL>"
   And I wait
   And I enter email "<EMAIL>"
@@ -14,10 +14,10 @@ Scenario: Creación exitosa de un page, visualización del page creado en la sec
   And I wait for 5 seconds
   And I click new page
   And I wait for 5 seconds
-  And I enter page title "Page1"
-  And I wait for 1 seconds
-  And I enter description page "description Page 1"
+  And I enter page title "<PAGE_NAME>"
   And I wait for 2 seconds
+  And I enter description page "<PAGE_DESCRIPTION>"
+  And I wait for 3 seconds
   And I click publish page
   And I wait for 3 seconds
   And I click continue final review page
@@ -28,8 +28,13 @@ Scenario: Creación exitosa de un page, visualización del page creado en la sec
   And I wait for 5 seconds
   And I click pages
   And I wait for 5 seconds
-  And I validate the title of page "Page1"
+  And I validate the title of page "<PAGE_NAME>"
   And I wait for 2 seconds
+
+  Examples:
+    | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     |
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA   | descripción pagina 1 |
+
 
 @user2 @web
 Scenario: Creación exitosa de un page, desde editor
@@ -45,9 +50,9 @@ Scenario: Creación exitosa de un page, desde editor
   And I wait for 3 seconds
   And I click new page
   And I wait for 3 seconds
-  And I enter page title "Page2"
+  And I enter page title "<PAGE_NAME>"
   And I wait for 1 seconds
-  And I enter description page "description Page 2"
+  And I enter description page "<PAGE_DESCRIPTION>"
   And I wait for 2 seconds
   And I click publish page
   And I wait for 2 seconds
@@ -59,8 +64,12 @@ Scenario: Creación exitosa de un page, desde editor
   And I wait for 2 seconds 
   And I click back to pages  
   And I wait for 5 seconds
-  And I validate the title of page "Page2"
+  And I validate the title of page "<PAGE_NAME>"
   And I wait for 2 seconds  
+
+  Examples:
+    | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     |
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA2  | descripción pagina 2 |
 
 @user3 @web
 Scenario: Modificación exitosa de un page
@@ -76,9 +85,9 @@ Scenario: Modificación exitosa de un page
   And I wait for 5 seconds
   And I click new page
   And I wait for 5 seconds
-  And I enter page title "Page3"
+  And I enter page title "<PAGE_NAME>"
   And I wait for 1 seconds
-  And I enter description page "description Page 3"
+  And I enter description page "<PAGE_DESCRIPTION>"
   And I wait for 2 seconds
   And I click publish page
   And I wait for 3 seconds
@@ -90,18 +99,22 @@ Scenario: Modificación exitosa de un page
   And I wait for 5 seconds 
   And I click pages
   And I wait for 4 seconds
-  And I select page to edit "Page3"  
+  And I select page to edit "<PAGE_NAME>"
   And I wait for 2 seconds
-  And I enter page title "Page4"
+  And I enter page title "<NEW_PAGE_NAME>"
   And I wait for 1 seconds
-  And I enter description page "description Page 4"
+  And I enter description page "<NEW_PAGE_DESCRIPTION>"
   And I wait for 2 seconds
   And I click to update page
   And I wait for 3 seconds  
   Then I click back to pages  
   And I wait for 5 seconds
-  And I validate the title of page "Page4"
+  And I validate the title of page "<NEW_PAGE_NAME>"
   And I wait for 2 seconds
+
+  Examples:
+    | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     | NEW_PAGE_NAME  | NEW_PAGE_DESCRIPTION  | 
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA3  | descripción pagina 3 | PRIMER_PAGINA4 | descripción pagina 4  | 
 
 @user4 @web
 Scenario: Eliminar de manera exitosa una page
@@ -117,9 +130,9 @@ Scenario: Eliminar de manera exitosa una page
   And I wait for 5 seconds
   And I click new page
   And I wait for 5 seconds
-  And I enter page title "Page5"
+  And I enter page title "<PAGE_NAME>"
   And I wait for 1 seconds
-  And I enter description page "description Page 5"
+  And I enter description page "<PAGE_DESCRIPTION>"
   And I wait for 2 seconds
   And I click publish page
   And I wait for 3 seconds
@@ -131,7 +144,7 @@ Scenario: Eliminar de manera exitosa una page
   And I wait for 5 seconds 
   And I click pages
   And I wait for 4 seconds
-  And I select page to edit "Page5"  
+  And I select page to edit "<PAGE_NAME>"  
   And I wait for 2 seconds
   And I click page settings
   And I wait for 1 seconds
@@ -139,6 +152,9 @@ Scenario: Eliminar de manera exitosa una page
   And I wait for 2 seconds
   And I click delete confirmation page
   And I wait for 3 seconds  
-  Then I validate the title of the page does not exist "Page5"  
+  Then I validate the title of the page does not exist "<PAGE_NAME>"
   And I wait for 2 seconds
 
+  Examples:
+    | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     |
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA4  | descripción pagina 4 |

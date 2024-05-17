@@ -22,6 +22,7 @@ BeforeAll(async function () {
   dns.setDefaultResultOrder("ipv4first");
 });
 
+/* SE COMENTA FUNCIONALIDAD SCREENSHOTS (KRAKEN) DADO QUE NO SE REQUIERE Y CONSUME RECURSOS DE MAQUINA
 AfterStep(async function ({ pickle }) {
   if (count % 2 == 0) {
       const scenarioName = pickle.name.replaceAll(' ', '_').replaceAll(',', '');
@@ -46,3 +47,4 @@ async function createFolderIfNotExists(folderPath) {
       fs.mkdirSync(folderPath, { recursive: true });
   }
 }
+*/
