@@ -2,6 +2,7 @@ import properties from './properties.json';
 import LoginPage from './model/loginPage';
 import ProfilePage from './model/profilePage';
 import CommonFunction from "./model/commonFunction";
+import {faker} from "@faker-js/faker";
 
 const profilePage = new ProfilePage();
 const loginPage = new LoginPage();
@@ -9,15 +10,23 @@ const commonFunction = new CommonFunction();
 
 let parentFolder = '';
 
+let profile_full_name;
+let profile_old_password;
+let profile_new_password;
+let profile_verify_password;
 
-describe("Funcionalidad de Profile Aleatorio", (z ) => {
+describe("Funcionalidad de Profile Aleatorio", (z) => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false;
         });
         Cypress.Screenshot.defaults({
             overwrite: true,
-        })
+        });
+        profile_full_name = faker.person.fullName();
+        profile_old_password = faker.internet.password({length: 12})
+        profile_new_password = faker.internet.password({length: 12})
+        profile_verify_password = profile_new_password;
     });
 
     it('Cambiar nombre de manera éxitosa', () => {
@@ -32,7 +41,7 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         profilePage.submitYourProfile()
         commonFunction.wait(1000);
         // AND I enter name "NombreNuevo"
-        profilePage.typeName('NombreNuevo');
+        profilePage.typeName(profile_full_name);
         commonFunction.wait(1000);
         // AND I click save
         profilePage.submitSaveButton();
@@ -41,10 +50,12 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         profilePage.submitProfileMenu();
         commonFunction.wait(1000);
         // AND I validate the name "NombreNuevo"
-        cy.get(profilePage.elements.profileLabel).should('contain', 'NombreNuevo');
+        cy.get(profilePage.elements.profileLabel).should('contain', profile_full_name);
     })
 
     it('Cambiar password de forma fallida por error insecure', () => {
+        profile_new_password = 'password1234'
+        profile_verify_password = profile_new_password;
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
         commonFunction.setPath(parentFolder)
         //GIVEN un usuario admin logueado en Ghost
@@ -58,11 +69,11 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         // AND I enter password "<PASSWORD>"
         profilePage.typeOldPassword(properties.PASSWORD);
         commonFunction.wait(1000);
-        // AND I enter the new password "password1234"
-        profilePage.typePassword('password1234');
+        // AND I enter the new password "profile_verify_password"
+        profilePage.typePassword(profile_new_password);
         commonFunction.wait(1000);
-        // AND I both enter and confirm the new password "password1234"
-        profilePage.typeConfirmPassword("password1234");
+        // AND I both enter and confirm the new password "profile_verify_password"
+        profilePage.typeConfirmPassword(profile_verify_password);
         commonFunction.wait(1000);
         // AND I click confirm password
         profilePage.submitChangePassword();
@@ -80,8 +91,8 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         commonFunction.wait(1000);
         // AND I enter email "<EMAIL>"
         loginPage.typeEmail(properties.EMAIL);
-        // AND I enter password "password1234"
-        loginPage.typePassword('password1234');
+        // AND I enter password "profile_new_password"
+        loginPage.typePassword(profile_new_password);
         // AND I click sign in
         loginPage.clickSignInButton();
         commonFunction.wait(3000);
@@ -95,6 +106,8 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
     });
 
     it('Cambiar password de forma fallida por error de longitud de la contraseña', () => {
+        profile_new_password = faker.internet.password({length: 9})
+        profile_verify_password = profile_new_password;
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
         commonFunction.setPath(parentFolder)
         //GIVEN un usuario admin logueado en Ghost
@@ -108,11 +121,11 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         // AND I enter password "<PASSWORD>"
         profilePage.typeOldPassword(properties.PASSWORD);
         commonFunction.wait(1000);
-        // AND I enter the new password "123456789"
-        profilePage.typePassword('123456789');
+        // AND I enter the new password "profile_new_password"
+        profilePage.typePassword(profile_new_password);
         commonFunction.wait(1000);
-        // AND I both enter and confirm the new password "123456789"
-        profilePage.typeConfirmPassword("123456789");
+        // AND I both enter and confirm the new password profile_verify_password
+        profilePage.typeConfirmPassword(profile_verify_password);
         commonFunction.wait(1000);
         // AND I click confirm password
         profilePage.submitChangePassword();
@@ -130,8 +143,8 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         commonFunction.wait(1000);
         // AND I enter email "<EMAIL>"
         loginPage.typeEmail(properties.EMAIL);
-        // AND I enter password "123456789"
-        loginPage.typePassword('123456789');
+        // AND I enter password "profile_new_password"
+        loginPage.typePassword(profile_new_password);
         // AND I click sign in
         loginPage.clickSignInButton();
         commonFunction.wait(3000);
@@ -155,14 +168,14 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         // AND I click on your profile
         profilePage.submitYourProfile()
         commonFunction.wait(1000);
-        // AND I enter old password "OldPswInvalido"
-        profilePage.typeOldPassword('OldPswInvalido');
+        // AND I enter old password "profile_old_password"
+        profilePage.typeOldPassword(profile_old_password);
         commonFunction.wait(1000);
-        // AND I enter the new password "EstoEsUnPswValido!"
-        profilePage.typePassword('EstoEsUnPswValido!');
+        // AND I enter the new password "profile_new_password"
+        profilePage.typePassword(profile_new_password);
         commonFunction.wait(1000);
-        // AND I both enter and confirm the new password "EstoEsUnPswValido!"
-        profilePage.typeConfirmPassword("EstoEsUnPswValido!");
+        // AND I both enter and confirm the new password "profile_verify_password"
+        profilePage.typeConfirmPassword(profile_verify_password);
         commonFunction.wait(1000);
         // AND I click confirm password
         profilePage.submitChangePassword();
@@ -180,8 +193,8 @@ describe("Funcionalidad de Profile Aleatorio", (z ) => {
         commonFunction.wait(1000);
         // AND I enter email "<EMAIL>"
         loginPage.typeEmail(properties.EMAIL);
-        // AND I enter password "EstoEsUnPswValido!"
-        loginPage.typePassword('EstoEsUnPswValido!');
+        // AND I enter password "profile_new_password"
+        loginPage.typePassword(profile_new_password);
         // AND I click sign in
         loginPage.clickSignInButton();
         commonFunction.wait(3000);
