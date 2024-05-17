@@ -40,7 +40,7 @@ describe("Funcionalidad de Profile Aleatorio", (z) => {
         // AND I click on your profile
         profilePage.submitYourProfile()
         commonFunction.wait(1000);
-        // AND I enter name "NombreNuevo"
+        // AND I enter name "profile_full_name"
         profilePage.typeName(profile_full_name);
         commonFunction.wait(1000);
         // AND I click save
@@ -49,7 +49,7 @@ describe("Funcionalidad de Profile Aleatorio", (z) => {
         // AND I click profile
         profilePage.submitProfileMenu();
         commonFunction.wait(1000);
-        // AND I validate the name "NombreNuevo"
+        // AND I validate the name "profile_full_name"
         cy.get(profilePage.elements.profileLabel).should('contain', profile_full_name);
     })
 
