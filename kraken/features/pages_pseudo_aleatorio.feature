@@ -1,4 +1,4 @@
-Feature: Pages
+Feature: Pages Pseudo Aleatorio
 
 @user1 @web
 Scenario: Creación exitosa de un page y visualización del page creado en la sección de Pages
