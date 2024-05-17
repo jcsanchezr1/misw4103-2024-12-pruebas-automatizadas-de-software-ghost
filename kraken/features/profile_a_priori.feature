@@ -1,4 +1,4 @@
-Feature: Profile
+Feature: Profile A priori
 
 @user1 @web
 Scenario: Cambiar nombre de manera éxitosa

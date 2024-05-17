@@ -1,4 +1,4 @@
-Feature: Pages
+Feature: Pages A priori
 
 @user1 @web
 Scenario Outline: Creación exitosa de un page y visualización del page creado en la sección de Pages
