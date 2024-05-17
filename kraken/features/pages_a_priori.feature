@@ -33,7 +33,7 @@ Scenario Outline: Creación exitosa de un page y visualización del page creado 
 
   Examples:
     | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     |
-    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA   | descripción pagina 1 |
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | Blatrol Bladder Relief   | Disp fx of left tibial spine, init for opn fx type 3A/B/C |
 
 
 @user2 @web
@@ -69,7 +69,7 @@ Scenario: Creación exitosa de un page, desde editor
 
   Examples:
     | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     |
-    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA2  | descripción pagina 2 |
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | Ondansetron  | Burn of third degree of left ear, initial encounter |
 
 @user3 @web
 Scenario: Modificación exitosa de un page
@@ -114,7 +114,7 @@ Scenario: Modificación exitosa de un page
 
   Examples:
     | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     | NEW_PAGE_NAME  | NEW_PAGE_DESCRIPTION  | 
-    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA3  | descripción pagina 3 | PRIMER_PAGINA4 | descripción pagina 4  | 
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | Qdryl Allergy  | Oth fx shaft of radius, left arm, init for opn fx type I/2 | galantamine hydrobromide | Strain extn musc/fasc/tend l little fngr at wrs/hnd lv, sqla  | 
 
 @user4 @web
 Scenario: Eliminar de manera exitosa una page
@@ -157,4 +157,4 @@ Scenario: Eliminar de manera exitosa una page
 
   Examples:
     | URL                                                | EMAIL            | PASSWORD          | PAGE_NAME       | PAGE_DESCRIPTION     |
-    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | PRIMER_PAGINA4  | descripción pagina 4 |
+    | https://ghost-rrgn.onrender.com/ghost/#/signin     | conan@gmail.com  | Automatizadas01*  | Allergy Composition  | Unspecified blood type |
