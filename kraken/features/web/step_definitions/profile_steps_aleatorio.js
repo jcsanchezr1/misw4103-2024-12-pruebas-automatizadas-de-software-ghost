@@ -4,18 +4,12 @@ const ProfilePage = require('../model/profilePage');
 const LoginPage = require('../model/loginPage');
 const { faker } = require('@faker-js/faker');
 
-
-
-
-
 let profilePage;
 let loginPage;
 
 let profile_full_name;
 let profile_old_password;
 let profile_new_password;
-let profile_verify_password;
-
 
 BeforeAll(async function () {
     profilePage = new ProfilePage();
@@ -26,7 +20,6 @@ Before(async function () {
     profile_full_name = faker.random.word();
     profile_old_password = faker.internet.password(12);
     profile_new_password = faker.internet.password(12);
-    profile_verify_password = profile_new_password;
 })
 
 When('Aleatorio: I click profile', async function () {

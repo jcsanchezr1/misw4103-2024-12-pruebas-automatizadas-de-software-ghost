@@ -14,13 +14,13 @@ Scenario: Cambiar nombre de manera éxitosa
   And I wait for 3 seconds
   And Pseudo: I click on your profile
   And I wait for 3 seconds
-  And Pseudo: I change FullName "Camilo"
+  And Pseudo: I change FullName
   And I wait for 3 seconds
   And Pseudo: I click Save button
   And I wait for 3 seconds
   And Pseudo: I click back on profile
   And I wait for 3 seconds
-  Then Pseudo: I validate the name has been changed "Camilo"
+  Then Pseudo: I validate the name has been changed
   And I wait for 3 seconds
 
 @user2 @web
@@ -39,9 +39,9 @@ Scenario: Cambiar password de forma fallida por error insecure
   And I wait for 3 seconds
   And Pseudo: I enter old password "<PASSWORD>"
   And I wait for 2 seconds
-  And Pseudo: I enter the new password "password1234"
+  And Pseudo: I enter the new password low security
   And I wait for 2 seconds
-  And Pseudo: I both enter and confirm the new password "password1234"
+  And Pseudo: I both enter and confirm the new password
   And I wait for 4 seconds
   And Pseudo: I click confirm password
   And I wait for 10 seconds    
@@ -53,16 +53,16 @@ Scenario: Cambiar password de forma fallida por error insecure
   And I wait for 3 seconds
   And Pseudo: I click sign out
   And I wait for 10 seconds
-  And Pseudo: I enter email "<EMAIL>"
+  And I enter email "<EMAIL>"
   And I wait for 1 seconds
-  And Pseudo: I enter password "password1234"
+  And Pseudo: I enter password invalid password
   And I wait for 1 seconds
-  And Pseudo: I click sign in
+  And I click sign in
   And I wait for 3 seconds
-  And Pseudo: I enter password "<PASSWORD>"
+  And I enter password "<PASSWORD>"
   And I wait for 1 seconds
-  And Pseudo: I click sign in
-  And I wait for 15 seconds
+  And I click sign in
+  And I wait for 15 seconds  
 
 @user3 @web
 Scenario: Cambiar password de forma fallida por error de longitud en la nueva contraseña
@@ -80,9 +80,9 @@ Scenario: Cambiar password de forma fallida por error de longitud en la nueva co
   And I wait for 3 seconds
   And Pseudo: I enter old password "<PASSWORD>"
   And I wait for 2 seconds
-  And Pseudo: I enter the new password "123456789"
+  And Pseudo: I enter the new password with only numbers
   And I wait for 2 seconds
-  And Pseudo: I both enter and confirm the new password "123456789"
+  And Pseudo: I both enter and confirm the new password
   And I wait for 4 seconds
   And Pseudo: I click confirm password
   And I wait for 10 seconds
@@ -94,18 +94,18 @@ Scenario: Cambiar password de forma fallida por error de longitud en la nueva co
   And I wait for 3 seconds
   And Pseudo: I click sign out
   And I wait for 10 seconds
-  And Pseudo: I enter email "<EMAIL>"
+  And I enter email "<EMAIL>"
   And I wait for 1 seconds
-  And Pseudo: I enter password "123456789"
+  And Pseudo: I enter password invalid password
   And I wait for 1 seconds
-  And Pseudo: I click sign in
+  And I click sign in
   And I wait for 3 seconds
-  And Pseudo: I enter password "<PASSWORD>"
+  And I enter password "<PASSWORD>"
   And I wait for 1 seconds
-  And Pseudo: I click sign in
-  And I wait for 15 seconds
+  And I click sign in
+  And I wait for 15 seconds  
 
-@user4 @web
+ @user4 @web
 Scenario: Cambiar password de forma fallida por error old password incorrecto
   Given I navigate to page "<URL>"
   And I wait
@@ -119,11 +119,11 @@ Scenario: Cambiar password de forma fallida por error old password incorrecto
   And I wait for 3 seconds
   And Pseudo: I click on your profile    
   And I wait for 3 seconds
-  And Pseudo: I enter old password "OldPswInvalido"
+  And Pseudo: I enter old password invalid
   And I wait for 2 seconds
-  And Pseudo: I enter the new password "EstoEsUnPswValido!"
+  And Pseudo: I enter the new password
   And I wait for 2 seconds
-  And Pseudo: I both enter and confirm the new password "EstoEsUnPswValido!"
+  And Pseudo: I both enter and confirm the new password
   And I wait for 4 seconds
   And Pseudo: I click confirm password
   And I wait for 10 seconds    
@@ -135,14 +135,13 @@ Scenario: Cambiar password de forma fallida por error old password incorrecto
   And I wait for 3 seconds
   And Pseudo: I click sign out
   And I wait for 10 seconds
-  And Pseudo: I enter email "<EMAIL>"
+  And I enter email "<EMAIL>"
   And I wait for 1 seconds
-  And Pseudo: I enter password "OldPswInvalido"
+  And Pseudo: I enter password password not saved
   And I wait for 1 seconds
-  And Pseudo: I click sign in
+  And I click sign in
   And I wait for 3 seconds
-  And Pseudo: I enter password "<PASSWORD>"
+  And I enter password "<PASSWORD>"
   And I wait for 1 seconds
-  And Pseudo: I click sign in
-  And I wait for 15 seconds
-
+  And I click sign in
+  And I wait for 15 seconds 
