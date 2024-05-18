@@ -4,12 +4,11 @@ const PostsPage = require('../model/postPage');
 const { faker } = require('@faker-js/faker');
 
 let postsPage;
-let date;
 let post_title;
 
 BeforeAll(async function () {
     postsPage = new PostsPage();
-    date = Date.now();
+
 })
 
 Before(async function () {
