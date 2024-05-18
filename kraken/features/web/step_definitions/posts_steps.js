@@ -1,6 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { BeforeAll } = require('@cucumber/cucumber');
 const PostsPage = require('../model/postPage');
+const { faker } = require('@faker-js/faker');
 
 let postsPage;
 let date;
@@ -8,6 +9,7 @@ let date;
 BeforeAll(async function () {
     postsPage = new PostsPage();
     date = Date.now();
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",faker.internet.email());
 })
 
 When('I click post', async function() {
