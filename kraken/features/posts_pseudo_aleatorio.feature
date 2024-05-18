@@ -1,4 +1,4 @@
-Feature: Posts
+Feature: Posts Pseudo Aleatorio
 
   @user1 @web
   Scenario: Creación exitosa de un post, visualización del post creado en post list
@@ -10,27 +10,27 @@ Feature: Posts
     And I wait for 1 seconds
     And I click sign in
     And I wait for 5 seconds
-    When Aleatorio: I click post
+    When Pseudo: I click post
     And I wait for 6 seconds
-    And Aleatorio: I click new post
+    And Pseudo: I click new post
     And I wait for 5 seconds
-    And Aleatorio: I enter post title
+    And Pseudo: I enter post title
     And I wait for 1 seconds
-    And Aleatorio: I select the  post description
+    And Pseudo: I select the  post description
     And I wait for 1 seconds
-    And Aleatorio: I enter post description
+    And Pseudo: I enter post description
     And I wait for 3 seconds
-    And Aleatorio: I click publish post
+    And Pseudo: I click publish post
     And I wait for 7 seconds
-    And Aleatorio: I click final review post
+    And Pseudo: I click final review post
     And I wait for 7 seconds
-    And Aleatorio: I click publish post right now
+    And Pseudo: I click publish post right now
     And I wait for 7 seconds
-    And Aleatorio: I click back to editor post
+    And Pseudo: I click back to editor post
     And I wait for 5 seconds
-    And Aleatorio: I click back to post
+    And Pseudo: I click back to post
     And I wait for 3 seconds
-    Then Aleatorio: I check the post in the list
+    Then Pseudo: I check the post in the list
     And I wait for 2 seconds
 
 
@@ -44,35 +44,35 @@ Feature: Posts
     And I wait for 1 seconds
     And I click sign in
     And I wait for 5 seconds
-    When Aleatorio: I click post
+    When Pseudo: I click post
     And I wait for 6 seconds
-    And Aleatorio: I click new post
+    And Pseudo: I click new post
     And I wait for 5 seconds
-    And Aleatorio: I enter post title
+    And Pseudo: I enter post title
     And I wait for 1 seconds
-    And Aleatorio: I select the  post description
+    And Pseudo: I select the  post description
     And I wait for 1 seconds
-    And Aleatorio: I enter post description
+    And Pseudo: I enter post description
     And I wait for 3 seconds
-    And Aleatorio: I click publish post
+    And Pseudo: I click publish post
     And I wait for 7 seconds
-    And Aleatorio: I click final review post
+    And Pseudo: I click final review post
     And I wait for 7 seconds
-    And Aleatorio: I click publish post right now
+    And Pseudo: I click publish post right now
     And I wait for 7 seconds
-    And Aleatorio: I click back to editor post
+    And Pseudo: I click back to editor post
     And I wait for 5 seconds
-    And Aleatorio: I update the post title
+    And Pseudo: I update the post title
     And I wait for 1 seconds
-    And Aleatorio: I select the  post description
+    And Pseudo: I select the  post description
     And I wait for 1 seconds
-    And Aleatorio: I update the post description
+    And Pseudo: I update the post description
     And I wait for 3 seconds
-    And Aleatorio: I click to update the post
+    And Pseudo: I click to update the post
     And I wait for 5 seconds
-    And Aleatorio: I click back to post
+    And Pseudo: I click back to post
     And I wait for 5 seconds
-    Then Aleatorio: I check the updated post in the list
+    Then Pseudo: I check the updated post in the list
     And I wait for 2 seconds
 
 
@@ -86,31 +86,31 @@ Feature: Posts
     And I wait for 1 seconds
     And I click sign in
     And I wait for 5 seconds
-    When Aleatorio: I click post
+    When Pseudo: I click post
     And I wait for 6 seconds
-    And Aleatorio: I click new post
+    And Pseudo: I click new post
     And I wait for 5 seconds
-    And Aleatorio: I enter post title
+    And Pseudo: I enter post title
     And I wait for 1 seconds
-    And Aleatorio: I select the  post description
+    And Pseudo: I select the  post description
     And I wait for 1 seconds
-    And Aleatorio: I enter post description
+    And Pseudo: I enter post description
     And I wait for 3 seconds
-    And Aleatorio: I click publish post
+    And Pseudo: I click publish post
     And I wait for 7 seconds
-    And Aleatorio: I click final review post
+    And Pseudo: I click final review post
     And I wait for 7 seconds
-    And Aleatorio: I click publish post right now
+    And Pseudo: I click publish post right now
     And I wait for 7 seconds
-    And Aleatorio: I click back to editor post
+    And Pseudo: I click back to editor post
     And I wait for 5 seconds
-    And Aleatorio: I click settings of post
+    And Pseudo: I click settings of post
     And I wait for 2 seconds
-    And Aleatorio: I click delete post
+    And Pseudo: I click delete post
     And I wait for 2 seconds
-    And Aleatorio: I click delete post confirmation
+    And Pseudo: I click delete post confirmation
     And I wait for 7 seconds
-    Then Aleatorio: I check the post is not in the list
+    Then Pseudo: I check the post is not in the list
     And I wait for 2 seconds
 
 
@@ -124,29 +124,29 @@ Feature: Posts
     And I wait for 1 seconds
     And I click sign in
     And I wait for 5 seconds
-    When Aleatorio: I click post
+    When Pseudo: I click post
     And I wait for 6 seconds
-    And Aleatorio: I click new post
+    And Pseudo: I click new post
     And I wait for 5 seconds
-    And Aleatorio: I enter post title
+    And Pseudo: I enter post title
     And I wait for 1 seconds
-    And Aleatorio: I select the  post description
+    And Pseudo: I select the  post description
     And I wait for 1 seconds
-    And Aleatorio: I enter post description
+    And Pseudo: I enter post description
     And I wait for 3 seconds
-    And Aleatorio: I click publish post
+    And Pseudo: I click publish post
     And I wait for 7 seconds
-    And Aleatorio: I click final review post
+    And Pseudo: I click final review post
     And I wait for 7 seconds
-    And Aleatorio: I click publish post right now
+    And Pseudo: I click publish post right now
     And I wait for 7 seconds
-    And Aleatorio: I click back to editor post
+    And Pseudo: I click back to editor post
     And I wait for 7 seconds
-    And Aleatorio: I click unpublish post
+    And Pseudo: I click unpublish post
     And I wait for 5 seconds
-    And Aleatorio: I confirm unpublish post
+    And Pseudo: I confirm unpublish post
     And I wait for 5 seconds
-    Then Aleatorio: I click publish post
+    Then Pseudo: I click publish post
     And I wait for 2 seconds
 
 
