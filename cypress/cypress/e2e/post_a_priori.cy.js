@@ -1,11 +1,12 @@
 import properties from './properties.json';
 import PostPage from './model/postPage';
 import CommonFunction from "./model/commonFunction";
-import {faker} from '@faker-js/faker';
+import postsApriori from "./prioriFiles/posts.json";
 
 
 const postPage = new PostPage();
 const commonFunction = new CommonFunction();
+
 let parentFolder = '';
 
 describe("Funcionalidad de Post", () => {
@@ -21,16 +22,15 @@ describe("Funcionalidad de Post", () => {
         Cypress.Screenshot.defaults({
             overwrite: true,
         })
-        post_name = faker.random.word();
-        post_description = faker.lorem.sentence();
-        new_post_name = faker.random.word();
-        new_post_description = faker.lorem.sentence();
-
-
     });
 
     it('Creación exitosa de un post, visualización del post modificado en post list', () => {
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
+        post_name = postsApriori[10].post_name;
+        post_description = postsApriori[10].post_description;
+        new_post_name = postsApriori[10].new_post_name;
+        new_post_description = postsApriori[10].new_post_description;
+
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
         commonFunction.login(properties.URL)
@@ -76,6 +76,11 @@ describe("Funcionalidad de Post", () => {
 
     it('Modificación exitosa de un post, visualización del post modificado en post list', () => {
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
+        post_name = postsApriori[11].post_name;;
+        post_description = postsApriori[11].post_description;
+        new_post_name = postsApriori[11].new_post_name;
+        new_post_description = postsApriori[11].new_post_description;
+
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
         commonFunction.login(properties.URL)
@@ -132,6 +137,11 @@ describe("Funcionalidad de Post", () => {
 
     it('Eliminación exitosa de un post, no visualización del post eliminado en post list', () => {
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
+        post_name = postsApriori[12].post_name;;
+        post_description = postsApriori[12].post_description;
+        new_post_name = postsApriori[12].new_post_name;
+        new_post_description = postsApriori[12].new_post_description;
+
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
         commonFunction.login(properties.URL)
@@ -183,6 +193,11 @@ describe("Funcionalidad de Post", () => {
 
     it('Despublicación exitosa de un post', () => {
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
+        post_name = postsApriori[13].post_name;;
+        post_description = postsApriori[13].post_description;
+        new_post_name = postsApriori[13].new_post_name;
+        new_post_description = postsApriori[13].new_post_description;
+
         commonFunction.setPath(parentFolder)
         //Given un usuario admin logueado en Ghost
         commonFunction.login(properties.URL)

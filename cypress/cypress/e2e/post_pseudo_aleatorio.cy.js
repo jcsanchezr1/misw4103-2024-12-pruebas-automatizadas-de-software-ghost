@@ -1,18 +1,14 @@
 import properties from './properties.json';
 import PostPage from './model/postPage';
 import CommonFunction from "./model/commonFunction";
-import {faker} from '@faker-js/faker';
-
 
 const postPage = new PostPage();
 const commonFunction = new CommonFunction();
+
 let parentFolder = '';
 
 describe("Funcionalidad de Post", () => {
-    let post_name;
-    let post_description;
-    let new_post_name;
-    let new_post_description;
+    let pseudoPost; 3000
 
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
@@ -21,13 +17,11 @@ describe("Funcionalidad de Post", () => {
         Cypress.Screenshot.defaults({
             overwrite: true,
         })
-        post_name = faker.random.word();
-        post_description = faker.lorem.sentence();
-        new_post_name = faker.random.word();
-        new_post_description = faker.lorem.sentence();
-
-
+        cy.request('https://my.api.mockaroo.com/pages.json?key=d87073e0').then((response) => {
+            pseudoPost = response.body;
+        });
     });
+
 
     it('Creación exitosa de un post, visualización del post modificado en post list', () => {
         parentFolder = Cypress.mocha.getRunner().suite.ctx._runnable.parent.title + '/' + Cypress.mocha.getRunner().suite.ctx._runnable.title + '/';
@@ -41,13 +35,13 @@ describe("Funcionalidad de Post", () => {
         postPage.submitNewPosts();
         commonFunction.wait(1000);
         //And I enter post title
-        postPage.setPostTitle(post_name);
+        postPage.setPostTitle(pseudoPost.page_name);
         commonFunction.wait(1000);
         //And I select description post
         postPage.selectPostDesc();
         commonFunction.wait(1000);
         //And I enter post desc
-        postPage.setPostDesc(post_description);
+        postPage.setPostDesc(pseudoPost.page_description);
         commonFunction.wait(1000);
         //And I submit the  post
         postPage.submitPublishPost();
@@ -67,7 +61,7 @@ describe("Funcionalidad de Post", () => {
         //And I look for the element in the list
         let listPosts = postPage.validatePostName();
         commonFunction.wait(3000).then(() => {
-            let found = postPage.validateExistPostTitle(listPosts, post_name);
+            let found = postPage.validateExistPostTitle(listPosts, pseudoPost.page_name);
             expect(found).to.be.true;
         });
 
@@ -86,13 +80,13 @@ describe("Funcionalidad de Post", () => {
         postPage.submitNewPosts();
         commonFunction.wait(1000)
         //And I enter post title
-        postPage.setPostTitle(post_name);
+        postPage.setPostTitle(pseudoPost.page_name);
         commonFunction.wait(1000);
         //And I select description post
         postPage.selectPostDesc();
         commonFunction.wait(1000);
         //And I enter post desc
-        postPage.setPostDesc(post_description);
+        postPage.setPostDesc(pseudoPost.page_description);
         commonFunction.wait(1000);
         //And I submit the  post
         postPage.submitPublishPost();
@@ -107,13 +101,13 @@ describe("Funcionalidad de Post", () => {
         postPage.backToEditorPost();
         commonFunction.wait(1000);
         //And I insert the updated value
-        postPage.setPostTitle(new_post_name);
+        postPage.setPostTitle(pseudoPost.new_page_name);
         commonFunction.wait(1000);
         //And I select description post
         postPage.selectPostDesc();
         commonFunction.wait(1000);
         //And I enter post desc
-        postPage.setPostDesc(new_post_description);
+        postPage.setPostDesc(pseudoPost.new_page_description);
         commonFunction.wait(1000);
         //And I click update button
         postPage.updatePost()
@@ -124,7 +118,7 @@ describe("Funcionalidad de Post", () => {
         //And I look for the element in the list
         let listPosts = postPage.validatePostName();
         commonFunction.wait(3000).then(() => {
-            let found = postPage.validateExistPostTitle(listPosts, new_post_name);
+            let found = postPage.validateExistPostTitle(listPosts, pseudoPost.new_page_name);
             expect(found).to.be.true;
         });
 
@@ -143,13 +137,13 @@ describe("Funcionalidad de Post", () => {
         postPage.submitNewPosts();
         commonFunction.wait(1000)
         //And I enter post title
-        postPage.setPostTitle(post_name);
+        postPage.setPostTitle(pseudoPost.page_name);
         commonFunction.wait(1000);
         //And I select description post
         postPage.selectPostDesc();
         commonFunction.wait(1000);
         //And I enter post desc
-        postPage.setPostDesc(post_description);
+        postPage.setPostDesc(pseudoPost.page_description);
         commonFunction.wait(1000);
         //And I submit the  post
         postPage.submitPublishPost();
@@ -193,13 +187,13 @@ describe("Funcionalidad de Post", () => {
         postPage.submitNewPosts();
         commonFunction.wait(1000)
         //And I enter post title
-        postPage.setPostTitle(post_name);
+        postPage.setPostTitle(pseudoPost.page_name);
         commonFunction.wait(1000);
         //And I select description post
         postPage.selectPostDesc();
         commonFunction.wait(1000);
         //And I enter post desc
-        postPage.setPostDesc(post_description);
+        postPage.setPostDesc(pseudoPost.page_description);
         commonFunction.wait(1000);
         //And I submit the  post
         postPage.submitPublishPost();
@@ -225,6 +219,5 @@ describe("Funcionalidad de Post", () => {
 
     });
 
-
-
 });
+
