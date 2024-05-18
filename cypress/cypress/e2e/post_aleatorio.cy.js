@@ -5,8 +5,6 @@ import {faker} from '@faker-js/faker';
 
 // import { fakerES_MX as faker } from '@faker-js/faker';
 
-faker.seed(41);
-
 const postPage = new PostPage();
 const commonFunction = new CommonFunction();
 let title = faker.lorem.sentence();
