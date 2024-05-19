@@ -19,6 +19,7 @@ class TagPage {
       buttonDeleteTag: "div > button.gh-btn.gh-btn-red.gh-btn-icon > span",
       buttonDeleteConfirmation: "div.modal-footer > button.gh-btn-red",
       titleList: ".gh-tag-list-name",
+      tagSelector: "#tag-input > ul > input"
     };
   }
 
@@ -57,7 +58,7 @@ class TagPage {
       }
     }
     if (!found) {
-      throw new Error("The error message is not displayed: " + title);
+      throw new Error("The error message is not displayed: " + nameTag);
     }
   }
 
@@ -77,6 +78,10 @@ class TagPage {
     await this.driver.$(this.elements.confirmDelete).waitForDisplayed();
     return await this.driver.$(this.elements.confirmDelete).click();
   }
+  async setTag(tag) {
+    await this.driver.$(this.elements.tagSelector).waitForDisplayed();
+    await this.driver.$(this.elements.tagSelector).setValue(tag);
+}
 }
 
 module.exports = TagPage;
