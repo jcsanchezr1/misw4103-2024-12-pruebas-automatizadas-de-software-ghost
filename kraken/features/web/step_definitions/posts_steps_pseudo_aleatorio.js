@@ -13,7 +13,7 @@ BeforeAll(async function () {
 
 Before(async function () {
     try {
-        const response = await axios.get('https://my.api.mockaroo.com/pages.json?key=d87073e0');
+        const response = await axios.get('https://my.api.mockaroo.com/posts.json?key=d5e48ec0');
         pseudoPost = response.data;
     } catch (error) {
         console.error("Error fetching pseudoPost: ", error);
@@ -31,11 +31,11 @@ When('Pseudo: I click new post', async function() {
 });
 
 When('Pseudo: I enter post title', async function() {
-    postsPage.setPostTitle(pseudoPost.page_name);
+    postsPage.setPostTitle(pseudoPost.post_name);
 });
 
 When('Pseudo: I update the post title', async function () {
-    postsPage.setPostTitle(pseudoPost.new_page_name);
+    postsPage.setPostTitle(pseudoPost.new_post_name);
 });
 
 When('Pseudo: I select the  post description', async function(){
@@ -43,11 +43,11 @@ When('Pseudo: I select the  post description', async function(){
 });
 
 When('Pseudo: I enter post description', async function() {
-    postsPage.setPostDescription(pseudoPost.page_description);
+    postsPage.setPostDescription(pseudoPost.post_description);
 });
 
 When('Pseudo: I update the post description', async function () {
-    postsPage.setPostDescription(pseudoPost.new_page_description);
+    postsPage.setPostDescription(pseudoPost.new_post_description);
 });
 
 When('Pseudo: I click publish post', async function() {
@@ -110,15 +110,15 @@ Then('Pseudo: I check the post in the list', async function() {
     for (let element of elements) {
         let text = await element.getText();
         console.log(text);
-        if (text.includes(pseudoPost.page_name)) {
-            console.log('The created post is displayed:', pseudoPost.page_name);
+        if (text.includes(pseudoPost.post_name)) {
+            console.log('The created post is displayed:', pseudoPost.post_name);
             found = true;
             break;
         }
     }
 
     if (!found) {
-        throw new Error('The created post is not displayed: ' + pseudoPost.page_name);
+        throw new Error('The created post is not displayed: ' + pseudoPost.post_name);
     }
     console.assert(found,"The created post is not displayed")
 });
@@ -130,15 +130,15 @@ Then('Pseudo: I check the updated post in the list', async function() {
     for (let element of elements) {
         let text = await element.getText();
         console.log(text);
-        if (text.includes(pseudoPost.new_page_name)) {
-            console.log('The created post is displayed:', pseudoPost.new_page_name);
+        if (text.includes(pseudoPost.new_post_name)) {
+            console.log('The created post is displayed:', pseudoPost.new_post_name);
             found = true;
             break;
         }
     }
 
     if (!found) {
-        throw new Error('The created post is not displayed: ' + pseudoPost.new_page_name);
+        throw new Error('The created post is not displayed: ' + pseudoPost.new_post_name);
     }
     console.assert(found,"The created post is not displayed")
 });
@@ -150,15 +150,15 @@ Then('Pseudo: I check the post is not in the list', async function() {
     for (let element of elements) {
         let text = await element.getText();
         console.log(text);
-        if (text.includes(pseudoPost.page_name)) {
-            console.log('The created post is displayed:', pseudoPost.page_name);
+        if (text.includes(pseudoPost.post_name)) {
+            console.log('The created post is displayed:', pseudoPost.post_name);
             found = false;
             break;
         }
     }
 
     if (!found) {
-        throw new Error('The created post is displayed: ' + pseudoPost.page_name);
+        throw new Error('The created post is displayed: ' + pseudoPost.post_name);
     }
     console.assert(found,"The created post is displayed")
 });
@@ -169,12 +169,12 @@ Then('Pseudo: I validate if the tag {string} is in the post creation', async fun
     for (let element of elements) {
         let text = await element.getText();
         console.log(text);
-        if (text.includes(pseudoPost.page_name)) {
+        if (text.includes(pseudoPost.post_name)) {
             found = true;
             break;
         }
     }
     if (!found) {
-        throw new Error('The error message is not displayed: ' + pseudoPost.page_name);
+        throw new Error('The error message is not displayed: ' + pseudoPost.post_name);
     }
 });
