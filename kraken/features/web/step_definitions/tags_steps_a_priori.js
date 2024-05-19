@@ -68,6 +68,7 @@ Then('I validate the title of tag {string}', async function(title) {
             break;
         }
     }
+
      if (!found) {
         throw new Error('The error message is not displayed: ' + title);
     }
@@ -107,4 +108,5 @@ Then('I validate the title of the tag does not exist {string}', async function (
 When('I modify the name and slug of the tag to {string}', async function (title) {
     tagPage.submitEditTag(title);
 });
+
 

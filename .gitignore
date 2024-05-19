@@ -19,6 +19,7 @@ resemblejs/results
 
 # Node
 kraken/node_modules
+cypress/node_modules
 resemblejs/node_modules
 npm-debug.log
 yarn-error.log

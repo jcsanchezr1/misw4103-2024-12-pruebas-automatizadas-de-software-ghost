@@ -30,11 +30,11 @@ class MemberPage {
     }
 
     setMemberName(name) {
-        cy.get(this.elements.memberNameText).type(name, {force: true});
+        cy.get(this.elements.memberNameText).click().type(name, {force: true});
     }
 
     setMemberEmail(email) {        
-        cy.get(this.elements.memberEmailText).type(email, {force: true});
+        cy.get(this.elements.memberEmailText).click().type(email, {force: true});
     }
 
     clickSaveMember() {        
