@@ -223,6 +223,34 @@ Se debe ejecutar las pruebas E2E con Cypress antes de proceder con la instalaci�
 
 **recordar que por cada funcionalidad generamos un reporte con esta herramienta (page, post, profile, tag)**
 
+## 5. Instalación y ejecución de la herramienta AXE para ejecutar pruebas de Accesibilidad
+
+Axe DevTools para pruebas de accesibilidad web es una herramienta para desarrolladores, probadores y diseñadores. Axe DevTools funciona en Chrome, Safari y Firefox en Mac y Windows. Axe DevTools analiza los sitios web, sacando a la luz automáticamente los problemas de accesibilidad.
+
+1. Instalar el plugin de AXE en el navegador de su preferencia, siguiendo los pasos de instalación de los siguientes links:
+
+[Instalar Axe DevTools en Chrome](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+
+[Instalar Axe DevTools en Firefox](https://addons.mozilla.org/es/firefox/addon/axe-devtools/)
+
+2. Abrir la aplicación de [Ghost 5.14.1](https://ghost-rrgn.onrender.com/ghost/#/signin) en el browser donde instaló la herramienta de AXE DevTools, y loguearse de manera correcta.
+
+3. Abrir las herramientas de desarrollo del browser:
+
+pulsar `Comando + Opción + C (Mac)` o `Control + Mayús + C (Windows, Linux y Chrome OS)`, o hacer click derecho sobre sobre la página y hacer click en inspeccionar.
+
+4. Acceder a AXE, en las herramientas de desarrollo, buscar la pestaña "AXE" o "AXE DevTools" y hacer clic en ella.
+
+<img width="1728" alt="Captura de pantalla 2024-05-24 a la(s) 18 45 46" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/5a778e7a-df02-4736-a3b6-d1a72e2d3e01">
+
+5. Ejecutar el análisis, en la pestaña de AXE, selecciona `Scan ALL of my page`.
+
+<img width="1728" alt="Captura de pantalla 2024-05-24 a la(s) 18 47 27" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/67e07902-027b-4836-bd1d-60d3e84c1392">
+
+6. Revisar los resultados, examinar los problemas identificados asociados a problemas de accesibilidad.
+
+<img width="1728" alt="Captura de pantalla 2024-05-24 a la(s) 18 47 57" src="https://github.com/jcsanchezr1/misw4103-2024-12-pruebas-automatizadas-de-software-ghost/assets/158225978/e82abc5d-a88c-40eb-bf3a-146c1539c98e">
+
 ## URL de Ghost y Credenciales de Inicio de Sesión
 - La versión de Ghost (Ghost 5.14.1) fue la que se utilizo para para pruebas automatización E2E
 - La versión de Ghost (Ghost 3.4.2) fue la que versión que se uso para las pruebas VRT.
